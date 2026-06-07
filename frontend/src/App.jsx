@@ -17,15 +17,15 @@ import Register from "./pages/auth/Register";
 
 // Recruiter
 // import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
-// import PostJob from "./pages/recruiter/PostJob";
+import PostJob from "./pages/recruiter/PostJob";
 // import Applicants from "./pages/recruiter/Applicants";
 // import JobSeekers from "./pages/recruiter/JobSeekers";
 // import Resources from "./pages/recruiter/Resources";
 
 // Job Seeker
-// import Dashboard from "./pages/seeker/Dashboard";
-// import Jobs from "./pages/seeker/Jobs";
-// import Profile from "./pages/seeker/Profile";
+import Dashboard from "./pages/seeker/Dashboard";
+import Jobs from "./pages/seeker/Jobs";
+//import Profile from "./pages/seeker/Profile";
 // import Resume from "./pages/seeker/Resume";
 // import AppliedJobs from "./pages/seeker/AppliedJobs";
 // import AIMatch from "./pages/seeker/AIMatch";
@@ -76,10 +76,7 @@ function App() {
           element={<RecruiterDashboard />}
         />
 
-        <Route
-          path="/recruiter/post-job"
-          element={<PostJob />}
-        />
+        
 
         <Route
           path="/recruiter/applicants"
@@ -96,11 +93,11 @@ function App() {
           element={<Resources />}
         /> */}
 
-
-
-        {/* ================= JOB SEEKER ================= */}
-
-        {/* <Route
+        <Route
+          path="/recruiter/post-job"
+          element={<PostJob />}
+        />
+        <Route
           path="/seeker/dashboard"
           element={<Dashboard />}
         />
@@ -109,6 +106,9 @@ function App() {
           path="/seeker/jobs"
           element={<Jobs />}
         />
+        {/* ================= JOB SEEKER ================= */}
+
+        {/* 
 
         <Route
           path="/seeker/profile"

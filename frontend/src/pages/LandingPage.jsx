@@ -1,6 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -108,20 +106,19 @@ export default function LandingPage() {
         </div>
 
         <div className="flex gap-2">
-          <Button
-            variant="outline"
+          <button
             onClick={() => navigate("/login")}
-            className="border-[#1a56a0] text-[#1a56a0] hover:bg-blue-50"
+            className="border-[#1a56a0] text-[#1a56a0] hover:bg-blue-50 border px-3 py-1 rounded"
           >
             Login
-          </Button>
+          </button>
 
-          <Button
+          <button
             onClick={() => navigate("/register")}
-            className="bg-[#1a56a0] hover:bg-[#154f96]"
+            className="bg-[#1a56a0] hover:bg-[#154f96] text-white px-3 py-1 rounded"
           >
             Sign Up
-          </Button>
+          </button>
         </div>
       </nav>
 
@@ -149,16 +146,19 @@ export default function LandingPage() {
         </p>
 
         <div className="mt-6 flex justify-center gap-3">
-          <Button
+          <button
             onClick={() => navigate("/register")}
-            className="bg-[#1a56a0] hover:bg-[#154f96]"
+            className="bg-[#1a56a0] hover:bg-[#154f96] text-white px-4 py-2 rounded"
           >
             Get Started
-          </Button>
+          </button>
 
-          <Button variant="outline" onClick={() => navigate("/login")}>
+          <button
+            onClick={() => navigate("/login")}
+            className="border border-[#1a56a0] text-[#1a56a0] px-4 py-2 rounded"
+          >
             Login
-          </Button>
+          </button>
         </div>
       </section>
 
@@ -170,13 +170,13 @@ export default function LandingPage() {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {features.map((f) => (
-            <Card key={f.title} className="shadow-sm">
-              <CardContent className="p-5">
+            <div key={f.title} className="shadow-sm bg-white rounded">
+              <div className="p-5">
                 <div className="text-2xl">{f.icon}</div>
                 <h3 className="font-semibold mt-2">{f.title}</h3>
                 <p className="text-sm text-gray-600 mt-1">{f.desc}</p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -189,34 +189,31 @@ export default function LandingPage() {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {roles.map((role) => (
-            <Card key={role.title} className="overflow-hidden shadow-md">
+            <div key={role.title} className="overflow-hidden shadow-md bg-white rounded">
               {/* header */}
-              <div
-                className="p-4 text-white"
-                style={{ background: role.color }}
-              >
+              <div className="p-4 text-white" style={{ background: role.color }}>
                 <div className="text-2xl">{role.icon}</div>
                 <h3 className="font-bold">{role.title}</h3>
                 <p className="text-sm opacity-90">{role.desc}</p>
               </div>
 
               {/* body */}
-              <CardContent className="p-5">
+              <div className="p-5">
                 <ul className="text-sm space-y-2">
                   {role.points.map((p) => (
                     <li key={p}>✔ {p}</li>
                   ))}
                 </ul>
 
-                <Button
-                  className="w-full mt-4"
+                <button
+                  className="w-full mt-4 text-white px-3 py-2 rounded"
                   style={{ background: role.color }}
                   onClick={() => navigate(role.path)}
                 >
                   Get Started →
-                </Button>
-              </CardContent>
-            </Card>
+                </button>
+              </div>
+            </div>
           ))}
         </div>
       </section>
@@ -234,20 +231,19 @@ export default function LandingPage() {
         </p>
 
         <div className="mt-6 flex justify-center gap-3">
-          <Button
-            className="bg-white text-[#1a56a0] hover:bg-gray-100"
+          <button
+            className="bg-white text-[#1a56a0] hover:bg-gray-100 px-4 py-2 rounded"
             onClick={() => navigate("/register")}
           >
             Sign Up
-          </Button>
+          </button>
 
-          <Button
-            variant="outline"
-            className="text-white border-white"
+          <button
+            className="border border-white text-white px-4 py-2 rounded"
             onClick={() => navigate("/login")}
           >
             Login
-          </Button>
+          </button>
         </div>
       </section>
 
