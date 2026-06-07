@@ -1,21 +1,46 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
+import { useSelector, useDispatch } from "react-redux";
+import { loginSuccess } from "../../redux/slices/AuthSlice";
 
 function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  // const users = useSelector(
+  //   (state) => state.users?.users || []
+  // );
+  const users = useSelector((state)=>state.user.users);
+  console.log(users);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Temporary Navigation
-    navigate("/admin/dashboard");
+    const user = users.find(
+      (u) =>
+        u.email === email &&
+        u.password === password
+    );
+    console.log(user);
 
-    // Later:
-    // if(role === "admin")
-    // navigate("/admin/dashboard")
-    // else if(role === "recruiter")
-    // navigate("/recruiter/dashboard")
-    // else
-    // navigate("/seeker/dashboard")
+    if (!user) {
+      alert("Invalid Email or Password");
+      return;
+    }
+
+    dispatch(loginSuccess(user));
+
+    if (user.role === "admin") {
+      navigate("/admin/dashboard");
+    } else if (user.role === "recruiter") {
+      navigate("/recruiter/dashboard");
+    } else {
+      navigate("/seeker/dashboard");
+    }
   };
 
   return (
@@ -26,31 +51,25 @@ function Login() {
           Job Referral Platform
         </h1>
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form
+          onSubmit={handleLogin}
+          className="space-y-4"
+        >
+          <input
+            type="email"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full border p-2 rounded"
+          />
 
-          <div>
-            <label className="block mb-1">
-              Email
-            </label>
-
-            <input
-              type="email"
-              placeholder="Enter Email"
-              className="w-full border p-2 rounded"
-            />
-          </div>
-
-          <div>
-            <label className="block mb-1">
-              Password
-            </label>
-
-            <input
-              type="password"
-              placeholder="Enter Password"
-              className="w-full border p-2 rounded"
-            />
-          </div>
+          <input
+            type="password"
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full border p-2 rounded"
+          />
 
           <button
             type="submit"
@@ -58,7 +77,6 @@ function Login() {
           >
             Login
           </button>
-
         </form>
 
         <p className="text-center mt-4">
@@ -70,7 +88,6 @@ function Login() {
             Register
           </Link>
         </p>
-
       </div>
     </div>
   );
