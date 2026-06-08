@@ -17,7 +17,7 @@ import ReferrerLogin from "./pages/auth/ReferrerLogin";
 // import Categories from "./pages/admin/Categories";
 
 // Recruiter
-// import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
+import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
 // import PostJob from "./pages/recruiter/PostJob";
 // import Applicants from "./pages/recruiter/Applicants";
 // import JobSeekers from "./pages/recruiter/JobSeekers";
@@ -72,12 +72,12 @@ function App() {
 
 
         {/* ================= RECRUITER ================= */}
-{/* 
+
         <Route
           path="/recruiter/dashboard"
           element={<RecruiterDashboard />}
         />
-
+{/* 
         <Route
           path="/recruiter/post-job"
           element={<PostJob />}
