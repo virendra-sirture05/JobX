@@ -4,7 +4,6 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function LandingPage() {
   const navigate = useNavigate();
-
   const features = [
     {
       icon: "🔍",
@@ -97,7 +96,7 @@ export default function LandingPage() {
           Job Referral
         </div>
 
-        <div className="hidden md:flex gap-6 text-sm text-gray-600">
+        <div className="hidden md:flex gap-6 text-gray-600">
           <span className="hover:text-[#1a56a0] cursor-pointer">Features</span>
           <span className="hover:text-[#1a56a0] cursor-pointer">
             How it Works
@@ -174,7 +173,7 @@ export default function LandingPage() {
               <CardContent className="p-5">
                 <div className="text-2xl">{f.icon}</div>
                 <h3 className="font-semibold mt-2">{f.title}</h3>
-                <p className="text-sm text-gray-600 mt-1">{f.desc}</p>
+                <p className="text-gray-600 mt-1">{f.desc}</p>
               </CardContent>
             </Card>
           ))}
@@ -197,12 +196,12 @@ export default function LandingPage() {
               >
                 <div className="text-2xl">{role.icon}</div>
                 <h3 className="font-bold">{role.title}</h3>
-                <p className="text-sm opacity-90">{role.desc}</p>
+                <p className="opacity-90">{role.desc}</p>
               </div>
 
               {/* body */}
               <CardContent className="p-5">
-                <ul className="text-sm space-y-2">
+                <ul className="space-y-2">
                   {role.points.map((p) => (
                     <li key={p}>✔ {p}</li>
                   ))}
@@ -228,7 +227,7 @@ export default function LandingPage() {
           background: "linear-gradient(135deg,#1a56a0,#1a7a56)",
         }}
       >
-        <h2 className="text-3xl font-bold">Ready to get referred?</h2>
+        <h2 className="text-2xl font-bold">Ready to get referred?</h2>
         <p className="mt-2 text-white/80">
           Join thousands already using the platform
         </p>
@@ -252,7 +251,7 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#1a1a2e] text-gray-400 text-sm py-6 px-6 flex justify-between">
+      <footer className="bg-[#1a1a2e] text-gray-400 py-6 px-6 flex justify-between">
         <div className="text-white font-semibold">Job Referral</div>
         <div>Built with React</div>
         <div className="flex gap-4">

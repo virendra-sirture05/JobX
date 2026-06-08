@@ -17,17 +17,17 @@ import Register from "./pages/auth/Register";
 
 // Recruiter
 // import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
-// import PostJob from "./pages/recruiter/PostJob";
+ import PostJob from "./pages/recruiter/PostJob";
 // import Applicants from "./pages/recruiter/Applicants";
 // import JobSeekers from "./pages/recruiter/JobSeekers";
 // import Resources from "./pages/recruiter/Resources";
 
 // Job Seeker
-// import Dashboard from "./pages/seeker/Dashboard";
-// import Jobs from "./pages/seeker/Jobs";
-// import Profile from "./pages/seeker/Profile";
-// import Resume from "./pages/seeker/Resume";
-// import AppliedJobs from "./pages/seeker/AppliedJobs";
+import Dashboard from "./pages/seeker/Dashboard";
+import Jobs from "./pages/seeker/Jobs";
+import AppliedJobs from "./pages/seeker/AppliedJobs";
+import Resume from "./pages/seeker/Resume";
+import Profile from "./pages/seeker/Profile";
 // import AIMatch from "./pages/seeker/AIMatch";
 // import Messages from "./pages/seeker/Messages";
 
@@ -67,7 +67,10 @@ function App() {
           element={<Categories />}
         /> */}
 
-
+          <Route
+          path="/recruiter/post-job"
+          element={<PostJob />}
+        />
 
         {/* ================= RECRUITER ================= */}
 {/* 
@@ -76,10 +79,7 @@ function App() {
           element={<RecruiterDashboard />}
         />
 
-        <Route
-          path="/recruiter/post-job"
-          element={<PostJob />}
-        />
+        
 
         <Route
           path="/recruiter/applicants"
@@ -97,10 +97,7 @@ function App() {
         /> */}
 
 
-
-        {/* ================= JOB SEEKER ================= */}
-
-        {/* <Route
+       <Route
           path="/seeker/dashboard"
           element={<Dashboard />}
         />
@@ -111,14 +108,25 @@ function App() {
         />
 
         <Route
-          path="/seeker/profile"
-          element={<Profile />}
+          path="/seeker/applied-jobs"
+          element={<AppliedJobs />}
         />
 
         <Route
           path="/seeker/resume"
           element={<Resume />}
         />
+
+        <Route
+          path="/seeker/profile"
+          element={<Profile />}
+        />
+
+        {/* ================= JOB SEEKER ================= */}
+
+        {/*
+
+       
 
         <Route
           path="/seeker/applied-jobs"

@@ -1,22 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { useSelector, useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/slices/AuthSlice";
 
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   // const users = useSelector(
   //   (state) => state.users?.users || []
   // );
   const users = useSelector((state)=>state.user.users);
   console.log(users);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -47,7 +43,7 @@ function Login() {
     <div className="min-h-screen flex items-center justify-center bg-slate-100">
       <div className="w-full max-w-md bg-white p-6 rounded-lg shadow">
 
-        <h1 className="text-2xl font-bold text-center mb-6">
+        <h1 className="text-xl font-bold text-center mb-6">
           Job Referral Platform
         </h1>
 

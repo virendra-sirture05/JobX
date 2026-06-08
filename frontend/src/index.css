@@ -122,9 +122,37 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground text-base;
     }
   html {
     @apply font-sans;
     }
+  
+  h1 {
+    @apply text-2xl font-semibold;
+  }
+  
+  h2 {
+    @apply text-xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-lg font-semibold;
+  }
+  
+  h4 {
+    @apply text-base font-semibold;
+  }
+  
+  p {
+    @apply text-sm;
+  }
+  
+  label {
+    @apply text-sm;
+  }
+  
+  .text-label {
+    @apply text-xs font-semibold uppercase text-gray-600;
+  }
 }
