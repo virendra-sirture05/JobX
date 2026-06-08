@@ -9,7 +9,7 @@ function Login() {
   // const users = useSelector(
   //   (state) => state.users?.users || []
   // );
-  const users = useSelector((state)=>state.user.users);
+  const users = useSelector((state)=>state.users.users);
   console.log(users);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
