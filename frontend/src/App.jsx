@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import ReferrerLogin from "./pages/auth/ReferrerLogin";
 
 // Auth
 // import Login from "./pages/auth/Login";
@@ -33,14 +34,15 @@ import Register from "./pages/auth/Register";
 
 function App() {
   return (
-    
-    <BrowserRouter>
+        <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {/* Auth Routes */}
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/referrer-login" element={<ReferrerLogin/> } />
+
 
 
 
@@ -138,6 +140,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
 
+}
 export default App;
