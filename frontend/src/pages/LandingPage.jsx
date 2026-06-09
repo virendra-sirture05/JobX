@@ -1,5 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import AuthModal from "@/components/ui/AuthModal";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function LandingPage() {
@@ -84,7 +86,8 @@ export default function LandingPage() {
       ],
     },
   ];
-
+  const [openLogin, setOpenLogin] = useState(false);
+  const [openSignup, setOpenSignup] = useState(false);
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* NAVBAR */}
@@ -109,14 +112,14 @@ export default function LandingPage() {
         <div className="flex gap-2">
           <Button
             variant="outline"
-            onClick={() => navigate("/login")}
+            onClick={()=>{setOpenLogin(true)}}
             className="border-[#1a56a0] text-[#1a56a0] hover:bg-blue-50"
           >
             Login
           </Button>
 
           <Button
-            onClick={() => navigate("/register")}
+            onClick={() => setOpenSignup(true)}
             className="bg-[#1a56a0] hover:bg-[#154f96]"
           >
             Sign Up
@@ -259,6 +262,8 @@ export default function LandingPage() {
           <span className="cursor-pointer">Sign Up</span>
         </div>
       </footer>
+      <AuthModal open={openLogin} onOpenChange={setOpenLogin} mode="login"  />
+      <AuthModal open={openSignup} onOpenChange={setOpenSignup} mode="signup"/>
     </div>
   );
 }

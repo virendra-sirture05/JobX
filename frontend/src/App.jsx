@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
+import ReferrerLogin from "./pages/auth/ReferrerLogin";
 
 // Auth
 // import Login from "./pages/auth/Login";
@@ -18,6 +19,8 @@ import Register from "./pages/auth/Register";
 // Recruiter
 // import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
  import PostJob from "./pages/recruiter/PostJob";
+import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
+// import PostJob from "./pages/recruiter/PostJob";
 // import Applicants from "./pages/recruiter/Applicants";
 // import JobSeekers from "./pages/recruiter/JobSeekers";
 // import Resources from "./pages/recruiter/Resources";
@@ -39,14 +42,15 @@ import Profile from "./pages/seeker/Profile";
 
 function App() {
   return (
-    
-    <BrowserRouter>
+        <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {/* Auth Routes */}
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/referrer-login" element={<ReferrerLogin/> } />
+
 
 
 
@@ -79,14 +83,17 @@ function App() {
         />
 
         {/* ================= RECRUITER ================= */}
-{/* 
+
         <Route
           path="/recruiter/dashboard"
           element={<RecruiterDashboard />}
         />
 
-        
-
+{/* 
+        <Route
+          path="/recruiter/post-job"
+          element={<PostJob />}
+        />
         <Route
           path="/recruiter/applicants"
           element={<Applicants />}
@@ -177,6 +184,6 @@ function App() {
       </Routes>
     </BrowserRouter>
   );
-}
 
+}
 export default App;
