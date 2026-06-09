@@ -28,6 +28,9 @@ import Jobs from "./pages/seeker/Jobs";
 import AppliedJobs from "./pages/seeker/AppliedJobs";
 import Resume from "./pages/seeker/Resume";
 import Profile from "./pages/seeker/Profile";
+import AIMatchDashboard from "./pages/seeker/AIMatchDashboard";
+import SavedJobs from "./pages/seeker/SavedJobs";
+import MessagesPage from "./pages/seeker/MessagePage";
 // import AIMatch from "./pages/seeker/AIMatch";
 // import Messages from "./pages/seeker/Messages";
 
@@ -121,27 +124,30 @@ function App() {
           path="/seeker/profile"
           element={<Profile />}
         />
+        <Route
+          path="/seeker/ai-match"
+          element={<AIMatchDashboard />}
+        />
+        <Route
+          path="/seeker/saved-jobs"
+          element={<SavedJobs />}
+        />
 
+        <Route
+          path="/seeker/messages"
+          element={<MessagesPage />}
+        />
         {/* ================= JOB SEEKER ================= */}
 
         {/*
 
        
 
-        <Route
-          path="/seeker/applied-jobs"
-          element={<AppliedJobs />}
-        />
+       
 
-        <Route
-          path="/seeker/ai-match"
-          element={<AIMatch />}
-        />
+        
 
-        <Route
-          path="/seeker/messages"
-          element={<Messages />}
-        /> */}
+         */}
 
       </Routes>
     </BrowserRouter>
