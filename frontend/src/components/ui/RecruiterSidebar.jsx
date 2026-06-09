@@ -81,7 +81,7 @@ export default function RecruiterSidebar() {
           </button>
         ))}
 
-        <button
+        <button onClick={()=>{navigate("/")}} 
           className="
             mt-4
             w-full

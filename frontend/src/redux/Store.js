@@ -5,7 +5,7 @@ import authReducer from './slices/AuthSlice'
 import jobReducer from "./slices/jobSlice";
 const Store = configureStore({
     reducer:{
-        user : usersReducer,
+        users : usersReducer,
         auth : authReducer,
         jobs : jobReducer
 

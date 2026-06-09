@@ -40,6 +40,12 @@ import Profile from "./pages/seeker/Profile";
 import AIMatchDashboard from "./pages/seeker/AIMatchDashboard";
 import SavedJobs from "./pages/seeker/SavedJobs";
 import MessagesPage from "./pages/seeker/MessagePage";
+import AdminDashboard from "./pages/admin/Dashboard";
+import ManageUsers from "./pages/admin/ManageUsers";
+import ManageJobs from "./pages/admin/ManageJobs";
+import Applications from "./pages/admin/Application";
+import LoginActivity from "./pages/admin/LoginActivity";
+import Categories from "./pages/admin/Categories";
 // import AIMatch from "./pages/seeker/AIMatch";
 // import Messages from "./pages/seeker/Messages";
 
@@ -59,7 +65,7 @@ function App() {
 
         {/* ================= ADMIN ================= */}
 
-        {/* <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
 
         <Route path="/admin/users" element={<ManageUsers />} />
 
@@ -78,7 +84,7 @@ function App() {
         <Route
           path="/admin/categories"
           element={<Categories />}
-        /> */}
+        />
 
           <Route
           path="/recruiter/post-job"
