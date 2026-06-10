@@ -37,34 +37,27 @@ const jobSlice = createSlice({
     },
 
     deleteJob: (state, action) => {
-      state.jobs = state.jobs.filter(
-        (job) => job.id !== action.payload
-      );
+      state.jobs = state.jobs.filter((job) => job.id !== action.payload);
     },
 
     toggleJobStatus: (state, action) => {
-      const job = state.jobs.find(
-        (job) => job.id === action.payload
-      );
+      const job = state.jobs.find((job) => job.id === action.payload);
 
       if (job) {
-        job.status =
-          job.status === "Active"
-            ? "Closed"
-            : "Active";
+        job.status = job.status === "Active" ? "Closed" : "Active";
       }
     },
 
     applyJob: (state, action) => {
-      const existingJob = state.jobs.find(
-        (job) => job.id === action.payload
-      );
+      const jobId =
+        typeof action.payload === "object"
+          ? action.payload?.id
+          : action.payload;
+      const existingJob = state.jobs.find((job) => job.id === jobId);
 
       if (
         existingJob &&
-        !state.appliedJobs.some(
-          (job) => job.id === existingJob.id
-        )
+        !state.appliedJobs.some((job) => job.id === existingJob.id)
       ) {
         state.appliedJobs.push(existingJob);
       }
@@ -72,11 +65,7 @@ const jobSlice = createSlice({
   },
 });
 
-export const {
-  addJob,
-  deleteJob,
-  toggleJobStatus,
-  applyJob,
-} = jobSlice.actions;
+export const { addJob, deleteJob, toggleJobStatus, applyJob } =
+  jobSlice.actions;
 
 export default jobSlice.reducer;

@@ -1,34 +1,33 @@
-import {useState} from "react";
-import {useSelector,useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {applyJob} from "../../redux/slices/jobSlice";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { applyJob } from "../../redux/slices/jobSlice";
 
-export default function Jobs(){
-  const dispatch=useDispatch();
-  const navigate=useNavigate();
-  const jobs=useSelector((state)=>state.jobs.jobs);
+export default function Jobs() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const jobs = useSelector((state) => state.jobs.jobs);
 
-  const [search,setSearch]=useState("");
-  const [location,setLocation]=useState("");
-  const [category,setCategory]=useState("");
+  const [search, setSearch] = useState("");
+  const [location, setLocation] = useState("");
+  const [category, setCategory] = useState("");
 
-  const filteredJobs=jobs.filter((job)=>{
-    const matchesSearch=
-      job.title.toLowerCase().includes(search.toLowerCase())||
-      job.company.toLowerCase().includes(search.toLowerCase())||
+  const filteredJobs = jobs.filter((job) => {
+    const matchesSearch =
+      job.title.toLowerCase().includes(search.toLowerCase()) ||
+      job.company.toLowerCase().includes(search.toLowerCase()) ||
       job.skills?.toLowerCase().includes(search.toLowerCase());
 
-    const matchesLocation=
-      location===""||
+    const matchesLocation =
+      location === "" ||
       job.location.toLowerCase().includes(location.toLowerCase());
 
-    const matchesCategory=
-      category===""||job.category===category;
+    const matchesCategory = category === "" || job.category === category;
 
-    return matchesSearch&&matchesLocation&&matchesCategory;
+    return matchesSearch && matchesLocation && matchesCategory;
   });
 
-  return(
+  return (
     <div className="flex min-h-screen bg-gray-100">
       <div className="w-64 border-r bg-white p-4">
         <h3 className="text-lg font-bold mb-4">FILTERS</h3>
@@ -40,7 +39,7 @@ export default function Jobs(){
             placeholder="City..."
             className="w-full border p-2"
             value={location}
-            onChange={(e)=>setLocation(e.target.value)}
+            onChange={(e) => setLocation(e.target.value)}
           />
         </div>
 
@@ -49,7 +48,7 @@ export default function Jobs(){
           <select
             className="w-full border p-2"
             value={category}
-            onChange={(e)=>setCategory(e.target.value)}
+            onChange={(e) => setCategory(e.target.value)}
           >
             <option value="">All</option>
             <option>Engineering</option>
@@ -61,8 +60,8 @@ export default function Jobs(){
 
         <button
           className="w-full text-white p-2 rounded"
-          style={{backgroundColor:"#1a56a0"}}
-          onClick={()=>{}}
+          style={{ backgroundColor: "#1a56a0" }}
+          onClick={() => {}}
         >
           Apply Filters
         </button>
@@ -71,14 +70,14 @@ export default function Jobs(){
           <h4 className="text-label mb-3">QUICK LINKS</h4>
 
           <button
-            onClick={()=>navigate("/seeker/dashboard")}
+            onClick={() => navigate("/seeker/dashboard")}
             className="w-full text-left px-2 py-2 hover:bg-gray-100 rounded text-sm"
           >
             Dashboard
           </button>
 
           <button
-            onClick={()=>navigate("/seeker/applied-jobs")}
+            onClick={() => navigate("/seeker/applied-jobs")}
             className="w-full text-left px-2 py-2 hover:bg-gray-100 rounded text-sm"
           >
             Applied Jobs
@@ -89,7 +88,7 @@ export default function Jobs(){
       <div className="flex-1 p-4">
         <div
           className="text-white flex justify-between items-center p-3 mb-4 rounded"
-          style={{backgroundColor:"#1a56a0"}}
+          style={{ backgroundColor: "#1a56a0" }}
         >
           <h2>Job Board</h2>
           <span className="text-xs">{filteredJobs.length} Active</span>
@@ -101,7 +100,7 @@ export default function Jobs(){
             placeholder="Search title, company, skills..."
             className="w-full border p-2 rounded"
             value={search}
-            onChange={(e)=>setSearch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
 
@@ -109,17 +108,29 @@ export default function Jobs(){
           <table className="w-full border-collapse">
             <thead>
               <tr className="bg-gray-100">
-                <th className="border p-3 text-left text-xs font-semibold text-gray-800">ID</th>
-                <th className="border p-3 text-left text-xs font-semibold text-gray-800">Title</th>
-                <th className="border p-3 text-left text-xs font-semibold text-gray-800">Company</th>
-                <th className="border p-3 text-left text-xs font-semibold text-gray-800">Location</th>
-                <th className="border p-3 text-left text-xs font-semibold text-gray-800">Category</th>
-                <th className="border p-3 text-left text-xs font-semibold text-gray-800">Actions</th>
+                <th className="border p-3 text-left text-xs font-semibold text-gray-800">
+                  ID
+                </th>
+                <th className="border p-3 text-left text-xs font-semibold text-gray-800">
+                  Title
+                </th>
+                <th className="border p-3 text-left text-xs font-semibold text-gray-800">
+                  Company
+                </th>
+                <th className="border p-3 text-left text-xs font-semibold text-gray-800">
+                  Location
+                </th>
+                <th className="border p-3 text-left text-xs font-semibold text-gray-800">
+                  Category
+                </th>
+                <th className="border p-3 text-left text-xs font-semibold text-gray-800">
+                  Actions
+                </th>
               </tr>
             </thead>
 
             <tbody>
-              {filteredJobs.length===0?(
+              {filteredJobs.length === 0 ? (
                 <tr>
                   <td
                     colSpan="6"
@@ -129,8 +140,8 @@ export default function Jobs(){
                     or add a new job.
                   </td>
                 </tr>
-              ):(
-                filteredJobs.map((job)=>(
+              ) : (
+                filteredJobs.map((job) => (
                   <tr key={job.id} className="hover:bg-gray-50 border-b">
                     <td className="border-r p-3">{job.id}</td>
 
@@ -138,10 +149,10 @@ export default function Jobs(){
                       <div className="flex items-center gap-2">
                         <span>{job.title}</span>
 
-                        {job.tags&&job.tags.includes("New")&&(
+                        {job.tags && job.tags.includes("New") && (
                           <span
                             className="text-xs px-2 py-0.5 rounded text-white"
-                            style={{backgroundColor:"#1a56a0"}}
+                            style={{ backgroundColor: "#1a56a0" }}
                           >
                             New
                           </span>
@@ -157,9 +168,9 @@ export default function Jobs(){
                       <div className="flex gap-2 flex-wrap">
                         <button
                           className="rounded text-white px-3 py-1 text-xs"
-                          style={{backgroundColor:"#1a56a0"}}
-                          onClick={()=>{
-                            dispatch(applyJob(job));
+                          style={{ backgroundColor: "#1a56a0" }}
+                          onClick={() => {
+                            dispatch(applyJob(job.id));
                             navigate("/seeker/applied-jobs");
                           }}
                         >
@@ -169,8 +180,6 @@ export default function Jobs(){
                         <button className="border rounded px-3 py-1 text-xs hover:bg-gray-100">
                           Save
                         </button>
-
-                      
                       </div>
                     </td>
                   </tr>

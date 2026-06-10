@@ -94,25 +94,17 @@ export default function LandingPage() {
       <nav className="sticky top-0 z-50 flex justify-between items-center px-6 py-4 border-b shadow-sm bg-white">
         <div className="flex items-center gap-2 font-bold">
           <div className="w-8 h-8 bg-[#1a56a0] text-white flex items-center justify-center rounded">
-            JR
+            JX
           </div>
-          Job Referral
-        </div>
-
-        <div className="hidden md:flex gap-6 text-gray-600">
-          <span className="hover:text-[#1a56a0] cursor-pointer">Features</span>
-          <span className="hover:text-[#1a56a0] cursor-pointer">
-            How it Works
-          </span>
-          <span className="hover:text-[#1a56a0] cursor-pointer">
-            Recruiters
-          </span>
+          JobX
         </div>
 
         <div className="flex gap-2">
           <Button
             variant="outline"
-            onClick={()=>{setOpenLogin(true)}}
+            onClick={() => {
+              setOpenLogin(true);
+            }}
             className="border-[#1a56a0] text-[#1a56a0] hover:bg-blue-50"
           >
             Login
@@ -152,14 +144,10 @@ export default function LandingPage() {
 
         <div className="mt-6 flex justify-center gap-3">
           <Button
-            onClick={() => navigate("/register")}
+            onClick={() => setOpenLogin(true)}
             className="bg-[#1a56a0] hover:bg-[#154f96]"
           >
             Get Started
-          </Button>
-
-          <Button variant="outline" onClick={() => navigate("/login")}>
-            Login
           </Button>
         </div>
       </section>
@@ -262,8 +250,8 @@ export default function LandingPage() {
           <span className="cursor-pointer">Sign Up</span>
         </div>
       </footer>
-      <AuthModal open={openLogin} onOpenChange={setOpenLogin} mode="login"  />
-      <AuthModal open={openSignup} onOpenChange={setOpenSignup} mode="signup"/>
+      <AuthModal open={openLogin} onOpenChange={setOpenLogin} mode="login" />
+      <AuthModal open={openSignup} onOpenChange={setOpenSignup} mode="signup" />
     </div>
   );
 }

@@ -1,17 +1,17 @@
 export default function ReferralTable() {
   const rows = [
     {
-      name: "John Doe",
+      name: "Aditi Inamdar",
       role: "AI Engineer",
       status: "Pending",
     },
     {
-      name: "Robert Brown",
+      name: "Bhavika rathor",
       role: "Backend Developer",
       status: "Accepted",
     },
     {
-      name: "Emily Davis",
+      name: "virendra sirture",
       role: "UX Designer",
       status: "Rejected",
     },
@@ -20,42 +20,25 @@ export default function ReferralTable() {
   return (
     <div className="bg-white rounded-2xl border shadow-sm mt-8">
       <div className="p-6 border-b">
-        <h2 className="font-semibold text-lg">
-          Referral Requests
-        </h2>
+        <h2 className="font-semibold text-lg">Referral Requests</h2>
       </div>
 
       <table className="w-full">
         <thead>
           <tr className="bg-gray-50">
-            <th className="text-left p-4">
-              Candidate
-            </th>
-            <th className="text-left p-4">
-              Job
-            </th>
-            <th className="text-left p-4">
-              Status
-            </th>
-            <th className="text-left p-4">
-              Action
-            </th>
+            <th className="text-left p-4">Candidate</th>
+            <th className="text-left p-4">Job</th>
+            <th className="text-left p-4">Status</th>
+            <th className="text-left p-4">Action</th>
           </tr>
         </thead>
 
         <tbody>
           {rows.map((row) => (
-            <tr
-              key={row.name}
-              className="border-t"
-            >
-              <td className="p-4">
-                {row.name}
-              </td>
+            <tr key={row.name} className="border-t">
+              <td className="p-4">{row.name}</td>
 
-              <td className="p-4">
-                {row.role}
-              </td>
+              <td className="p-4">{row.role}</td>
 
               <td className="p-4">
                 <span
@@ -66,8 +49,8 @@ export default function ReferralTable() {
                       row.status === "Accepted"
                         ? "bg-green-100 text-green-700"
                         : row.status === "Rejected"
-                        ? "bg-red-100 text-red-700"
-                        : "bg-yellow-100 text-yellow-700"
+                          ? "bg-red-100 text-red-700"
+                          : "bg-yellow-100 text-yellow-700"
                     }
                   `}
                 >
@@ -106,4 +89,4 @@ export default function ReferralTable() {
       </table>
     </div>
   );
-} 
+}

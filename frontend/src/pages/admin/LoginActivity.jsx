@@ -14,7 +14,7 @@ const initialLoginActivity = [
   },
   {
     id: 2,
-    username: "john@example.com",
+    username: "ritesh@example.com",
     time: "May 10, 09:30 AM",
     ip: "192.168.1.2",
     role: "Job Seeker",
@@ -22,7 +22,7 @@ const initialLoginActivity = [
   },
   {
     id: 3,
-    username: "robert@example.com",
+    username: "aditi@example.com",
     time: "May 10, 10:00 AM",
     ip: "192.168.1.4",
     role: "Job Seeker",

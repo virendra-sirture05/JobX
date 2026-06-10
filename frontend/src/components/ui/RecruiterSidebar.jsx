@@ -3,7 +3,6 @@ import {
   Briefcase,
   Users,
   Search,
-  MessageSquare,
   User,
   LogOut,
 } from "lucide-react";
@@ -20,11 +19,7 @@ const menus = [
     icon: Briefcase,
     path: "/recruiter/post-job",
   },
-  {
-    label: "My Jobs",
-    icon: Briefcase,
-    path: "/recruiter/jobs",
-  },
+  
   {
     label: "Applicants",
     icon: Users,
@@ -36,26 +31,19 @@ const menus = [
     path: "/recruiter/search-jobseeker",
   },
   {
-    label: "Messages",
-    icon: MessageSquare,
-    path: "/recruiter/messages",
-  },
-  {
     label: "Resources",
     icon: User,
-    path: "/recruiter/resourcese",
+    path: "/recruiter/resources",
   },
 ];
 
 export default function RecruiterSidebar() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <aside className="w-64 bg-white border-r min-h-[calc(100vh-64px)]">
       <div className="p-5 border-b">
-        <h2 className="font-semibold text-gray-700">
-          Recruiter Panel
-        </h2>
+        <h2 className="font-semibold text-gray-700">Recruiter Panel</h2>
       </div>
 
       <nav className="p-3">
@@ -81,7 +69,10 @@ export default function RecruiterSidebar() {
           </button>
         ))}
 
-        <button onClick={()=>{navigate("/")}} 
+        <button
+          onClick={() => {
+            navigate("/");
+          }}
           className="
             mt-4
             w-full

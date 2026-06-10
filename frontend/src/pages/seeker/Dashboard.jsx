@@ -85,21 +85,11 @@ export default function Dashboard(){
             <Link to="/seeker/profile">My Profile</Link>
           </li>
 
-          <li className="p-3 border-b hover:bg-gray-100">
-            <Link to="/seeker/skills">Skills</Link>
-          </li>
-
+    
           <li className="p-3 border-b hover:bg-gray-100">
             <Link to="/seeker/resume">Resume Upload</Link>
           </li>
 
-          <li className="p-3 border-b hover:bg-gray-100">
-            <Link to="/seeker/work-experience">Work Experience</Link>
-          </li>
-
-          <li className="p-3 border-b hover:bg-gray-100">
-            <Link to="/seeker/qualifications">Qualifications</Link>
-          </li>
         </ul>
 
         <div className="text-label">PREMIUM</div>
@@ -117,12 +107,10 @@ export default function Dashboard(){
             <Link to="/seeker/messages">Messages</Link>
           </li>
 
-          <li className="p-3 border-b hover:bg-gray-100">
-            <Link to="/seeker/resources">Resources</Link>
-          </li>
+          
 
           <li className="p-3 border-b hover:bg-gray-100">
-            <Link to="/login">Logout</Link>
+            <Link to="/">Logout</Link>
           </li>
         </ul>
       </div>
@@ -132,7 +120,7 @@ export default function Dashboard(){
           className="text-white flex justify-end p-3"
           style={{backgroundColor:"#1a56a0"}}
         >
-          Welcome, John Doe
+          Welcome, Virendra
         </div>
 
         <div className="p-4">

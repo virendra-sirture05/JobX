@@ -60,25 +60,19 @@ const userSlice = createSlice({
     },
 
     deleteUser: (state, action) => {
-      state.users = state.users.filter(
-        (user) => user.id !== action.payload
-      );
+      state.users = state.users.filter((user) => user.id !== action.payload);
     },
 
     toggleUserStatus: (state, action) => {
-      const user = state.users.find(
-        (user) => user.id === action.payload
-      );
+      const user = state.users.find((user) => user.id === action.payload);
 
       if (user) {
-        user.status =
-          user.status === "Active" ? "Suspended" : "Active";
+        user.status = user.status === "Active" ? "Suspended" : "Active";
       }
     },
   },
 });
 
-export const { addUser, deleteUser, toggleUserStatus } =
-  userSlice.actions;
+export const { addUser, deleteUser, toggleUserStatus } = userSlice.actions;
 
 export default userSlice.reducer;
