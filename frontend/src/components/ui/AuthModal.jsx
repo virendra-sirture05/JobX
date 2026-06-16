@@ -38,6 +38,7 @@ export default function AuthModal({
   };
   
   return (
+    <div className="">
     <Dialog
       open={open}
       onOpenChange={resetModal}
@@ -540,5 +541,6 @@ export default function AuthModal({
 )}
       </DialogContent>
     </Dialog>
+    </div>
   );
 }
