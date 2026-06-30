@@ -1,0 +1,17 @@
+target/
+.git/
+.idea/
+.settings/
+
+.env
+.env.*
+
+README.md
+
+*.iml
+
+Dockerfile
+
+.gitignore
+
+.vscode/
