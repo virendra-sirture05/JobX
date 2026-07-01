@@ -1,4 +1,19 @@
 services:
+  redis:
+    image: redis:7.4-alpine
+
+    container_name: jobx-redis
+
+    restart: unless-stopped
+
+    ports:
+      - "6379:6379"
+
+    volumes:
+      - redis-data:/data
+
+    command: redis-server --appendonly yes
+
   backend:
     build:
       context: .
@@ -8,8 +23,29 @@ services:
 
     ports:
       - "8080:8080"
+    volumes:
+      - /root/.aws:/root/.aws:ro
+    depends_on:
+      - redis
 
     environment:
-      SPRING_PROFILES_ACTIVE: local
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+
+      DB_URL: ${DB_URL}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: 6379
+      REDIS_USERNAME: ""
+      REDIS_PASSWORD: ""
+
+      SPRING_SECURITY_USERNAME: ${SPRING_SECURITY_USERNAME}
+      SPRING_SECURITY_PASSWORD: ${SPRING_SECURITY_PASSWORD}
+
+      AWS_SES_SENDER_EMAIL: ${AWS_SES_SENDER_EMAIL}
 
     restart: unless-stopped
+
+volumes:
+  redis-data:
