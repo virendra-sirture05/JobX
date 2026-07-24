@@ -24,13 +24,13 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - /root/.aws:/root/.aws:ro
+      - /root/.aws:/home/spring/.aws:ro
     depends_on:
       - redis
 
     environment:
       SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
-
+      HOME: /home/spring
       DB_URL: ${DB_URL}
       DB_USERNAME: ${DB_USERNAME}
       DB_PASSWORD: ${DB_PASSWORD}
@@ -42,9 +42,8 @@ services:
 
       SPRING_SECURITY_USERNAME: ${SPRING_SECURITY_USERNAME}
       SPRING_SECURITY_PASSWORD: ${SPRING_SECURITY_PASSWORD}
-
+      AWS_REGION: ${AWS_REGION}
       AWS_SES_SENDER_EMAIL: ${AWS_SES_SENDER_EMAIL}
-
     restart: unless-stopped
 
 volumes:
