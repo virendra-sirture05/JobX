@@ -30,7 +30,7 @@ function Login() {
 
     dispatch(loginSuccess(user));
 
-    if (user.role === "admin") {
+    if (user.role === "ROLE_ADMIN") {
       navigate("/admin/dashboard");
     } else if (user.role === "recruiter") {
       navigate("/recruiter/dashboard");

@@ -9,7 +9,7 @@ const initialLoginActivity = [
     username: "admin",
     time: "May 10, 09:15 AM",
     ip: "192.168.1.1",
-    role: "Admin",
+    role: "ROLE_ADMIN",
     status: "Success",
   },
   {
@@ -17,7 +17,7 @@ const initialLoginActivity = [
     username: "ritesh@example.com",
     time: "May 10, 09:30 AM",
     ip: "192.168.1.2",
-    role: "Job Seeker",
+    role: "ROLE_JOBSEEKER",
     status: "Success",
   },
   {
@@ -25,7 +25,7 @@ const initialLoginActivity = [
     username: "aditi@example.com",
     time: "May 10, 10:00 AM",
     ip: "192.168.1.4",
-    role: "Job Seeker",
+    role: "ROLE_JOBSEEKER",
     status: "Failed",
   },
   {
@@ -33,7 +33,7 @@ const initialLoginActivity = [
     username: "rahul@example.com",
     time: "May 10, 10:30 AM",
     ip: "192.168.1.6",
-    role: "Job Seeker",
+    role: "ROLE_JOBSEEKER",
     status: "Failed",
   },
 ];

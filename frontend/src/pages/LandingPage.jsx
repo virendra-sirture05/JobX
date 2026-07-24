@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import BgGradient from "./gradient/BgGradient";
-import AuthModal from "@/components/ui/AuthModal";
+import AuthModal from "@/components/auth/AuthModal";
 
 // PDFGlow exact palette
 const C = {
@@ -150,8 +150,13 @@ const slideLeftV = {
 
 
 export default function JobXLanding() {
-  const [openLogin, setOpenLogin] = useState(false);
-  const [openSignup, setOpenSignup] = useState(false);
+const [authModal, setAuthModal] = useState({
+
+    open: false,
+
+    mode: "login"
+
+});
 
   return (
     <div
@@ -224,7 +229,7 @@ export default function JobXLanding() {
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            onClick={() => setOpenLogin(true)}
+            onClick={() => setAuthModal({ open: true,mode: "login"})}
             style={{
               background: "transparent",
               color: C.slate700,
@@ -241,7 +246,7 @@ export default function JobXLanding() {
           <motion.button
             whileHover={buttonHover}
             whileTap={{ scale: 0.96 }}
-            onClick={() => setOpenSignup(true)}
+            onClick={() => setAuthModal({ open: true,mode: "signup"})}
             style={{
               background: `linear-gradient(135deg, ${C.slate900}, ${C.rose600})`,
               color: "white",
@@ -358,7 +363,7 @@ export default function JobXLanding() {
             <motion.button
               whileHover={buttonHover}
               whileTap={{ scale: 0.96 }}
-              onClick={() => setOpenSignup(true)}
+              onClick={() => setAuthModal({ open: true,mode: "login"})}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -379,57 +384,6 @@ export default function JobXLanding() {
           </motion.div>
         </motion.div>
       </section>
-
-      {/* ── STATS ── */}
-      {/* <InView>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            background: C.slate900,
-            padding: "30px 6%",
-          }}
-        >
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              variants={itemV}
-              style={{
-                textAlign: "center",
-                padding: "10px 38px",
-                borderRight:
-                  i < stats.length - 1
-                    ? "1px solid rgba(255,255,255,0.1)"
-                    : "none",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 28,
-                  fontWeight: 800,
-                  color: C.white,
-                  letterSpacing: -0.5,
-                }}
-              >
-                {s.value}
-              </div>
-              <div
-                style={{
-                  fontSize: 12,
-                  color: "rgba(255,255,255,0.45)",
-                  marginTop: 3,
-                  textTransform: "uppercase",
-                  letterSpacing: 1,
-                }}
-              >
-                {s.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </InView> */}
-
    
       <br/>
 
@@ -948,8 +902,19 @@ export default function JobXLanding() {
         </div>
       </footer>
 
-      <AuthModal open={openLogin} onOpenChange={setOpenLogin} mode="login" />
-      <AuthModal open={openSignup} onOpenChange={setOpenSignup} mode="signup" />
+      {/* <AuthModal open={openLogin} onOpenChange={setOpenLogin} mode="login" />
+      <AuthModal open={openSignup} onOpenChange={setOpenSignup} mode="signup" /> */}
+      <AuthModal
+    open={authModal.open}
+    mode={authModal.mode}
+    onOpenChange={(open) =>
+        setAuthModal((prev) => ({
+            ...prev,
+            open
+        }))
+    }
+    setAuthModal={setAuthModal}
+/>
     </div>
   );
 }
