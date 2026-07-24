@@ -10,7 +10,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
+    <groupId>com.zosh.job</groupId>
     <artifactId>job-portal-common</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>job-portal-common</name>
     <description>Shared library - enums, exceptions, and DTOs for all services</description>

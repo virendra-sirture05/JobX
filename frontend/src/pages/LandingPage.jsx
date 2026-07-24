@@ -3,14 +3,14 @@ import { motion, useInView } from "framer-motion";
 import BgGradient from "./gradient/BgGradient";
 import AuthModal from "@/components/ui/AuthModal";
 
-// PDFGlow exact palette
+// JobX blue palette
 const C = {
-  rose500: "#f43f5e",
-  rose600: "#e11d48",
-  rose700: "#be123c",
-  rose200: "#fecdd3",
-  rose100: "#ffe4e6",
-  rose50: "#fff1f2",
+  rose500: "#1a56a0",
+  rose600: "#15467f",
+  rose700: "#103a68",
+  rose200: "#bfdbfe",
+  rose100: "#dbeafe",
+  rose50: "#eff6ff",
   slate900: "#0f172a",
   slate800: "#1e293b",
   slate700: "#334155",
@@ -138,7 +138,6 @@ const stats = [
   { value: "48hr", label: "Avg. Response" },
 ];
 
-
 const slideLeftV = {
   hidden: { opacity: 0, x: -100 },
   visible: {
@@ -147,7 +146,6 @@ const slideLeftV = {
     transition: { duration: 0.5, ease: "easeOut" },
   },
 };
-
 
 export default function JobXLanding() {
   const [openLogin, setOpenLogin] = useState(false);
@@ -162,11 +160,6 @@ export default function JobXLanding() {
         minHeight: "100vh",
       }}
     >
-      {/* <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-      `}</style> */}
-
       <BgGradient />
 
       {/* ── NAVBAR ── */}
@@ -188,14 +181,13 @@ export default function JobXLanding() {
           borderBottom: "1px solid rgba(255,255,255,0.3)",
         }}
       >
-        {/* Logo */}
         <div style={{ display: "flex", alignItems: "center", gap: 9 }}>
           <div
             style={{
               width: 34,
               height: 34,
               borderRadius: 8,
-              background: `linear-gradient(135deg, ${C.slate900}, ${C.rose600})`,
+              background: C.rose500,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -219,7 +211,6 @@ export default function JobXLanding() {
           </span>
         </div>
 
-        {/* Buttons */}
         <div style={{ display: "flex", gap: 8 }}>
           <motion.button
             whileHover={{ scale: 1.03 }}
@@ -243,7 +234,7 @@ export default function JobXLanding() {
             whileTap={{ scale: 0.96 }}
             onClick={() => setOpenSignup(true)}
             style={{
-              background: `linear-gradient(135deg, ${C.slate900}, ${C.rose600})`,
+              background: C.rose500,
               color: "white",
               border: "none",
               padding: "8px 20px",
@@ -267,7 +258,6 @@ export default function JobXLanding() {
         }}
       >
         <motion.div variants={containerV} initial="hidden" animate="visible">
-          {/* Badge */}
           <motion.div variants={itemV}>
             <motion.span
               animate={{ scale: [1, 1.04, 1] }}
@@ -291,7 +281,6 @@ export default function JobXLanding() {
             </motion.span>
           </motion.div>
 
-          {/* H1 */}
           <motion.h1
             variants={itemV}
             style={{
@@ -314,9 +303,7 @@ export default function JobXLanding() {
                   position: "relative",
                   zIndex: 1,
                   padding: "0 6px",
-                  background: `linear-gradient(135deg, ${C.rose500}, ${C.rose700})`,
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
+                  color: C.rose600,
                   display: "inline-block",
                 }}
               >
@@ -335,7 +322,6 @@ export default function JobXLanding() {
             </span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             variants={itemV}
             style={{
@@ -350,7 +336,6 @@ export default function JobXLanding() {
             every application — all in one place.
           </motion.p>
 
-          {/* CTA Button */}
           <motion.div
             variants={itemV}
             style={{ display: "flex", justifyContent: "center" }}
@@ -363,7 +348,7 @@ export default function JobXLanding() {
                 display: "flex",
                 alignItems: "center",
                 gap: 8,
-                background: `linear-gradient(135deg, ${C.slate900}, ${C.rose600})`,
+                background: C.rose500,
                 color: "white",
                 border: "none",
                 padding: "13px 32px",
@@ -380,58 +365,7 @@ export default function JobXLanding() {
         </motion.div>
       </section>
 
-      {/* ── STATS ── */}
-      {/* <InView>
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            background: C.slate900,
-            padding: "30px 6%",
-          }}
-        >
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              variants={itemV}
-              style={{
-                textAlign: "center",
-                padding: "10px 38px",
-                borderRight:
-                  i < stats.length - 1
-                    ? "1px solid rgba(255,255,255,0.1)"
-                    : "none",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 28,
-                  fontWeight: 800,
-                  color: C.white,
-                  letterSpacing: -0.5,
-                }}
-              >
-                {s.value}
-              </div>
-              <div
-                style={{
-                  fontSize: 12,
-                  color: "rgba(255,255,255,0.45)",
-                  marginTop: 3,
-                  textTransform: "uppercase",
-                  letterSpacing: 1,
-                }}
-              >
-                {s.label}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </InView> */}
-
-   
-      <br/>
+      <br />
 
       {/* ── FEATURES ── */}
       <section style={{ padding: "80px 6%", background: C.slate100 }}>
@@ -538,10 +472,7 @@ export default function JobXLanding() {
                 fontSize: "clamp(24px, 3.5vw, 36px)",
                 fontWeight: 800,
                 letterSpacing: -0.8,
-                background: `linear-gradient(135deg, ${C.rose500}, ${C.rose700})`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                display: "inline-block",
+                color: C.rose600,
                 marginBottom: 8,
               }}
             >
@@ -649,195 +580,191 @@ export default function JobXLanding() {
       </section>
 
       {/* ── PRICING ── */}
-<section style={{ padding: "80px 6%", background: C.slate100 }}>
-  <InView>
-    <motion.div
-      variants={fadeUpV}
-      style={{ textAlign: "center", marginBottom: 48 }}
-    >
-      <p
-        style={{
-          fontSize: 12,
-          fontWeight: 700,
-          letterSpacing: 1.6,
-          color: C.rose600,
-          textTransform: "uppercase",
-          marginBottom: 8,
-        }}
-      >
-        Pricing
-      </p>
-      <h2
-        style={{
-          fontSize: "clamp(24px, 3.5vw, 36px)",
-          fontWeight: 800,
-          letterSpacing: -0.8,
-          color: C.slate900,
-        }}
-      >
-        One Plan. Everything Included.
-      </h2>
-      <p style={{ color: C.slate500, marginTop: 10, fontSize: 15 }}>
-        No tiers, no confusion — just full access to JobX.
-      </p>
-    </motion.div>
-  </InView>
-
-  <InView delay={0.05}>
-    <motion.div
-      variants={slideLeftV}
-      whileHover={{ y: -6, boxShadow: `0 24px 56px ${C.rose200}99` }}
-      transition={{ duration: 0.22 }}
-      style={{
-        background: C.white,
-        border: `2px solid ${C.rose500}`,
-        borderRadius: 20,
-        overflow: "hidden",
-        maxWidth: 380,
-        margin: "0 auto",
-      }}
-    >
-      <div
-        style={{
-          background: `linear-gradient(135deg, ${C.slate900}, ${C.rose600})`,
-          color: "white",
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: 1.2,
-          textAlign: "center",
-          padding: "7px 0",
-        }}
-      >
-        ⭐ MOST POPULAR
-      </div>
-
-      <div style={{ padding: "32px 28px 26px", textAlign: "center" }}>
-        <h3
-          style={{
-            fontWeight: 800,
-            fontSize: 18,
-            color: C.slate900,
-            marginBottom: 6,
-          }}
-        >
-          JobX Pro
-        </h3>
-        <p style={{ color: C.slate500, fontSize: 13, marginBottom: 22 }}>
-          Everything you need to land referrals faster
-        </p>
-
-        <div
-          style={{
-            display: "flex",
-            alignItems: "baseline",
-            justifyContent: "center",
-            gap: 4,
-            marginBottom: 4,
-          }}
-        >
-          <span
-            style={{ fontSize: 22, fontWeight: 700, color: C.slate500 }}
+      <section style={{ padding: "80px 6%", background: C.slate100 }}>
+        <InView>
+          <motion.div
+            variants={fadeUpV}
+            style={{ textAlign: "center", marginBottom: 48 }}
           >
-            ₹
-          </span>
-          <span
-            style={{
-              fontSize: 44,
-              fontWeight: 800,
-              background: `linear-gradient(135deg, ${C.rose500}, ${C.rose700})`,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            999
-          </span>
-          <span
-            style={{ fontSize: 14, color: C.slate500, fontWeight: 600 }}
-          >
-            /mo
-          </span>
-        </div>
-        <p style={{ color: C.slate500, fontSize: 12, marginBottom: 26 }}>
-          Cancel anytime
-        </p>
-
-        <ul
-          style={{
-            listStyle: "none",
-            textAlign: "left",
-            marginBottom: 26,
-          }}
-        >
-          {[
-            "Unlimited job applications",
-            "Direct referral requests",
-            "AI resume match score",
-            "Priority recruiter messaging",
-            "Live application tracking",
-            "24/7 priority support",
-          ].map((p) => (
-            <li
-              key={p}
+            <p
               style={{
-                fontSize: 14,
-                color: C.slate700,
-                padding: "7px 0",
-                display: "flex",
-                alignItems: "center",
-                gap: 9,
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: 1.6,
+                color: C.rose600,
+                textTransform: "uppercase",
+                marginBottom: 8,
               }}
             >
-              <span
+              Pricing
+            </p>
+            <h2
+              style={{
+                fontSize: "clamp(24px, 3.5vw, 36px)",
+                fontWeight: 800,
+                letterSpacing: -0.8,
+                color: C.slate900,
+              }}
+            >
+              One Plan. Everything Included.
+            </h2>
+            <p style={{ color: C.slate500, marginTop: 10, fontSize: 15 }}>
+              No tiers, no confusion — just full access to JobX.
+            </p>
+          </motion.div>
+        </InView>
+
+        <InView delay={0.05}>
+          <motion.div
+            variants={slideLeftV}
+            whileHover={{ y: -6, boxShadow: `0 24px 56px ${C.rose200}99` }}
+            transition={{ duration: 0.22 }}
+            style={{
+              background: C.white,
+              border: `2px solid ${C.rose500}`,
+              borderRadius: 20,
+              overflow: "hidden",
+              maxWidth: 380,
+              margin: "0 auto",
+            }}
+          >
+            <div
+              style={{
+                background: C.rose600,
+                color: "white",
+                fontSize: 11,
+                fontWeight: 700,
+                letterSpacing: 1.2,
+                textAlign: "center",
+                padding: "7px 0",
+              }}
+            >
+              ⭐ MOST POPULAR
+            </div>
+
+            <div style={{ padding: "32px 28px 26px", textAlign: "center" }}>
+              <h3
                 style={{
-                  width: 18,
-                  height: 18,
-                  borderRadius: "50%",
-                  background: C.rose50,
-                  color: C.rose600,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 11,
                   fontWeight: 800,
-                  flexShrink: 0,
+                  fontSize: 18,
+                  color: C.slate900,
+                  marginBottom: 6,
                 }}
               >
-                ✓
-              </span>
-              {p}
-            </li>
-          ))}
-        </ul>
+                JobX Pro
+              </h3>
+              <p style={{ color: C.slate500, fontSize: 13, marginBottom: 22 }}>
+                Everything you need to land referrals faster
+              </p>
 
-        <motion.button
-          whileHover={buttonHover}
-          whileTap={{ scale: 0.96 }}
-          onClick={() => setOpenSignup(true)}
-          style={{
-            width: "100%",
-            padding: "13px 0",
-            background: `linear-gradient(135deg, ${C.slate900}, ${C.rose600})`,
-            color: "white",
-            border: "none",
-            borderRadius: 10,
-            fontSize: 15,
-            fontWeight: 700,
-            cursor: "pointer",
-            boxShadow: `0 6px 20px ${C.rose200}`,
-          }}
-        >
-          Get Started →
-        </motion.button>
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "baseline",
+                  justifyContent: "center",
+                  gap: 4,
+                  marginBottom: 4,
+                }}
+              >
+                <span
+                  style={{ fontSize: 22, fontWeight: 700, color: C.slate500 }}
+                >
+                  ₹
+                </span>
+                <span
+                  style={{
+                    fontSize: 44,
+                    fontWeight: 800,
+                    color: C.rose600,
+                  }}
+                >
+                  999
+                </span>
+                <span
+                  style={{ fontSize: 14, color: C.slate500, fontWeight: 600 }}
+                >
+                  /mo
+                </span>
+              </div>
+              <p style={{ color: C.slate500, fontSize: 12, marginBottom: 26 }}>
+                Cancel anytime
+              </p>
 
-        <p style={{ color: C.slate500, fontSize: 11, marginTop: 14 }}>
-          Secure payment · Data encrypted
-        </p>
-      </div>
-    </motion.div>
-  </InView>
-</section>
+              <ul
+                style={{
+                  listStyle: "none",
+                  textAlign: "left",
+                  marginBottom: 26,
+                }}
+              >
+                {[
+                  "Unlimited job applications",
+                  "Direct referral requests",
+                  "AI resume match score",
+                  "Priority recruiter messaging",
+                  "Live application tracking",
+                  "24/7 priority support",
+                ].map((p) => (
+                  <li
+                    key={p}
+                    style={{
+                      fontSize: 14,
+                      color: C.slate700,
+                      padding: "7px 0",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 9,
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 18,
+                        height: 18,
+                        borderRadius: "50%",
+                        background: C.rose50,
+                        color: C.rose600,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: 11,
+                        fontWeight: 800,
+                        flexShrink: 0,
+                      }}
+                    >
+                      ✓
+                    </span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
 
+              <motion.button
+                whileHover={buttonHover}
+                whileTap={{ scale: 0.96 }}
+                onClick={() => setOpenSignup(true)}
+                style={{
+                  width: "100%",
+                  padding: "13px 0",
+                  background: C.rose500,
+                  color: "white",
+                  border: "none",
+                  borderRadius: 10,
+                  fontSize: 15,
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  boxShadow: `0 6px 20px ${C.rose200}`,
+                }}
+              >
+                Get Started →
+              </motion.button>
 
+              <p style={{ color: C.slate500, fontSize: 11, marginTop: 14 }}>
+                Secure payment · Data encrypted
+              </p>
+            </div>
+          </motion.div>
+        </InView>
+      </section>
 
       {/* ── CTA ── */}
       <InView stagger={false}>
@@ -879,7 +806,7 @@ export default function JobXLanding() {
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: `linear-gradient(135deg, ${C.slate900}, ${C.rose600})`,
+              background: C.rose500,
               color: "white",
               border: "none",
               padding: "13px 36px",
@@ -913,7 +840,7 @@ export default function JobXLanding() {
               width: 28,
               height: 28,
               borderRadius: 6,
-              background: `linear-gradient(135deg, ${C.slate800}, ${C.rose600})`,
+              background: C.rose500,
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
