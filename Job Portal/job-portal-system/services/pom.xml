@@ -9,7 +9,7 @@
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <groupId>com.zosh.job</groupId>
+    <groupId>com.project.referral</groupId>
     <artifactId>job-portal-services</artifactId>
     <packaging>pom</packaging>
     <name>job-portal-services</name>

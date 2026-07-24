@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/job-portal-system/pom.xml" />
+        <option value="$PROJECT_DIR$/job-portal-system/services/job-portal-preferences/pom.xml" />
       </list>
     </option>
   </component>
