@@ -4,9 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.project.referral</groupId>
-		<artifactId>job-referral-system</artifactId>
+		<artifactId>job-portal-services</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.project.referral</groupId>
 	<artifactId>job-portal-preferences</artifactId>
@@ -19,7 +19,8 @@
 		<dependency>
 			<groupId>com.project.referral</groupId>
 			<artifactId>job-portal-common</artifactId>
-<!--			<version>0.0.1-SNAPSHOT</version>-->
+			<version>0.0.1-SNAPSHOT</version>
+			<!--			<version>0.0.1-SNAPSHOT</version>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
