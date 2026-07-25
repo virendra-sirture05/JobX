@@ -38,3 +38,4 @@ target/
 .project
 .factorypath
 .env
+.metadata
