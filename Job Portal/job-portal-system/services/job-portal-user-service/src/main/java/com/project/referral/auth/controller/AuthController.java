@@ -1,5 +1,6 @@
 package com.project.referral.auth.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,17 +31,12 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<ApiResponse<LoginResponse>> login(
+    public ResponseEntity<LoginResponse> login(
             @Valid @RequestBody LoginRequest request){
 
         log.info("POST /api/auth/login");
 
-        return ResponseEntity.ok(
-                ApiResponse.success(
-                        authService.login(request),
-                        "Login successful"
-                )
-        );
+        return  authService.login(request);
     }
 
     @PostMapping("/send-otp")
@@ -58,5 +54,19 @@ public class AuthController {
         return ResponseEntity.ok(
                 authService.verifyOtp(request)
         );
+    }
+    @PostMapping("/refresh")
+    public ResponseEntity<?> refreshToken(
+            HttpServletRequest request) {
+
+        return authService.refreshToken(request);
+
+    }
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(
+            HttpServletRequest request) {
+
+        return authService.logout(request);
+
     }
 }

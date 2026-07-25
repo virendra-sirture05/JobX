@@ -14,13 +14,14 @@ import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @MappedSuperclass
 @Getter
 @Setter
 @ToString
 
-public abstract class BaseClass {
+public abstract class BaseClass   {
 	@Id 
 	@GeneratedValue (strategy = GenerationType.IDENTITY)		
 	private Long id;

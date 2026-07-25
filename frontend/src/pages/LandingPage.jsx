@@ -5,12 +5,12 @@ import AuthModal from "@/components/auth/AuthModal";
 
 // PDFGlow exact palette
 const C = {
-  rose500: "#f43f5e",
-  rose600: "#e11d48",
-  rose700: "#be123c",
-  rose200: "#fecdd3",
-  rose100: "#ffe4e6",
-  rose50: "#fff1f2",
+  rose500: "#1a56a0",
+  rose600: "#15467f",
+  rose700: "#103a68",
+  rose200: "#bfdbfe",
+  rose100: "#dbeafe",
+  rose50: "#eff6ff",
   slate900: "#0f172a",
   slate800: "#1e293b",
   slate700: "#334155",

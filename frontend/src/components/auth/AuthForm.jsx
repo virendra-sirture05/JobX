@@ -114,19 +114,20 @@ useEffect(() => {
           );
 
           const response = await authService.login(payload);
-          console.log("response is ");
           
-          console.log(response);
-        if (response.success) {
-
+          
+        if (response.message === "Login successful") {
+            console.log("navigating to dashboard");
+            
             navigate("/seeker/dashboard");
 
         } else {
-
+          console.log("login failed");
+          
             console.log(response.message);
 
 }
-            
+             
 
         }
 
