@@ -1,5 +1,6 @@
 package com.project.referral.user.entity;
 
+import com.project.referral.common.domain.UserStatus;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,6 +23,8 @@ import java.util.List;
 @Entity // to declare Entity class - to tell Hibernate to manage entity life cycle
 @Table(name = "users") // customizes table name
 @AttributeOverride(name = "id", column = @Column(name = "user_id"))
+@Builder
+@AllArgsConstructor
 public class User extends BaseClass   implements UserDetails {
 
 	@Column(length = 30, unique = true) // col name , varchar(30) , unique constraint
@@ -31,8 +34,11 @@ public class User extends BaseClass   implements UserDetails {
 	@Column(length = 14, unique = true)
 	private String phone;
 	@Enumerated(EnumType.STRING) // col type - varchar | enum
-	private UserRole role;
-
+	private UserRole role=UserRole.ROLE_JOBSEEKER;
+	private String fullName;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false)
+	private UserStatus userStatus=UserStatus.ACTIVE;
 	public User(String email, String hashedPassword, UserRole role) {
 		this.email = email;
 		this.hashedPassword = hashedPassword;
