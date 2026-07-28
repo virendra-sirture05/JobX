@@ -43,9 +43,9 @@
 
             <!-- Common Lib -->
             <dependency>
-                <groupId>com.zosh.job</groupId>
+                <groupId>com.project.referral</groupId>
                 <artifactId>job-portal-common</artifactId>
-                <version>${project.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
 
             <!-- JJWT -->
