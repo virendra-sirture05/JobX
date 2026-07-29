@@ -5,29 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/domain/JobType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/domain/ProficiencyLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/ResumeSkillResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/WorkExperienceResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/ResumeSkillController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/WorkExperienceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/AddResumeSkillRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/AddWorkExperienceRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/ResumeSkill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/WorkExperience.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/repository/ResumeSkillRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/repository/WorkExperienceRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/ResumeSkillService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/WorkExperienceService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/impl/ResumeSkillServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/impl/WorkExperienceServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/mapper/ResumeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/mapper/ResumeMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="341" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,63 +25,67 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0002404478453488" />
-      <entry key="S2" value="1.1316909549826857" />
-      <entry key="S5" value="1.629776941211243" />
-      <entry key="S10" value="2.3566694143052334" />
-      <entry key="S30" value="3.671998514455712" />
-      <entry key="S60" value="4.401593351997249" />
-      <entry key="M2" value="6.079612559547901" />
-      <entry key="M5" value="11.729284646754996" />
-      <entry key="M10" value="17.761671535428807" />
-      <entry key="M15" value="22.511471472342855" />
-      <entry key="M30" value="36.854779612514314" />
-      <entry key="H1" value="59.82492776549629" />
-      <entry key="H2" value="83.59180939133839" />
-      <entry key="H4" value="101.35553790983462" />
-      <entry key="D1" value="120.56636283351203" />
-      <entry key="W1" value="124.35325710598681" />
+      <entry key="MS100" value="1.3954791674547729" />
+      <entry key="MS500" value="3.8538683863767234" />
+      <entry key="S2" value="10.089733116586782" />
+      <entry key="S5" value="21.237694896056297" />
+      <entry key="S10" value="35.107874991025994" />
+      <entry key="S30" value="58.16042325443187" />
+      <entry key="S60" value="68.1981193563996" />
+      <entry key="M2" value="75.35675911203487" />
+      <entry key="M5" value="84.57423115745623" />
+      <entry key="M10" value="91.96455062397456" />
+      <entry key="M15" value="97.20281945191614" />
+      <entry key="M30" value="112.03762035707794" />
+      <entry key="H1" value="135.28699937297236" />
+      <entry key="H2" value="159.2560017125079" />
+      <entry key="H4" value="177.16265435709124" />
+      <entry key="D1" value="196.52971247927303" />
+      <entry key="W1" value="200.34789451819952" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.009860500859445E-6" />
-      <entry key="MS500" value="0.11418545173282356" />
-      <entry key="S2" value="1.030015380833052" />
-      <entry key="S5" value="2.222858264433276" />
-      <entry key="S10" value="3.831947908993535" />
-      <entry key="S30" value="6.84592980138692" />
-      <entry key="S60" value="8.47618219900192" />
-      <entry key="M2" value="11.716309795917905" />
-      <entry key="M5" value="22.20656859999331" />
-      <entry key="M10" value="33.258202352264945" />
-      <entry key="M15" value="41.67866901454466" />
-      <entry key="M30" value="64.36199999877826" />
-      <entry key="H1" value="94.86227737937703" />
-      <entry key="H2" value="122.3931236864688" />
-      <entry key="H4" value="141.32755226593602" />
-      <entry key="D1" value="160.67332938820942" />
-      <entry key="W1" value="164.37179389773016" />
+      <entry key="MS100" value="4.71339869725932E-94" />
+      <entry key="MS500" value="3.401295987978451E-19" />
+      <entry key="S2" value="4.279096918150677E-5" />
+      <entry key="S5" value="0.0392929953657798" />
+      <entry key="S10" value="0.5094731246037804" />
+      <entry key="S30" value="3.4940812720134002" />
+      <entry key="S60" value="6.055507744779349" />
+      <entry key="M2" value="9.902981933471624" />
+      <entry key="M5" value="20.762111155991168" />
+      <entry key="M10" value="32.158353094634705" />
+      <entry key="M15" value="40.75465242177731" />
+      <entry key="M30" value="63.6445480753411" />
+      <entry key="H1" value="94.33207435606568" />
+      <entry key="H2" value="122.05060537802748" />
+      <entry key="H4" value="141.1296604759237" />
+      <entry key="D1" value="160.63581075521716" />
+      <entry key="W1" value="164.36631016936042" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.358817084067828E-6" />
-      <entry key="MS500" value="0.1394814438836046" />
-      <entry key="S2" value="1.4849217639242849" />
-      <entry key="S5" value="3.3444223694323396" />
-      <entry key="S10" value="5.764191792136729" />
-      <entry key="S30" value="10.271032395086314" />
-      <entry key="S60" value="12.726879175548339" />
-      <entry key="M2" value="17.695211234994513" />
-      <entry key="M5" value="33.86490845548862" />
-      <entry key="M10" value="50.968095847987854" />
-      <entry key="M15" value="64.14607105276058" />
-      <entry key="M30" value="101.17937214041419" />
-      <entry key="H1" value="154.65672135699504" />
-      <entry key="H2" value="205.96394701953136" />
-      <entry key="H4" value="242.6705316438247" />
-      <entry key="D1" value="281.23723658367" />
-      <entry key="W1" value="288.72469013295057" />
+      <entry key="MS100" value="1.3367883161511926" />
+      <entry key="MS500" value="3.821873717742904" />
+      <entry key="S2" value="10.068707763646088" />
+      <entry key="S5" value="21.25057280165683" />
+      <entry key="S10" value="35.546737781477965" />
+      <entry key="S30" value="61.520856158635" />
+      <entry key="S60" value="74.14140925349538" />
+      <entry key="M2" value="85.17223285819523" />
+      <entry key="M5" value="105.26901220319922" />
+      <entry key="M10" value="124.07232987177191" />
+      <entry key="M15" value="137.91403889372563" />
+      <entry key="M30" value="175.6450067440662" />
+      <entry key="H1" value="229.5886744874156" />
+      <entry key="H2" value="281.2856367872188" />
+      <entry key="H4" value="318.27975238407015" />
+      <entry key="D1" value="357.1630645841821" />
+      <entry key="W1" value="364.7138433165443" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -114,6 +104,7 @@
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
