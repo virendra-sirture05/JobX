@@ -6,7 +6,7 @@ export const ENDPOINTS = {
 
         LOGOUT:"/auth/logout",
 
-        SEND_OTP:"/auth/send-otp",
+        SEND_OTP:"/auth/signup",
 
         VERIFY_OTP:"/auth/verify-otp",
 
