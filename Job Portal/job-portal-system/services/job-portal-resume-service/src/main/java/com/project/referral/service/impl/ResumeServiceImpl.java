@@ -1,0 +1,168 @@
+package com.project.referral.service.impl;
+
+import com.project.referral.common.exception.ResourceNotFoundException;
+import com.project.referral.dto.request.CreateResumeRequest;
+import com.project.referral.dto.request.UpdatePersonalInfoRequest;
+import com.project.referral.dto.request.UpdateResumeRequest;
+import com.project.referral.dto.response.ResumeResponse;
+import com.project.referral.entity.*;
+import com.project.referral.entity.embeddable.PersonalInfo;
+import com.project.referral.mapper.ResumeMapper;
+import com.project.referral.repository.*;
+import com.project.referral.service.ResumeService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+
+@Service
+@RequiredArgsConstructor
+public class ResumeServiceImpl implements ResumeService {
+
+    private final ResumeRepository resumeRepository;
+
+    @Override
+    @Transactional
+    public ResumeResponse createResume(Long candidateId, CreateResumeRequest req) {
+        // If this should be default, clear any existing default
+        if (Boolean.TRUE.equals(req.getIsDefault())) {
+            resumeRepository.findByCandidateIdAndIsDefaultTrue(candidateId)
+                    .ifPresent(existing -> {
+                        existing.setIsDefault(false);
+                        resumeRepository.save(existing);
+                    });
+        }
+
+        Resume resume = Resume.builder()
+                .candidateId(candidateId)
+                .title(req.getTitle())
+                .template(req.getTemplate())
+                .visibility(req.getVisibility())
+                .isDefault(Boolean.TRUE.equals(req.getIsDefault()))
+                .build();
+
+        resume = resumeRepository.save(resume);
+        return buildFullResponse(resume);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public ResumeResponse getResumeById(Long resumeId, Long candidateId) throws ResourceNotFoundException {
+        Resume resume = getResumeEntity(resumeId);
+        assertOwner(resume, candidateId);
+        return buildFullResponse(resume);
+    }
+
+    private void assertOwner(Resume resume, Long candidateId) throws ResourceNotFoundException {
+        if (!resume.getCandidateId().equals(candidateId)) {
+            throw new ResourceNotFoundException("Resume not found with id: " + resume.getId());
+        }
+    }
+    @Override
+    @Transactional(readOnly = true)
+    public List<ResumeResponse> getMyResumes(Long candidateId) {
+        return resumeRepository.findByCandidateIdAndActiveTrue(candidateId)
+                .stream()
+                .map(this::buildFullResponse)
+                .toList();
+    }
+
+    @Override
+    @Transactional
+    public ResumeResponse updatePersonalInfo(Long resumeId, Long candidateId,
+            UpdatePersonalInfoRequest req) throws ResourceNotFoundException {
+        Resume resume = getResumeEntity(resumeId);
+        assertOwner(resume, candidateId);
+
+        PersonalInfo info = resume.getPersonalInfo();
+        if (info == null) info = new PersonalInfo();
+
+        if (req.getFirstName() != null)
+            info.setFirstName(req.getFirstName());
+        if (req.getLastName() != null) info.setLastName(req.getLastName());
+        if (req.getHeadline() != null) info.setHeadline(req.getHeadline());
+        if (req.getEmail() != null) info.setEmail(req.getEmail());
+        if (req.getPhone() != null) info.setPhone(req.getPhone());
+        if (req.getCity() != null) info.setCity(req.getCity());
+        if (req.getCountry() != null) info.setCountry(req.getCountry());
+        if (req.getLinkedinUrl() != null) info.setLinkedinUrl(req.getLinkedinUrl());
+        if (req.getGithubUrl() != null) info.setGithubUrl(req.getGithubUrl());
+        if (req.getPortfolioUrl() != null) info.setPortfolioUrl(req.getPortfolioUrl());
+        if (req.getWebsiteUrl() != null) info.setWebsiteUrl(req.getWebsiteUrl());
+        if (req.getProfileImage() != null) info.setProfileImage(req.getProfileImage());
+
+        resume.setPersonalInfo(info);
+        resume = resumeRepository.save(resume);
+        return buildFullResponse(resume);
+    }
+
+    @Override
+    @Transactional
+    public ResumeResponse updateSummary(Long resumeId, Long candidateId, String summary)
+            throws ResourceNotFoundException {
+        Resume resume = getResumeEntity(resumeId);
+        assertOwner(resume, candidateId);
+        resume.setSummary(summary);
+        resume = resumeRepository.save(resume);
+        return buildFullResponse(resume);
+    }
+
+    @Override
+    @Transactional
+    public ResumeResponse updateResume(Long resumeId, Long candidateId, UpdateResumeRequest req)
+            throws ResourceNotFoundException {
+        Resume resume = getResumeEntity(resumeId);
+        assertOwner(resume, candidateId);
+        if (req.getTitle() != null)      resume.setTitle(req.getTitle());
+        if (req.getTemplate() != null)   resume.setTemplate(req.getTemplate());
+        if (req.getVisibility() != null) resume.setVisibility(req.getVisibility());
+        resume = resumeRepository.save(resume);
+        return buildFullResponse(resume);
+    }
+
+    @Override
+    @Transactional
+    public ResumeResponse setDefaultResume(Long resumeId, Long candidateId)
+            throws ResourceNotFoundException {
+        Resume resume = getResumeEntity(resumeId);
+        assertOwner(resume, candidateId);
+
+        // Clear existing default
+        resumeRepository.findByCandidateIdAndIsDefaultTrue(candidateId)
+                .ifPresent(existing -> {
+                    if (!existing.getId().equals(resumeId)) {
+                        existing.setIsDefault(false);
+                        resumeRepository.save(existing);
+                    }
+                });
+
+        resume.setIsDefault(true);
+        resume = resumeRepository.save(resume);
+        return buildFullResponse(resume);
+    }
+
+    @Override
+    @Transactional
+    public void deleteResume(Long resumeId, Long candidateId) throws ResourceNotFoundException {
+        Resume resume = getResumeEntity(resumeId);
+        assertOwner(resume, candidateId);
+        resume.setActive(false);
+        resumeRepository.save(resume);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Resume getResumeEntity(Long resumeId) throws ResourceNotFoundException {
+        return resumeRepository.findById(resumeId)
+                .orElseThrow(() -> new ResourceNotFoundException("Resume not found with id: " + resumeId));
+    }
+
+
+
+    private ResumeResponse buildFullResponse(Resume resume) {
+
+
+        return ResumeMapper.toResponse(resume);
+    }
+}
