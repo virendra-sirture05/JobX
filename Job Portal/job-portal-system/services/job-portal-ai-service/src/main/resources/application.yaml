@@ -16,7 +16,7 @@ eureka:
 
 gemini:
   api:
-    key: ${GCP_API_KEY}
+    key: AIzaSyAhdaFFs30WWiSrcbn3r13Zw69K6Bu-9Mg
     model: gemini-3-flash-preview
     embedding-model: textembedding-gecko-001
     max-output-tokens: 2048
