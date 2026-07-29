@@ -1,5 +1,4 @@
 package com.project.referral.controller;
-
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,7 +17,6 @@ import com.project.referral.web.ApiResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor

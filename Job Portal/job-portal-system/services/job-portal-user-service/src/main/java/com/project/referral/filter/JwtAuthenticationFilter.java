@@ -112,7 +112,7 @@ public class JwtAuthenticationFilter
             }
 
         } catch (Exception ignored) {
-
+            System.out.println("JWT Authentication Failed: " + ignored.getMessage());
         }
 
         filterChain.doFilter(request, response);
