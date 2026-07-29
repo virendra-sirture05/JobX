@@ -1,6 +1,6 @@
 package com.project.referral.filter;
 
-import com.project.referral.security.CustomUserDetailsService;
+import com.project.referral.auth.service.CustomUserDetailsService;
 import com.project.referral.security.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
