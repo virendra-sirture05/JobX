@@ -3,10 +3,7 @@ package com.project.referral.common.dto.response;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.project.referral.common.domain.CompanySize;
 import com.project.referral.common.domain.IndustryType;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 /**
  * Lightweight company card response.

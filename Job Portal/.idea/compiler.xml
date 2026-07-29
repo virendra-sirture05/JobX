@@ -10,22 +10,45 @@
         <module name="job-portal-common" />
         <module name="job-portal-preferences" />
       </profile>
+<<<<<<< HEAD
       <profile name="Annotation profile for job-referral-system" enabled="true">
+=======
+      <profile name="Annotation profile for job-referral-system (2)" enabled="true">
+>>>>>>> resume-service
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+<<<<<<< HEAD
         <module name="job-referral-system (1)" />
+=======
+        <module name="job-referral-system (2)" />
+      </profile>
+      <profile name="Annotation profile for job-referral-system" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="job-portal-company-service" />
+>>>>>>> resume-service
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="job-portal-common" options="-parameters" />
+      <module name="job-portal-company-service" options="-parameters" />
       <module name="job-portal-preferences" options="-parameters" />
+<<<<<<< HEAD
       <module name="job-referral-system (1)" options="-parameters" />
+=======
+      <module name="job-referral-system (1)" options="" />
+      <module name="job-referral-system (2)" options="-parameters" />
+>>>>>>> resume-service
     </option>
   </component>
 </project>

@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/exception/CompanyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/domain/CompanySize.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/domain/CompanyStatus.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/domain/CompanyType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/domain/IndustryType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/domain/ResumeTemplate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/domain/ResumeVisibility.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/domain/SocialPlatform.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/CompanyResponse$CompanyResponseBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/CompanyResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/CompanySummaryResponse$CompanySummaryResponseBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/CompanySummaryResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/SocialLinkResponse$SocialLinkResponseBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/SocialLinkResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/exception/CompanyException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/exception/ResourceNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/JobPortalComApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/controller/CompanyController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/dto/request/CompanyRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/entity/Company.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/entity/CompanyLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/entity/embeddable/SocialLink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/mapper/CompanyMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/repository/CompanyLocationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/repository/CompanyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/service/CompanyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/service/impl/CompanyServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/test/java/com/project/referral/JobPortalComApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/JobPortalResumeServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/ResumeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/ResumeSkillController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/WorkExperienceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/AddResumeSkillRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/AddWorkExperienceRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/CreateResumeRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/UpdatePersonalInfoRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/UpdateResumeRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/response/ResumeResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/Resume.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/ResumeSkill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/WorkExperience.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/embeddable/PersonalInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/mapper/ResumeMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/repository/ResumeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/repository/ResumeSkillRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/repository/WorkExperienceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/ResumeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/ResumeSkillService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/WorkExperienceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/impl/ResumeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/impl/ResumeSkillServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/impl/WorkExperienceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/test/java/com/project/referral/JobPortalResumeServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/LoginResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/RefreshTokenData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/SendOtpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/SignupResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/VerifyOtpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/AuthServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/RefreshTokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/cache/CacheService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/cache/RedisOtpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/email/AwsSesEmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/email/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/email/EmailTemplateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/otp/model/OtpData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/otp/util/OtpGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/BaseClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/JobSeeker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/Referrer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/UserRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/repository/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-lib/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/CompanyResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/CompanyResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/CompanySummaryResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/CompanySummaryResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/ApiResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/SavedJobResponse$SavedJobResponseBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/SavedJobResponse$SavedJobResponseBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/SavedJobResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/target/classes/com/project/referral/common/dto/response/SavedJobResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-preferences/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-preferences/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0002404478453488" />
+      <entry key="S2" value="1.1316909549826857" />
+      <entry key="S5" value="1.629776941211243" />
+      <entry key="S10" value="2.3566694143052334" />
+      <entry key="S30" value="3.671998514455712" />
+      <entry key="S60" value="4.401593351997249" />
+      <entry key="M2" value="6.079612559547901" />
+      <entry key="M5" value="11.729284646754996" />
+      <entry key="M10" value="17.761671535428807" />
+      <entry key="M15" value="22.511471472342855" />
+      <entry key="M30" value="36.854779612514314" />
+      <entry key="H1" value="59.82492776549629" />
+      <entry key="H2" value="83.59180939133839" />
+      <entry key="H4" value="101.35553790983462" />
+      <entry key="D1" value="120.56636283351203" />
+      <entry key="W1" value="124.35325710598681" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="2.009860500859445E-6" />
+      <entry key="MS500" value="0.11418545173282356" />
+      <entry key="S2" value="1.030015380833052" />
+      <entry key="S5" value="2.222858264433276" />
+      <entry key="S10" value="3.831947908993535" />
+      <entry key="S30" value="6.84592980138692" />
+      <entry key="S60" value="8.47618219900192" />
+      <entry key="M2" value="11.716309795917905" />
+      <entry key="M5" value="22.20656859999331" />
+      <entry key="M10" value="33.258202352264945" />
+      <entry key="M15" value="41.67866901454466" />
+      <entry key="M30" value="64.36199999877826" />
+      <entry key="H1" value="94.86227737937703" />
+      <entry key="H2" value="122.3931236864688" />
+      <entry key="H4" value="141.32755226593602" />
+      <entry key="D1" value="160.67332938820942" />
+      <entry key="W1" value="164.37179389773016" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="2.358817084067828E-6" />
+      <entry key="MS500" value="0.1394814438836046" />
+      <entry key="S2" value="1.4849217639242849" />
+      <entry key="S5" value="3.3444223694323396" />
+      <entry key="S10" value="5.764191792136729" />
+      <entry key="S30" value="10.271032395086314" />
+      <entry key="S60" value="12.726879175548339" />
+      <entry key="M2" value="17.695211234994513" />
+      <entry key="M5" value="33.86490845548862" />
+      <entry key="M10" value="50.968095847987854" />
+      <entry key="M15" value="64.14607105276058" />
+      <entry key="M30" value="101.17937214041419" />
+      <entry key="H1" value="154.65672135699504" />
+      <entry key="H2" value="205.96394701953136" />
+      <entry key="H4" value="242.6705316438247" />
+      <entry key="D1" value="281.23723658367" />
+      <entry key="W1" value="288.72469013295057" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3HA5bjAt4dIDc0TTw40VgYHk3dz" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.JobPortalComApplication.executor": "Run",
+    "Spring Boot.JobPortalResumeServiceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Merging merge-main-and-user-service",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project.referral.controller" />
+      <recent name="com.project.referral.repository" />
+      <recent name="com.project.referral.service.impl" />
+      <recent name="com.project.referral.dto.request" />
+      <recent name="com.project.referral.common.dto.response" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="job-portal-system" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="job-portal-system" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-referral-system (2)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalComApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-company-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalComApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalPreferencesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-preferences" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalPreferencesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalResumeServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-resume-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalResumeServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="" />
+      <created>1785298109121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1785298109121</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
