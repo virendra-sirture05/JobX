@@ -33,6 +33,36 @@ public class ResumeMapper {
                 .build();
     }
 
+    public static WorkExperienceResponse toWorkExperienceResponse(
+            WorkExperience exp) {
+        if (exp == null) return null;
+        return WorkExperienceResponse.builder()
+                .id(exp.getId())
+                .companyName(exp.getCompanyName())
+                .companyLogoUrl(exp.getCompanyLogoUrl())
+                .jobTitle(exp.getJobTitle())
+                .employmentType(exp.getEmploymentType())
+                .location(exp.getLocation())
+                .startDate(exp.getStartDate())
+                .endDate(exp.getEndDate())
+                .isCurrentJob(exp.getIsCurrentJob())
+                .description(exp.getDescription())
+                .technologies(exp.getTechnologies())
+                .displayOrder(exp.getDisplayOrder())
+                .build();
+    }
+
+    public static ResumeSkillResponse toSkillResponse(ResumeSkill skill) {
+        if (skill == null) return null;
+        return ResumeSkillResponse.builder()
+                .id(skill.getId())
+                .skillName(skill.getSkillName())
+                .proficiencyLevel(skill.getProficiencyLevel())
+                .yearsOfExperience(skill.getYearsOfExperience())
+                .displayOrder(skill.getDisplayOrder())
+                .build();
+    }
+
 
 
 
