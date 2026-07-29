@@ -183,7 +183,7 @@
     <configuration name="JobPortalAiServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="job-portal-ai-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalAiServiceApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zosh.job.service.JobPortalAiServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
