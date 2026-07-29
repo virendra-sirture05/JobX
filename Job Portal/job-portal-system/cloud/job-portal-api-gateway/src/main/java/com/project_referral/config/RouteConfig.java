@@ -19,6 +19,16 @@ public class RouteConfig {
 //                .before(this::jwtAuthFilter)
                 .build();
     }
-}
 
+    @Bean
+    public RouterFunction<ServerResponse> companyServiceRoutes(){
+        return GatewayRouterFunctions.route("company-service-routes")
+                .route(RequestPredicates.path("/api/companies/**"), HandlerFunctions.http())
+                .filter(LoadBalancerFilterFunctions.lb("job-portal-company-service"))
+//                .before(this::jwtAuthFilter)
+                .build();
+    }
+
+
+}
 

@@ -13,16 +13,17 @@
         <module name="job-portal-preferences" />
         <module name="job-portal-config-server" />
       </profile>
-      <profile name="Annotation profile for job-referral-system (2)" enabled="true">
+      <profile name="Annotation profile for job-referral-system" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
         </processorPath>
+        <module name="job-referral-system (1)" />
         <module name="job-referral-system (2)" />
       </profile>
-      <profile name="Annotation profile for job-referral-system" enabled="true">
+      <profile name="Annotation profile for job-portal-company-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -31,19 +32,7 @@
         </processorPath>
         <module name="job-portal-company-service" />
       </profile>
-      <profile name="Annotation profile for job-referral-system (1)" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.46/lombok-1.18.46.jar" />
-        </processorPath>
-        <module name="job-referral-system (1)" />
-      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="job-portal-api-gateway" target="17" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
