@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,61 +31,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.3954791674547729" />
-      <entry key="MS500" value="3.8538683863767234" />
-      <entry key="S2" value="10.089733116586782" />
-      <entry key="S5" value="21.237694896056297" />
-      <entry key="S10" value="35.107874991025994" />
-      <entry key="S30" value="58.16042325443187" />
-      <entry key="S60" value="68.1981193563996" />
-      <entry key="M2" value="75.35675911203487" />
-      <entry key="M5" value="84.57423115745623" />
-      <entry key="M10" value="91.96455062397456" />
-      <entry key="M15" value="97.20281945191614" />
-      <entry key="M30" value="112.03762035707794" />
-      <entry key="H1" value="135.28699937297236" />
-      <entry key="H2" value="159.2560017125079" />
-      <entry key="H4" value="177.16265435709124" />
-      <entry key="D1" value="196.52971247927303" />
-      <entry key="W1" value="200.34789451819952" />
+      <entry key="MS100" value="1.0031291792093344" />
+      <entry key="MS500" value="1.315563008028029" />
+      <entry key="S2" value="1.7494998008777738" />
+      <entry key="S5" value="1.8910634064095366" />
+      <entry key="S10" value="1.9439615492219673" />
+      <entry key="S30" value="1.9809916209237404" />
+      <entry key="S60" value="2.036108310767979" />
+      <entry key="M2" value="4.311320520240107" />
+      <entry key="M5" value="35.52632045393026" />
+      <entry key="M10" value="98.37736785126023" />
+      <entry key="M15" value="144.89134387123173" />
+      <entry key="M30" value="223.77334603133585" />
+      <entry key="H1" value="302.6348035989234" />
+      <entry key="H2" value="390.429345887506" />
+      <entry key="H4" value="472.3819807134682" />
+      <entry key="D1" value="582.1430425450841" />
+      <entry key="W1" value="606.7035400472151" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="4.71339869725932E-94" />
-      <entry key="MS500" value="3.401295987978451E-19" />
-      <entry key="S2" value="4.279096918150677E-5" />
-      <entry key="S5" value="0.0392929953657798" />
-      <entry key="S10" value="0.5094731246037804" />
-      <entry key="S30" value="3.4940812720134002" />
-      <entry key="S60" value="6.055507744779349" />
-      <entry key="M2" value="9.902981933471624" />
-      <entry key="M5" value="20.762111155991168" />
-      <entry key="M10" value="32.158353094634705" />
-      <entry key="M15" value="40.75465242177731" />
-      <entry key="M30" value="63.6445480753411" />
-      <entry key="H1" value="94.33207435606568" />
-      <entry key="H2" value="122.05060537802748" />
-      <entry key="H4" value="141.1296604759237" />
-      <entry key="D1" value="160.63581075521716" />
-      <entry key="W1" value="164.36631016936042" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="1.0136340802957607E-110" />
+      <entry key="S60" value="3.2615546859817674E-55" />
+      <entry key="M2" value="2.2982805257370183E-27" />
+      <entry key="M5" value="1.8345363946902155E-10" />
+      <entry key="M10" value="9.559192546070046E-5" />
+      <entry key="M15" value="0.00842549581023652" />
+      <entry key="M30" value="0.9151037682393711" />
+      <entry key="H1" value="11.3113372977117" />
+      <entry key="H2" value="42.26367149772963" />
+      <entry key="H4" value="83.0485279317014" />
+      <entry key="D1" value="147.04874079987277" />
+      <entry key="W1" value="162.30421456979113" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3367883161511926" />
-      <entry key="MS500" value="3.821873717742904" />
-      <entry key="S2" value="10.068707763646088" />
-      <entry key="S5" value="21.25057280165683" />
-      <entry key="S10" value="35.546737781477965" />
-      <entry key="S30" value="61.520856158635" />
-      <entry key="S60" value="74.14140925349538" />
-      <entry key="M2" value="85.17223285819523" />
-      <entry key="M5" value="105.26901220319922" />
-      <entry key="M10" value="124.07232987177191" />
-      <entry key="M15" value="137.91403889372563" />
-      <entry key="M30" value="175.6450067440662" />
-      <entry key="H1" value="229.5886744874156" />
-      <entry key="H2" value="281.2856367872188" />
-      <entry key="H4" value="318.27975238407015" />
-      <entry key="D1" value="357.1630645841821" />
-      <entry key="W1" value="364.7138433165443" />
+      <entry key="MS100" value="0.9358531657468123" />
+      <entry key="MS500" value="1.2953015197235969" />
+      <entry key="S2" value="1.7421538214214287" />
+      <entry key="S5" value="1.8878270834257898" />
+      <entry key="S10" value="1.9422876958263544" />
+      <entry key="S30" value="1.9804206781122404" />
+      <entry key="S60" value="2.035817870862858" />
+      <entry key="M2" value="4.311089442829939" />
+      <entry key="M5" value="35.525729726409914" />
+      <entry key="M10" value="98.37664950246413" />
+      <entry key="M15" value="144.89895869502928" />
+      <entry key="M30" value="224.6872970036593" />
+      <entry key="H1" value="313.94209463450426" />
+      <entry key="H2" value="432.68551974512377" />
+      <entry key="H4" value="555.4229861247217" />
+      <entry key="D1" value="729.1895088745674" />
+      <entry key="W1" value="769.0073943239112" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -97,31 +97,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Spring Boot.JobPortalComApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Spring Boot.JobPortalResumeServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;resume-service&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.JobPortalAiServiceApplication.executor": "Run",
+    "Spring Boot.JobPortalComApplication.executor": "Run",
+    "Spring Boot.JobPortalResumeServiceApplication.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "ai-trial-service",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.configurations.included.in.services": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.project.referral.controller" />
@@ -145,6 +146,7 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
+              <entry key="JobPortalAiServiceApplication" value="STOPPED" />
               <entry key="JobPortalComApplication" value="STOPPED" />
               <entry key="JobPortalResumeServiceApplication" value="STOPPED" />
             </map>
@@ -153,7 +155,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JobPortalComApplication">
+  <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="job-portal-system" />
       <method v="2">
@@ -169,6 +171,14 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="job-referral-system (2)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalAiServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-ai-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zosh.job.service.JobPortalAiServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

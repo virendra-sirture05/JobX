@@ -3,10 +3,20 @@ spring:
     name: job-portal-ai-service
   config:
     import: optional:configserver:http://localhost:8888
+  cloud:
+    discovery:
+      enabled: false
+
+# Disable Eureka client when running standalone (no Eureka server available locally)
+eureka:
+  client:
+    enabled: false
+    register-with-eureka: false
+    fetch-registry: false
 
 gemini:
   api:
-    key: AQ.Ab8RN6JZKoaEf-B10kxjIO8a6S-tLbJdGpMrzi_jD8ohZFxJFg
+    key: ${GCP_API_KEY}
     model: gemini-3-flash-preview
     embedding-model: textembedding-gecko-001
     max-output-tokens: 2048

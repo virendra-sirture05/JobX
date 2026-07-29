@@ -10,6 +10,7 @@
 		<groupId>com.project.referral</groupId>
 		<artifactId>job-portal-services</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath/> <!-- resolve parent from sibling services module -->
 	</parent>
 
 	<artifactId>job-portal-ai-service</artifactId>
