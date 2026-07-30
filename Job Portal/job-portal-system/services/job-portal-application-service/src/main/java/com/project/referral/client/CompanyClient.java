@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 
-//@FeignClient(name="job-portal-company-service",
-//        url = "${job.service.url:http://localhost:8082}")
-////TODO ADD WORKING SERVICES
+@FeignClient(name="job-portal-company-service")
 
 public interface CompanyClient {
 
-  //  @GetMapping("/api/companies/my")
+    @GetMapping("/api/companies/my")
     CompanyResponse getMyCompany(
             @RequestHeader("X-User-Id") Long ownerId) throws ResourceNotFoundException;
 
-   // @GetMapping("/api/companies/summary/{id}")
+    @GetMapping("/api/companies/summary/{id}")
     CompanySummaryResponse getCompanySummaryById(@PathVariable("id") Long id);
 }

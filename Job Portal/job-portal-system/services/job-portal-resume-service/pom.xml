@@ -13,7 +13,7 @@
 
 	<name>job-portal-resume-service</name>
 
-	<dependencies>
+    <dependencies>
 		<dependency>
 			<groupId>com.project.referral</groupId>
 			<artifactId>job-portal-common</artifactId>

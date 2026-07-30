@@ -8,11 +8,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-//@FeignClient(name = "job-portal-ai-service",
-//        url = "${job.service.url:http://localhost:8082}")
-//TODO ADD WORKING SERVICES
+@FeignClient(name = "job-portal-ai-service")
 public interface AiClient {
 
-    //@PostMapping("/api/ai/application/screening-score")
+    @PostMapping("/api/ai/application/screening-score")
     ApiResponse<ScreeningScoreResponse> scoreCandidate(@RequestBody ScreeningScoreRequest request);
 }
