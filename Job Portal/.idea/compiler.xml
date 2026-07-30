@@ -23,16 +23,13 @@
         <module name="job-referral-system (1)" />
         <module name="job-referral-system (2)" />
       </profile>
-      <profile name="Annotation profile for job-portal-company-service" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
-        </processorPath>
-        <module name="job-portal-company-service" />
-      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="job-portal-ai-service" target="17" />
+      <module name="job-portal-company-service" target="21" />
+      <module name="job-portal-job-service" target="1.5" />
+      <module name="job-portal-resume-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
