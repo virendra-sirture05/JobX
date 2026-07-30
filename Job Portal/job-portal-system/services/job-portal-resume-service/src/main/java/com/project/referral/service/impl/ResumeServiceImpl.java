@@ -1,5 +1,6 @@
 package com.project.referral.service.impl;
 
+import com.project.referral.common.dto.response.*;
 import com.project.referral.common.exception.ResourceNotFoundException;
 import com.project.referral.dto.request.CreateResumeRequest;
 import com.project.referral.dto.request.UpdatePersonalInfoRequest;
@@ -18,9 +19,15 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Transactional
 public class ResumeServiceImpl implements ResumeService {
 
     private final ResumeRepository resumeRepository;
+    private final WorkExperienceRepository workExperienceRepository;
+    private final LanguageRepository languageRepository;
+    private final ProjectRepository projectRepository;
+    private final ResumeSkillRepository resumeSkillRepository;
+    private final EducationRepository educationRepository;
 
     @Override
     @Transactional
@@ -161,8 +168,19 @@ public class ResumeServiceImpl implements ResumeService {
 
 
     private ResumeResponse buildFullResponse(Resume resume) {
+        List<WorkExperience> workExperiences = workExperienceRepository
+                .findByResume_IdOrderByDisplayOrderAsc(resume.getId());
+        List<Education> educations = educationRepository
+                .findByResume_IdOrderByDisplayOrderAsc(resume.getId());
+        List<ResumeSkill> skills = resumeSkillRepository
+                .findByResume_IdOrderByDisplayOrderAsc(resume.getId());
+        List<Project> projects = projectRepository
+                .findByResume_IdOrderByDisplayOrderAsc(resume.getId());
 
+        List<Language> languages = languageRepository
+                .findByResume_IdOrderByDisplayOrderAsc(resume.getId());
 
-        return ResumeMapper.toResponse(resume);
+        return ResumeMapper.toResponse(resume, workExperiences, educations, skills,
+                projects, languages);
     }
 }

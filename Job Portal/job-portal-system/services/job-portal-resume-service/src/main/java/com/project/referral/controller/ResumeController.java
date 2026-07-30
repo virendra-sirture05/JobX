@@ -22,13 +22,7 @@ public class ResumeController {
 
     private final ResumeService resumeService;
 
-    @PostMapping
-    public ResponseEntity<ResumeResponse> createResume(
-            @RequestHeader("X-User-Id") Long candidateId,
-            @RequestBody @Valid CreateResumeRequest req) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(resumeService.createResume(candidateId, req));
-    }
+   
 
     @GetMapping("/{resumeId}")
     public ResponseEntity<ResumeResponse> getResumeById(
