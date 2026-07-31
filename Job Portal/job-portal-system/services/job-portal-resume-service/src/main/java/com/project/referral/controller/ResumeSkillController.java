@@ -1,0 +1,56 @@
+package com.project.referral.controller;
+
+import com.project.referral.common.dto.response.ApiResponse;
+import com.project.referral.common.dto.response.ResumeSkillResponse;
+import com.project.referral.common.exception.ResourceNotFoundException;
+import com.project.referral.dto.request.AddResumeSkillRequest;
+import com.project.referral.service.ResumeSkillService;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/resumes/{resumeId}/skills")
+@RequiredArgsConstructor
+public class ResumeSkillController {
+
+    private final ResumeSkillService resumeSkillService;
+
+    @PostMapping
+    public ResponseEntity<ResumeSkillResponse> addSkill(
+            @PathVariable Long resumeId,
+            @RequestHeader("X-User-Id") Long candidateId,
+            @RequestBody @Valid AddResumeSkillRequest req) throws ResourceNotFoundException {
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(resumeSkillService.addSkill(resumeId, candidateId, req));
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ResumeSkillResponse>> getSkills(
+            @PathVariable Long resumeId) throws ResourceNotFoundException {
+        return ResponseEntity.ok(resumeSkillService.getSkills(resumeId));
+    }
+
+    @PutMapping("/{skillId}")
+    public ResponseEntity<ResumeSkillResponse> updateSkill(
+            @PathVariable Long resumeId,
+            @PathVariable Long skillId,
+            @RequestHeader("X-User-Id") Long candidateId,
+            @RequestBody @Valid AddResumeSkillRequest req) throws ResourceNotFoundException {
+        return ResponseEntity.ok(
+                resumeSkillService.updateSkill(skillId, resumeId, candidateId, req));
+    }
+
+    @DeleteMapping("/{skillId}")
+    public ResponseEntity<ApiResponse> deleteSkill(
+            @PathVariable Long resumeId,
+            @PathVariable Long skillId,
+            @RequestHeader("X-User-Id") Long candidateId) throws ResourceNotFoundException {
+        resumeSkillService.deleteSkill(skillId, resumeId, candidateId);
+        return ResponseEntity.ok(new ApiResponse("Skill deleted successfully", true));
+    }
+}

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/domain/JobType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/domain/ProficiencyLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/ResumeSkillResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/WorkExperienceResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/ResumeSkillController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/controller/WorkExperienceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/AddResumeSkillRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/dto/request/AddWorkExperienceRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/ResumeSkill.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/entity/WorkExperience.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/repository/ResumeSkillRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/repository/WorkExperienceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/ResumeSkillService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/WorkExperienceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/impl/ResumeSkillServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/service/impl/WorkExperienceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/mapper/ResumeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/java/com/project/referral/mapper/ResumeMapper.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0002404478453488" />
+      <entry key="S2" value="1.1316909549826857" />
+      <entry key="S5" value="1.629776941211243" />
+      <entry key="S10" value="2.3566694143052334" />
+      <entry key="S30" value="3.671998514455712" />
+      <entry key="S60" value="4.401593351997249" />
+      <entry key="M2" value="6.079612559547901" />
+      <entry key="M5" value="11.729284646754996" />
+      <entry key="M10" value="17.761671535428807" />
+      <entry key="M15" value="22.511471472342855" />
+      <entry key="M30" value="36.854779612514314" />
+      <entry key="H1" value="59.82492776549629" />
+      <entry key="H2" value="83.59180939133839" />
+      <entry key="H4" value="101.35553790983462" />
+      <entry key="D1" value="120.56636283351203" />
+      <entry key="W1" value="124.35325710598681" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="2.009860500859445E-6" />
+      <entry key="MS500" value="0.11418545173282356" />
+      <entry key="S2" value="1.030015380833052" />
+      <entry key="S5" value="2.222858264433276" />
+      <entry key="S10" value="3.831947908993535" />
+      <entry key="S30" value="6.84592980138692" />
+      <entry key="S60" value="8.47618219900192" />
+      <entry key="M2" value="11.716309795917905" />
+      <entry key="M5" value="22.20656859999331" />
+      <entry key="M10" value="33.258202352264945" />
+      <entry key="M15" value="41.67866901454466" />
+      <entry key="M30" value="64.36199999877826" />
+      <entry key="H1" value="94.86227737937703" />
+      <entry key="H2" value="122.3931236864688" />
+      <entry key="H4" value="141.32755226593602" />
+      <entry key="D1" value="160.67332938820942" />
+      <entry key="W1" value="164.37179389773016" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="2.358817084067828E-6" />
+      <entry key="MS500" value="0.1394814438836046" />
+      <entry key="S2" value="1.4849217639242849" />
+      <entry key="S5" value="3.3444223694323396" />
+      <entry key="S10" value="5.764191792136729" />
+      <entry key="S30" value="10.271032395086314" />
+      <entry key="S60" value="12.726879175548339" />
+      <entry key="M2" value="17.695211234994513" />
+      <entry key="M5" value="33.86490845548862" />
+      <entry key="M10" value="50.968095847987854" />
+      <entry key="M15" value="64.14607105276058" />
+      <entry key="M30" value="101.17937214041419" />
+      <entry key="H1" value="154.65672135699504" />
+      <entry key="H2" value="205.96394701953136" />
+      <entry key="H4" value="242.6705316438247" />
+      <entry key="D1" value="281.23723658367" />
+      <entry key="W1" value="288.72469013295057" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="3HA5bjAt4dIDc0TTw40VgYHk3dz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.JobPortalComApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.JobPortalResumeServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;resume-service&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project.referral.controller" />
+      <recent name="com.project.referral.repository" />
+      <recent name="com.project.referral.service.impl" />
+      <recent name="com.project.referral.dto.request" />
+      <recent name="com.project.referral.common.dto.response" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="KtorApplicationConfigurationType" />
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="JobPortalComApplication" value="STOPPED" />
+              <entry key="JobPortalResumeServiceApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.JobPortalComApplication">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="job-portal-system" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="job-portal-system" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-referral-system (2)" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalComApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-company-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalComApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalPreferencesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-preferences" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalPreferencesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalResumeServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-resume-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalResumeServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="" />
+      <created>1785298109121</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1785298109121</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
