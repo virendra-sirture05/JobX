@@ -9,3 +9,7 @@ public class JobPortalUserServiceApplication {
         SpringApplication.run(JobPortalUserServiceApplication.class, args);
     }
 }
+
+
+
+
