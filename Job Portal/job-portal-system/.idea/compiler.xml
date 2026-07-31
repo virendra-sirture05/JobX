@@ -12,6 +12,7 @@
         <module name="job-portal-service-registry" />
         <module name="job-portal-preferences" />
         <module name="job-portal-config-server" />
+        <module name="job-portal-job-service" />
       </profile>
       <profile name="Annotation profile for job-referral-system" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -33,6 +34,7 @@
       <module name="job-portal-common" options="-parameters" />
       <module name="job-portal-company-service" options="-parameters" />
       <module name="job-portal-config-server" options="-parameters" />
+      <module name="job-portal-job-service" options="-parameters" />
       <module name="job-portal-preferences" options="-parameters" />
       <module name="job-portal-service-registry" options="-parameters" />
       <module name="job-referral-system (2)" options="-parameters" />

@@ -29,6 +29,18 @@ public class RouteConfig {
                 .build();
     }
 
+    @Bean
+    public RouterFunction<ServerResponse> jobServiceRoutes() {
+        return GatewayRouterFunctions.route("job-service-routes")
+                .route(RequestPredicates.path("/api/jobs/**")
+                                .or(RequestPredicates.path("/api/job-categories/**"))
+                                .or(RequestPredicates.path("/api/job-skills/**"))
+                                .or(RequestPredicates.path("/api/job-tags/**")),
+                        HandlerFunctions.http())
+                .filter(LoadBalancerFilterFunctions.lb("job-portal-job-service"))
+//                .before(this::jwtAuthFilter)
+                .build();
+    }
 
 }
 
