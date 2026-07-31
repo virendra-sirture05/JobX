@@ -11,10 +11,6 @@ public class GeminiProperties {
 
     private String key;
     private String model;
-
-    /** Embedding model name. Default targets Google's textembedding-gecko series. */
-    private String embeddingModel = "textembedding-gecko-001";
-
     private int maxOutputTokens = 2048;
     private double temperature = 0.7;
 }

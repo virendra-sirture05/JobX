@@ -1,11 +1,9 @@
 package com.project.referral.service;
 
 import com.project.referral.client.GeminiClient;
-import com.project.referral.dto.request.HiringInsightsRequest;
 import com.project.referral.dto.request.JobDescriptionRequest;
 import com.project.referral.dto.request.SalaryRangeRequest;
 import com.project.referral.dto.response.AiTextResponse;
-import com.project.referral.dto.response.HiringInsightsResponse;
 import com.project.referral.dto.response.SalaryRangeResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

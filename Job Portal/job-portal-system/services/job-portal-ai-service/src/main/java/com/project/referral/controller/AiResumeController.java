@@ -1,21 +1,16 @@
 package com.project.referral.controller;
 
 import com.project.referral.common.dto.response.ApiResponse;
-import com.project.referral.dto.request.CareerFeedbackRequest;
-import com.project.referral.dto.request.ResumeImprovementRequest;
-import com.project.referral.dto.request.ResumeParseRequest;
-import com.project.referral.dto.request.ResumeSummaryRequest;
-import com.project.referral.dto.request.WorkExperienceBulletRequest;
-import com.project.referral.dto.response.AiTextResponse;
-import com.project.referral.dto.response.CareerFeedbackResponse;
-import com.project.referral.dto.response.ResumeImprovementResponse;
-import com.project.referral.dto.response.ResumeParseResponse;
-import com.project.referral.dto.response.WorkExperienceBulletsResponse;
+import com.project.referral.dto.request.*;
+import com.project.referral.dto.response.*;
 import com.project.referral.service.ResumeAiService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/ai/resume")

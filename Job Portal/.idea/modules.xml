@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Job Portal.iml" filepath="$PROJECT_DIR$/.idea/Job Portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job-portal-system/services/job-portal-application-service/job-portal-application-service.iml" filepath="$PROJECT_DIR$/job-portal-system/services/job-portal-application-service/job-portal-application-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job-portal-system/job-referral-system (1).iml" filepath="$PROJECT_DIR$/job-portal-system/job-referral-system (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/job-portal-system/services/job-portal-user-service/job-referral-system (2).iml" filepath="$PROJECT_DIR$/job-portal-system/services/job-portal-user-service/job-referral-system (2).iml" />
     </modules>
   </component>
 </project>

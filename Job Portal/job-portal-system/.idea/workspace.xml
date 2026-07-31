@@ -6,10 +6,151 @@
   <component name="ChangeListManager">
     <list default="true" id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-ai-service/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-ai-service/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-ai-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-ai-service/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-ai-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/zosh/job/JobPortalAiServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/JobPortalAiServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/JobPortalAiServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/client/ChromaClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/client/GeminiClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/config/ChromaProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/config/GeminiProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/config/RagProperties.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/config/RestClientConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/controller/AiApplicationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/controller/AiCompanyController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/controller/AiJobController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/controller/AiResumeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/controller/AiSearchController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/BulkScreeningRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/CandidateScreeningInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/CareerFeedbackRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/CompanyDescriptionRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/CompanyTaglineRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/CoverLetterRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/HiringInsightsRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/InterviewQuestionsRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/JobAlertSuggestRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/JobDescriptionRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/JobMatchRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/ResumeImprovementRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/ResumeParseRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/ResumeSummaryRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/SalaryRangeRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/ScreeningScoreRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/SearchEnhanceRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/SkillsGapRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/request/WorkExperienceBulletRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/AiTextResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/BulkScreeningResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/CandidateEvaluation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/CandidateScreeningResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/CareerFeedbackResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/CompanyTaglineResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/GeminiExplanation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/HiringInsightsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/InterviewQuestionsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/JobAlertSuggestResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/JobMatchResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/JobRequirements.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/ResumeChunk.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/ResumeImprovementResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/ResumeParseResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/SalaryRangeResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/ScreeningScoreResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/SearchEnhanceResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/SkillsGapResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/dto/response/WorkExperienceBulletsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/exception/AiServiceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/exception/EmbeddingException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/exception/GeminiParsingException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/exception/ResumeIndexingException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/exception/ScoringException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/exception/VectorSearchException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/ApplicationAiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/ChromaResumeIndexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/ChromaResumeRetriever.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/ChunkingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/CompanyAiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/DeterministicScoringService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/DeterministicScoringServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/EmbeddingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/GoogleEmbeddingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/JobAiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/JobRequirementExtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/PromptBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/RagService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/ResumeAiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/ResumeIndexer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/ResumeRetriever.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/SearchAiService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/java/com/project/referral/service/SemanticChunkingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/test/java/com/project/referral/ChunkingServiceTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/test/java/com/project/referral/DeterministicScoringServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/test/java/com/project/referral/GoogleEmbeddingServiceExtractionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-ai-service/src/test/java/com/project/referral/JobPortalAiServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/.dockerignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/compose.prod.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/docker/mysql/init.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/BackendApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/LoginRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/LoginResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/RefreshTokenData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/SendOtpRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/SignupResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/dto/VerifyOtpRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/AuthServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/CustomUserDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/auth/service/RefreshTokenService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/cache/CacheService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/cache/RedisOtpService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/config/AwsSesConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/config/PasswordConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/config/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/email/AwsSesEmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/email/EmailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/email/EmailTemplateService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/exception/BadRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/exception/ResourceNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/filter/CorrelationIdFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/filter/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/otp/model/OtpData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/otp/util/OtpGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/security/CookieService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/security/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/BaseClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/JobSeeker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/Referrer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/entity/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/user/service/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/java/com/project/referral/web/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/resources/application-dev.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/resources/application-local.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/resources/application-prod.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/resources/application-test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-user-service/src/test/java/com/project/referrer/BackendApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/services/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +159,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="341" />
+    <option name="cachedIndexableFilesCount" value="246" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -28,6 +169,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="ai-trial-service" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="McpProjectServerCommands">
@@ -36,61 +182,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.4119942918650847" />
-      <entry key="MS500" value="3.8362215437016776" />
-      <entry key="S2" value="11.015409202889144" />
-      <entry key="S5" value="16.201958239696214" />
-      <entry key="S10" value="18.78393774309975" />
-      <entry key="S30" value="20.847206024203256" />
-      <entry key="S60" value="21.412777936893356" />
-      <entry key="M2" value="21.70735734775204" />
-      <entry key="M5" value="23.48479217892671" />
-      <entry key="M10" value="34.60528371068361" />
-      <entry key="M15" value="47.88217980787199" />
-      <entry key="M30" value="79.837461162754" />
-      <entry key="H1" value="119.20957012907716" />
-      <entry key="H2" value="156.9983678056241" />
-      <entry key="H4" value="185.11350310914193" />
-      <entry key="D1" value="215.8420601479955" />
-      <entry key="W1" value="221.9541730178476" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000658162822609" />
+      <entry key="S5" value="1.046980943661815" />
+      <entry key="S10" value="1.8500993375296741" />
+      <entry key="S30" value="9.322871947540005" />
+      <entry key="S60" value="16.19672575096829" />
+      <entry key="M2" value="21.609373693576444" />
+      <entry key="M5" value="27.178425562405543" />
+      <entry key="M10" value="39.22955806527144" />
+      <entry key="M15" value="52.74141280097468" />
+      <entry key="M30" value="85.09843059633866" />
+      <entry key="H1" value="124.92829649394793" />
+      <entry key="H2" value="163.1601163415551" />
+      <entry key="H4" value="191.6208426015556" />
+      <entry key="D1" value="222.74655077834421" />
+      <entry key="W1" value="228.94014800088658" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="2.122485703454096E-263" />
-      <entry key="S5" value="1.872889682792351E-105" />
-      <entry key="S10" value="1.1122945504284878E-52" />
-      <entry key="S30" value="2.1039359401832617E-17" />
-      <entry key="S60" value="1.4859367335168493E-8" />
-      <entry key="M2" value="4.905585666860656E-4" />
-      <entry key="M5" value="0.3937689457024307" />
-      <entry key="M10" value="4.428725623363657" />
-      <entry key="M15" value="10.868439126391657" />
-      <entry key="M30" value="32.86670742890175" />
-      <entry key="H1" value="67.78863368500555" />
-      <entry key="H2" value="103.46386212825607" />
-      <entry key="H4" value="129.93994263661293" />
-      <entry key="D1" value="158.43936698023447" />
-      <entry key="W1" value="164.04334798667506" />
+      <entry key="MS100" value="8.910192710000038E-91" />
+      <entry key="MS500" value="9.771864120805513E-19" />
+      <entry key="S2" value="3.1440855518190724E-5" />
+      <entry key="S5" value="0.01581239817795349" />
+      <entry key="S10" value="0.12574735853270833" />
+      <entry key="S30" value="0.5009944986769255" />
+      <entry key="S60" value="0.7078096565805191" />
+      <entry key="M2" value="0.8416733363697773" />
+      <entry key="M5" value="1.2807946154126493" />
+      <entry key="M10" value="5.126891932721014" />
+      <entry key="M15" value="11.402880202002356" />
+      <entry key="M30" value="33.178792752916024" />
+      <entry key="H1" value="68.08165194031501" />
+      <entry key="H2" value="103.92445501223104" />
+      <entry key="H4" value="130.60115176290907" />
+      <entry key="D1" value="159.37049563989464" />
+      <entry key="W1" value="165.03316055183498" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3363880207321073" />
-      <entry key="MS500" value="3.7951446120446595" />
-      <entry key="S2" value="10.984532865467452" />
-      <entry key="S5" value="16.183383258295148" />
-      <entry key="S10" value="18.773081236831057" />
-      <entry key="S30" value="20.843167061945866" />
-      <entry key="S60" value="21.41070074402934" />
-      <entry key="M2" value="21.706790113628333" />
-      <entry key="M5" value="23.876859155164514" />
-      <entry key="M10" value="39.02683138700827" />
-      <entry key="M15" value="58.73889403074618" />
-      <entry key="M30" value="112.68490673657337" />
-      <entry key="H1" value="186.9763227987333" />
-      <entry key="H2" value="260.4444353332616" />
-      <entry key="H4" value="315.04187042911497" />
-      <entry key="D1" value="374.27900061198426" />
-      <entry key="W1" value="385.99716013153875" />
+      <entry key="MS100" value="0.0010986899264539155" />
+      <entry key="MS500" value="0.25596172510711057" />
+      <entry key="S2" value="0.7113327894700989" />
+      <entry key="S5" value="0.9227505693884669" />
+      <entry key="S10" value="1.8466838787848694" />
+      <entry key="S30" value="9.68827282417072" />
+      <entry key="S60" value="16.804750308775525" />
+      <entry key="M2" value="22.38977588010555" />
+      <entry key="M5" value="28.430273221085642" />
+      <entry key="M10" value="44.33538788837203" />
+      <entry key="M15" value="64.12336340628487" />
+      <entry key="M30" value="118.25344721380596" />
+      <entry key="H1" value="192.98582080292934" />
+      <entry key="H2" value="267.065628121338" />
+      <entry key="H4" value="322.2098275350879" />
+      <entry key="D1" value="382.11451720448235" />
+      <entry key="W1" value="393.97293287705634" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -102,32 +248,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.JobPortalAiServiceApplication.executor": "Run",
-    "Spring Boot.JobPortalComApplication.executor": "Run",
-    "Spring Boot.JobPortalResumeServiceApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "resume-service",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.configurations.included.in.services": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.JobPortalAiServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.JobPortalComApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.JobPortalResumeServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;resume-service&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.project.referral.controller" />
@@ -160,7 +306,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="job-portal-system" />
       <method v="2">
@@ -176,6 +322,21 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="job-referral-system (2)" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.BackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalAiServiceApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="job-portal-ai-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalAiServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalAiServiceApplication (2)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="job-portal-ai-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.job_portal_ai_service.JobPortalAiServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

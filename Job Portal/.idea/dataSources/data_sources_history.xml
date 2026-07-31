@@ -5,7 +5,7 @@
       <driver-ref>redis</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
-      <remarks>C:/Users/Admin/OneDrive/Desktop/jobx/JobX/Job Portal/job-portal-system/services/job-portal-user-service/src/main/resources/application-test.properties</remarks>
+      <remarks>C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system/services/job-portal-user-service/src/main/resources/application-test.properties</remarks>
       <jdbc-driver>jdbc.RedisDriver</jdbc-driver>
       <jdbc-url>jdbc:redis://localhost:6379/0</jdbc-url>
       <schema-mapping />
@@ -18,7 +18,7 @@
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
-      <remarks>C:/Users/Admin/OneDrive/Desktop/jobx/JobX/Job Portal/job-portal-system/services/job-portal-preferences/src/main/resources/application.properties</remarks>
+      <remarks>C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system/services/job-portal-preferences/src/main/resources/application.properties</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/job-portal-preferences?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</jdbc-url>
       <jdbc-additional-properties>
@@ -37,7 +37,7 @@
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
-      <remarks>C:/Users/Admin/OneDrive/Desktop/jobx/JobX/Job Portal/job-portal-system/services/job-portal-job-service/src/main/resources/application.properties</remarks>
+      <remarks>C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system/services/job-portal-job-service/src/main/resources/application.properties</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/job-portal-job-service?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</jdbc-url>
       <user-name>root</user-name>

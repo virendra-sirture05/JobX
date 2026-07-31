@@ -1,21 +1,20 @@
 package com.project.referral.controller;
 
 import com.project.referral.common.dto.response.ApiResponse;
-import com.project.referral.dto.request.BulkScreeningRequest;
 import com.project.referral.dto.request.CoverLetterRequest;
-import com.project.referral.dto.request.InterviewQuestionsRequest;
 import com.project.referral.dto.request.ScreeningScoreRequest;
 import com.project.referral.dto.request.SkillsGapRequest;
 import com.project.referral.dto.response.AiTextResponse;
-import com.project.referral.dto.response.BulkScreeningResponse;
-import com.project.referral.dto.response.InterviewQuestionsResponse;
 import com.project.referral.dto.response.ScreeningScoreResponse;
 import com.project.referral.dto.response.SkillsGapResponse;
 import com.project.referral.service.ApplicationAiService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 

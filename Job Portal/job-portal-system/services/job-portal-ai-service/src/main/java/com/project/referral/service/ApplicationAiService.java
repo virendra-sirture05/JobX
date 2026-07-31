@@ -1,15 +1,10 @@
 package com.project.referral.service;
 
 import com.project.referral.client.GeminiClient;
-import com.project.referral.dto.request.BulkScreeningRequest;
-import com.project.referral.dto.request.CandidateScreeningInput;
 import com.project.referral.dto.request.CoverLetterRequest;
-import com.project.referral.dto.request.InterviewQuestionsRequest;
 import com.project.referral.dto.request.ScreeningScoreRequest;
 import com.project.referral.dto.request.SkillsGapRequest;
 import com.project.referral.dto.response.AiTextResponse;
-import com.project.referral.dto.response.BulkScreeningResponse;
-import com.project.referral.dto.response.InterviewQuestionsResponse;
 import com.project.referral.dto.response.ScreeningScoreResponse;
 import com.project.referral.dto.response.SkillsGapResponse;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +12,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 @Slf4j
 @Service
@@ -26,7 +19,6 @@ import java.util.stream.IntStream;
 public class ApplicationAiService {
 
     private final GeminiClient geminiClient;
-    private final RagService ragService;
 
     private static final String SYSTEM = """
             You are a senior technical recruiter and career coach with 15+ years of experience in the Indian tech industry.
@@ -87,8 +79,58 @@ public class ApplicationAiService {
     // ==================== Phase 3: Candidate Screening Score ====================
 
     public ScreeningScoreResponse scoreCandidate(ScreeningScoreRequest req) {
-        // Use RAG pipeline + deterministic scoring + Gemini explanation (no numeric scoring from Gemini)
-        return ragService.screenCandidate(req);
+        String requiredSkills = req.getRequiredSkills() != null
+                ? String.join(", ", req.getRequiredSkills()) : "Not specified";
+        String candidateSkills = req.getCandidateSkills() != null
+                ? String.join(", ", req.getCandidateSkills()) : "Not specified";
+        String candidateExp = req.getCandidateExperience() != null
+                ? String.join("; ", req.getCandidateExperience()) : "Not provided";
+        String candidateEdu = req.getCandidateEducation() != null && !req.getCandidateEducation().isEmpty()
+                ? String.join("; ", req.getCandidateEducation()) : "Not provided";
+
+        String prompt = """
+                Score this job application based on how well the candidate matches the requirements.
+
+                Job Requirements:
+                - Title: %s
+                - Experience Level Required: %s
+                - Required Skills: %s
+                - Key Responsibilities: %s
+
+                Candidate Profile:
+                - Professional Summary: %s
+                - Skills: %s
+                - Work Experience: %s
+                - Education: %s
+
+                Respond with ONLY this JSON (no explanation, no markdown):
+                {
+                  "score": 85,
+                  "skillsMatchScore": 90,
+                  "experienceMatchScore": 80,
+                  "educationMatchScore": 75,
+                  "matchedSkills": ["skill1", "skill2"],
+                  "missingSkills": ["skill3"],
+                  "strengths": ["strength1", "strength2"],
+                  "concerns": ["concern1"],
+                  "summary": "2-3 sentence honest assessment of this candidate's fit"
+                }
+
+                Score scale: 0-100 where 100 is a perfect match.
+                skillsMatchScore: how well candidate skills match required skills (0-100).
+                experienceMatchScore: how well candidate experience matches required level (0-100).
+                educationMatchScore: how well candidate education fits the role — use the actual education provided, not a guess (0-100).
+                score: overall weighted match considering all factors. Be objective and fair.
+                """.formatted(
+                req.getJobTitle() != null ? req.getJobTitle() : "Not specified",
+                req.getExperienceLevel() != null ? req.getExperienceLevel() : "Not specified",
+                requiredSkills,
+                req.getResponsibilities() != null ? req.getResponsibilities() : "Not provided",
+                req.getCandidateSummary() != null ? req.getCandidateSummary() : "Not provided",
+                candidateSkills, candidateExp, candidateEdu
+        );
+
+        return geminiClient.generateJson(SYSTEM, prompt, ScreeningScoreResponse.class);
     }
 
     // ==================== Phase 4: Skills Gap Analysis ====================

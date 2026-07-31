@@ -1,11 +1,9 @@
 package com.project.referral.controller;
 
 import com.project.referral.common.dto.response.ApiResponse;
-import com.project.referral.dto.request.HiringInsightsRequest;
 import com.project.referral.dto.request.JobDescriptionRequest;
 import com.project.referral.dto.request.SalaryRangeRequest;
 import com.project.referral.dto.response.AiTextResponse;
-import com.project.referral.dto.response.HiringInsightsResponse;
 import com.project.referral.dto.response.SalaryRangeResponse;
 import com.project.referral.service.JobAiService;
 import jakarta.validation.Valid;

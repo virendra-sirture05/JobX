@@ -1,16 +1,8 @@
 package com.project.referral.service;
 
 import com.project.referral.client.GeminiClient;
-import com.project.referral.dto.request.CareerFeedbackRequest;
-import com.project.referral.dto.request.ResumeImprovementRequest;
-import com.project.referral.dto.request.ResumeParseRequest;
-import com.project.referral.dto.request.ResumeSummaryRequest;
-import com.project.referral.dto.request.WorkExperienceBulletRequest;
-import com.project.referral.dto.response.AiTextResponse;
-import com.project.referral.dto.response.CareerFeedbackResponse;
-import com.project.referral.dto.response.ResumeImprovementResponse;
-import com.project.referral.dto.response.ResumeParseResponse;
-import com.project.referral.dto.response.WorkExperienceBulletsResponse;
+import com.project.referral.dto.request.*;
+import com.project.referral.dto.response.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
