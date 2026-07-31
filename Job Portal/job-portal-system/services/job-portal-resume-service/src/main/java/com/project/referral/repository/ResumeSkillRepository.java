@@ -8,4 +8,5 @@ import java.util.List;
 public interface ResumeSkillRepository extends JpaRepository<ResumeSkill, Long> {
 
     List<ResumeSkill> findByResume_IdOrderByDisplayOrderAsc(Long resumeId);
+
 }
