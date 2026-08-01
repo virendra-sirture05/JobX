@@ -9,11 +9,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/job-portal-api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/job-portal-api-gateway/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cloud/job-portal-api-gateway/src/main/java/com/project_referral/config/RouteConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/job-portal-api-gateway/src/main/java/com/project_referral/config/RouteConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/mapper/CompanyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-company-service/src/main/java/com/project/referral/mapper/CompanyMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-resume-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-resume-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-resume-service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/JobPortalApplicationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/JobPortalApplicationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/config/FeignHeaderInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/config/KafkaProducerConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,63 +31,67 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0002404478453488" />
-      <entry key="S2" value="1.1316909549826857" />
-      <entry key="S5" value="1.629776941211243" />
-      <entry key="S10" value="2.3566694143052334" />
-      <entry key="S30" value="3.671998514455712" />
-      <entry key="S60" value="4.401593351997249" />
-      <entry key="M2" value="6.079612559547901" />
-      <entry key="M5" value="11.729284646754996" />
-      <entry key="M10" value="17.761671535428807" />
-      <entry key="M15" value="22.511471472342855" />
-      <entry key="M30" value="36.854779612514314" />
-      <entry key="H1" value="59.82492776549629" />
-      <entry key="H2" value="83.59180939133839" />
-      <entry key="H4" value="101.35553790983462" />
-      <entry key="D1" value="120.56636283351203" />
-      <entry key="W1" value="124.35325710598681" />
+      <entry key="MS100" value="1.0000000000050744" />
+      <entry key="MS500" value="1.0062521567698801" />
+      <entry key="S2" value="1.4375480960773763" />
+      <entry key="S5" value="2.0812975634620514" />
+      <entry key="S10" value="2.573816069929326" />
+      <entry key="S30" value="8.350213949426902" />
+      <entry key="S60" value="18.397542663720415" />
+      <entry key="M2" value="29.816536139290335" />
+      <entry key="M5" value="44.165455165886605" />
+      <entry key="M10" value="54.42666060826407" />
+      <entry key="M15" value="60.87411614131183" />
+      <entry key="M30" value="76.9850398035543" />
+      <entry key="H1" value="101.06666811801358" />
+      <entry key="H2" value="125.78690806993359" />
+      <entry key="H4" value="144.2936616847251" />
+      <entry key="D1" value="164.36059480979412" />
+      <entry key="W1" value="168.32305008331565" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="2.009860500859445E-6" />
-      <entry key="MS500" value="0.11418545173282356" />
-      <entry key="S2" value="1.030015380833052" />
-      <entry key="S5" value="2.222858264433276" />
-      <entry key="S10" value="3.831947908993535" />
-      <entry key="S30" value="6.84592980138692" />
-      <entry key="S60" value="8.47618219900192" />
-      <entry key="M2" value="11.716309795917905" />
-      <entry key="M5" value="22.20656859999331" />
-      <entry key="M10" value="33.258202352264945" />
-      <entry key="M15" value="41.67866901454466" />
-      <entry key="M30" value="64.36199999877826" />
-      <entry key="H1" value="94.86227737937703" />
-      <entry key="H2" value="122.3931236864688" />
-      <entry key="H4" value="141.32755226593602" />
-      <entry key="D1" value="160.67332938820942" />
-      <entry key="W1" value="164.37179389773016" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="6.93260413589979E-112" />
+      <entry key="S2" value="2.8751805164753976E-28" />
+      <entry key="S5" value="2.1146589486815408E-11" />
+      <entry key="S10" value="1.1819085600897803E-5" />
+      <entry key="S30" value="0.09965227136880694" />
+      <entry key="S60" value="1.0226515094299087" />
+      <entry key="M2" value="4.069626350377698" />
+      <entry key="M5" value="14.547451963159673" />
+      <entry key="M10" value="26.91854051600139" />
+      <entry key="M15" value="36.19781312140167" />
+      <entry key="M30" value="59.981010356611826" />
+      <entry key="H1" value="91.57684341542881" />
+      <entry key="H2" value="120.25498275742997" />
+      <entry key="H4" value="140.08765580907033" />
+      <entry key="D1" value="160.43752910151917" />
+      <entry key="W1" value="164.33731105134925" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.358817084067828E-6" />
-      <entry key="MS500" value="0.1394814438836046" />
-      <entry key="S2" value="1.4849217639242849" />
-      <entry key="S5" value="3.3444223694323396" />
-      <entry key="S10" value="5.764191792136729" />
-      <entry key="S30" value="10.271032395086314" />
-      <entry key="S60" value="12.726879175548339" />
-      <entry key="M2" value="17.695211234994513" />
-      <entry key="M5" value="33.86490845548862" />
-      <entry key="M10" value="50.968095847987854" />
-      <entry key="M15" value="64.14607105276058" />
-      <entry key="M30" value="101.17937214041419" />
-      <entry key="H1" value="154.65672135699504" />
-      <entry key="H2" value="205.96394701953136" />
-      <entry key="H4" value="242.6705316438247" />
-      <entry key="D1" value="281.23723658367" />
-      <entry key="W1" value="288.72469013295057" />
+      <entry key="MS100" value="0.8066417592258927" />
+      <entry key="MS500" value="0.963508494888062" />
+      <entry key="S2" value="1.397624921591247" />
+      <entry key="S5" value="2.0422790707123673" />
+      <entry key="S10" value="2.5463441657077577" />
+      <entry key="S30" value="8.430535802748956" />
+      <entry key="S60" value="19.390353559573484" />
+      <entry key="M2" value="33.84357550231402" />
+      <entry key="M5" value="58.66277434077946" />
+      <entry key="M10" value="81.30134150928063" />
+      <entry key="M15" value="97.03232503747049" />
+      <entry key="M30" value="136.93050893652907" />
+      <entry key="H1" value="192.61373967751243" />
+      <entry key="H2" value="246.02109849682307" />
+      <entry key="H4" value="284.3687824530647" />
+      <entry key="D1" value="324.7956573952056" />
+      <entry key="W1" value="332.6599982699284" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -112,11 +117,14 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.JobPortalApiGatewayApplication.executor": "Run",
+    "Spring Boot.JobPortalApplicationServiceApplication.executor": "Run",
     "Spring Boot.JobPortalComApplication.executor": "Run",
+    "Spring Boot.JobPortalConfigServerApplication.executor": "Run",
     "Spring Boot.JobPortalResumeServiceApplication.executor": "Run",
+    "Spring Boot.JobPortalServiceRegistryApplication.executor": "Run",
     "Spring Boot.JobPortalUserServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "application-service",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system",
     "node.js.detected.package.eslint": "true",
@@ -150,9 +158,7 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
-              <entry key="JobPortalApiGatewayApplication" value="STOPPED" />
-              <entry key="JobPortalComApplication" value="STOPPED" />
-              <entry key="JobPortalResumeServiceApplication" value="STOPPED" />
+              <entry key="JobPortalApplicationServiceApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
@@ -186,6 +192,20 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.project_referral.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalApplicationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="job-portal-application-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalApplicationServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.referral.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -231,9 +251,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.BackendApplication" />
+      <item itemvalue="Spring Boot.JobPortalComApplication" />
+      <item itemvalue="Spring Boot.JobPortalPreferencesApplication" />
+      <item itemvalue="Spring Boot.JobPortalResumeServiceApplication" />
+      <item itemvalue="Spring Boot.JobPortalApplicationServiceApplication" />
+      <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
+      <item itemvalue="Spring Boot.JobPortalUserServiceApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
+        <item itemvalue="Spring Boot.JobPortalApplicationServiceApplication" />
         <item itemvalue="Spring Boot.JobPortalUserServiceApplication" />
       </list>
     </recent_temporary>

@@ -15,6 +15,7 @@
         <module name="job-portal-api-gateway" />
         <module name="job-portal-resume-service" />
         <module name="job-portal-preferences" />
+        <module name="job-portal-application-service" />
       </profile>
       <profile name="Annotation profile for job-referral-system (2)" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -35,10 +36,14 @@
         <module name="job-portal-company-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="job-portal-notification-service" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="job-portal-api-gateway" options="-parameters" />
+      <module name="job-portal-application-service" options="-parameters" />
       <module name="job-portal-common" options="-parameters" />
       <module name="job-portal-company-service" options="-parameters" />
       <module name="job-portal-config-server" options="-parameters" />

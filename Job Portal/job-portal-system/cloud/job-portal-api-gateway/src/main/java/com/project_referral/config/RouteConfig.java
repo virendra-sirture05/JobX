@@ -87,6 +87,15 @@ public class RouteConfig {
                 .build();
     }
 
+    @Bean
+    public RouterFunction<ServerResponse> applicationServiceRoutes() {
+        return GatewayRouterFunctions.route("application-service-routes")
+                .route(RequestPredicates.path("/api/applications/**"), HandlerFunctions.http())
+                .filter(LoadBalancerFilterFunctions.lb("job-portal-application-service"))
+//                .before(this::jwtAuthFilter)
+                .build();
+    }
+
 
     // ==================== JWT Filter ====================
 
@@ -121,7 +130,7 @@ public class RouteConfig {
         return GatewayRouterFunctions.route("resume-service-routes")
                 .route(RequestPredicates.path("/api/resumes/**"), HandlerFunctions.http())
                 .filter(LoadBalancerFilterFunctions.lb("job-portal-resume-service"))
-//                .before(this::jwtAuthFilter)
+                .before(this::jwtAuthFilter)
                 .build();
     }
 
