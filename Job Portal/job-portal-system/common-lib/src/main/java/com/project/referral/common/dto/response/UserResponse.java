@@ -5,12 +5,14 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.project.referral.common.domain.AuthProvider;
 import com.project.referral.common.domain.UserRole;
 import com.project.referral.common.domain.UserStatus;
+import lombok.Builder;
 import lombok.Data;
 
 import java.time.LocalDateTime;
 
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
+@Builder
 public class UserResponse {
     private Long id;
     private String fullName;

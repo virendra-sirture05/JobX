@@ -13,41 +13,28 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 /**
- * Full job detail response — used on the job detail page.
+ * Lightweight job card response — used in application cards and list views.
+ * Omits heavy text fields (description, requirements, etc.) to reduce payload.
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class JobResponse {
+public class JobSummaryResponse {
+
     private Long id;
     private String title;
-    private String description;
-    private String requirements;
-    private String responsibilities;
-    private String benefits;
-
-    private CompanySummaryResponse company;
-    private Long employerId;
-
-    private JobCategoryResponse category;
-    private Set<JobSkillResponse> skills;
-    private Set<JobTagResponse> tags;
+    private Long companyId;
 
     // Location
-    private String address;
     private String city;
-    private String state;
     private String country;
-    private String zipCode;
 
     // Salary
     private BigDecimal minSalary;
     private BigDecimal maxSalary;
     private String currency;
-    private SalaryPeriod salaryPeriod;
-    private Boolean salaryNegotiable;
     private Boolean salaryDisclosed;
 
     // Classification
@@ -56,19 +43,15 @@ public class JobResponse {
     private ExperienceLevel experienceLevel;
     private JobStatus status;
 
+    // Taxonomy
+    private String categoryName;
+    private Set<String> skillNames;
+    private Set<String> tagNames;
+
     // Posting details
     private Integer openings;
-    private LocalDate applicationDeadline;
-    private LocalDate expiresAt;
-    private Boolean active;
-
-    // Analytics
-    private Long viewCount;
     private Long applicationCount;
+    private LocalDate applicationDeadline;
 
-    // Timestamps
     private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime publishedAt;
-    private LocalDateTime closedAt;
 }
