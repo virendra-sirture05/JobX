@@ -285,6 +285,6 @@ public class ApplicationServiceImpl implements ApplicationService {
         //todo : fetch requiered data form respective service
         List<ApplicationNote> notes =
                 noteRepository.findByApplicationIdOrderByCreatedAtDesc(application.getId());
-        return ApplicationMapper.toResponse(application, JobSummaryResponse.builder().id(application.getJobId()).build(), CompanySummaryResponse.builder().id(application.getCompanyId()).build(), UserResponse.builder().id(application.getCandidateId()).build() );
+        return ApplicationMapper.toResponse(application, JobSummaryResponse.builder().id(application.getJobId()).build(),notes, CompanySummaryResponse.builder().id(application.getCompanyId()).build(), UserResponse.builder().id(application.getCandidateId()).build() );
     }
 }
