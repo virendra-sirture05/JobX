@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../job-portal-config" beforeDir="false" afterPath="$PROJECT_DIR$/../job-portal-config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloud/job-portal-api-gateway/src/main/java/com/project_referral/config/RouteConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/job-portal-api-gateway/src/main/java/com/project_referral/config/RouteConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/JobPortalApplicationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/JobPortalApplicationServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/config/FeignHeaderInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/config/KafkaProducerConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,11 +112,12 @@
     "Spring Boot.JobPortalApplicationServiceApplication.executor": "Run",
     "Spring Boot.JobPortalComApplication.executor": "Run",
     "Spring Boot.JobPortalConfigServerApplication.executor": "Run",
+    "Spring Boot.JobPortalNotificationServiceApplication.executor": "Run",
     "Spring Boot.JobPortalResumeServiceApplication.executor": "Run",
     "Spring Boot.JobPortalServiceRegistryApplication.executor": "Run",
     "Spring Boot.JobPortalUserServiceApplication.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "application-service",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Aditi/Documents/All data/JobX/Job Portal/job-portal-system",
     "node.js.detected.package.eslint": "true",
@@ -159,13 +152,16 @@
           <value>
             <map>
               <entry key="JobPortalApplicationServiceApplication" value="STOPPED" />
+              <entry key="JobPortalConfigServerApplication" value="STOPPED" />
+              <entry key="JobPortalNotificationServiceApplication" value="STOPPED" />
+              <entry key="JobPortalServiceRegistryApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JobPortalApiGatewayApplication">
+  <component name="RunManager" selected="Spring Boot.JobPortalNotificationServiceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="job-portal-system" />
       <method v="2">
@@ -221,6 +217,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JobPortalNotificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <envs>
+        <env name="MAIL_USERNAME" value="virendrasirture05@gmail.com" />
+        <env name="MAIL_PASSWORD" value="yzcfwcgeefltqmko" />
+      </envs>
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="job-portal-notification-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalNotificationServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.referral.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JobPortalPreferencesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="job-portal-preferences" />
@@ -256,14 +280,16 @@
       <item itemvalue="Spring Boot.JobPortalComApplication" />
       <item itemvalue="Spring Boot.JobPortalPreferencesApplication" />
       <item itemvalue="Spring Boot.JobPortalResumeServiceApplication" />
+      <item itemvalue="Spring Boot.JobPortalNotificationServiceApplication" />
       <item itemvalue="Spring Boot.JobPortalApplicationServiceApplication" />
       <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
       <item itemvalue="Spring Boot.JobPortalUserServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
+        <item itemvalue="Spring Boot.JobPortalNotificationServiceApplication" />
         <item itemvalue="Spring Boot.JobPortalApplicationServiceApplication" />
+        <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
         <item itemvalue="Spring Boot.JobPortalUserServiceApplication" />
       </list>
     </recent_temporary>
