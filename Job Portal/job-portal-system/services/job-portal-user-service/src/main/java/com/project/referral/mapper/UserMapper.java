@@ -11,19 +11,19 @@ public class UserMapper {
     private UserMapper() {}
 
     public static UserResponse toDTO(User user) {
-        UserResponse dto = new UserResponse();
-        dto.setId(user.getId());
-        dto.setEmail(user.getEmail());
-        dto.setFullName(user.getFullName());
-        dto.setPhone(user.getPhone());
-        dto.setProfileImage(user.getProfileImage());
-        dto.setRole(user.getRole());
-        dto.setAuthProvider(user.getAuthProvider());
-        dto.setStatus(user.getStatus());
-        dto.setVerified(user.getVerified());
-        dto.setLastLogin(user.getLastLogin());
-        dto.setCreatedAt(user.getCreatedAt());
-        return dto;
+        return UserResponse.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .fullName(user.getFullName())
+                .phone(user.getPhone())
+                .profileImage(user.getProfileImage())
+                .role(user.getRole())
+                .authProvider(user.getAuthProvider())
+                .status(user.getStatus())
+                .verified(user.getVerified())
+                .lastLogin(user.getLastLogin())
+                .createdAt(user.getCreatedAt())
+                .build();
     }
 
     public static List<UserResponse> toDTOList(List<User> users) {
