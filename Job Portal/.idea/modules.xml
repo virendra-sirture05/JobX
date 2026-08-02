@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Job Portal.iml" filepath="$PROJECT_DIR$/.idea/Job Portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/job-portal-system/services/job-portal-ai-service/job-portal-ai-service.iml" filepath="$PROJECT_DIR$/job-portal-system/services/job-portal-ai-service/job-portal-ai-service.iml" />
     </modules>
   </component>
 </project>
