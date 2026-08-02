@@ -233,7 +233,8 @@ public class ApplicationServiceImpl implements ApplicationService {
             throws ResourceNotFoundException, ApplicationException {
         Application application = getApplicationEntity(applicationId);
         assertCandidate(application, candidateId);
-        applicationRepository.delete(application);
+        application.setStatus(ApplicationStatus.DELETED);
+        applicationRepository.save(application);
     }
 
     // ── Internal ──────────────────────────────────────────────────────────────

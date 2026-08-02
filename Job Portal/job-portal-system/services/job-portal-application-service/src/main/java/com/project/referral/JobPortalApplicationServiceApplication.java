@@ -13,5 +13,4 @@ public class JobPortalApplicationServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JobPortalApplicationServiceApplication.class, args);
 	}
-
 }
