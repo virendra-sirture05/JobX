@@ -8,8 +8,12 @@
     <file url="file://$PROJECT_DIR$/job-portal-system/cloud/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/job-portal-system/common-lib/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/job-portal-system/common-lib/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job-portal-system/services/job-portal-ai-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/job-portal-system/services/job-portal-company-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job-portal-system/services/job-portal-job-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job-portal-system/services/job-portal-notification-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/job-portal-system/services/job-portal-preferences/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/job-portal-system/services/job-portal-resume-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/job-portal-system/services/job-portal-user-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/job-portal-system/services/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/job-portal-system/services/src/main/resources" charset="UTF-8" />

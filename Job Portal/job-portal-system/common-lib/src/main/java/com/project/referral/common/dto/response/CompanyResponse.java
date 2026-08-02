@@ -1,16 +1,13 @@
 package com.project.referral.common.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.project.referral.common.domain.CompanyStatus;
-import com.project.referral.common.domain.CompanyType;
-import com.project.referral.common.domain.IndustryType;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.project.referral.common.domain.*;
+import com.project.referral.common.dto.response.*;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
 
 @Data
 @NoArgsConstructor
@@ -31,6 +28,7 @@ public class CompanyResponse {
     private String phone;
     private Integer foundedYear;
 
+    private CompanySize companySize;
     private CompanyType companyType;
     private IndustryType industryType;
     private CompanyStatus status;
