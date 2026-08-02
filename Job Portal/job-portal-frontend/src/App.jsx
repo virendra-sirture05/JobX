@@ -1,201 +1,162 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+﻿import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Toaster } from "sonner";
+
+// Auth Components
+import AppBootstrap from "./components/auth/AppBootstrap";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
+import RoleBasedRoute from "./components/auth/RoleBasedRoute";
+
+// Public Pages
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
-import ReferrerLogin from "./pages/auth/ReferrerLogin";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 
-// Auth
-// import Login from "./pages/auth/Login";
-// import Register from "./pages/auth/Register";
+// User/Job Seeker Pages
+import UserLayout from "./components/user/layout/UserLayout";
+import JobsPage from "./pages/user/Jobs";
+import JobDetails from "./pages/user/JobDetails";
+import ApplyJob from "./pages/user/ApplyJob";
+import UserApplications from "./pages/user/Applications";
+import Profile from "./pages/user/Profile";
+import Resumes from "./pages/user/Resumes";
+import ResumeEdit from "./pages/user/ResumeEdit";
+import ResumeView from "./pages/user/ResumeView";
+import SavedJobs from "./pages/user/SavedJobs";
+import AITools from "./pages/user/AITools"
+import AIMatch from "./pages/user/AIMatch";
+import UserSettings from "./pages/user/Settings";
 
-// // Admin
-// import AdminDashboard from "./pages/admin/AdminDashboard";
-// import ManageUsers from "./pages/admin/ManageUsers";
-// import ManageJobs from "./pages/admin/ManageJobs";
-// import Applications from "./pages/admin/Applications";
-// import LoginActivity from "./pages/admin/LoginActivity";
-// import Categories from "./pages/admin/Categories";
+// Employer Pages
+import DashboardLayout from "./components/employer/layout/DashboardLayout";
+import Dashboard from "./pages/employer/Dashboard";
+import EmployerJobs from "./pages/employer/Jobs";
+import CreateJob from "./pages/employer/CreateJob";
+import EditJob from "./pages/employer/EditJob";
+import Applications from "./pages/employer/Applications";
 
-// Recruiter
-// import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
- import PostJob from "./pages/recruiter/PostJob";
-import RecruiterDashboard from "./pages/recruiter/RecruiterDashboard";
-// import PostJob from "./pages/recruiter/PostJob";
-// import Applicants from "./pages/recruiter/Applicants";
-// import JobSeekers from "./pages/recruiter/JobSeekers";
-// import Resources from "./pages/recruiter/Resources";
-// Change "SearchApplications" to "SearchApplication" at the end of the string
-import ViewApplications from "./pages/recruiter/ViewApplications";
-import SearchApplications from "./pages/recruiter/SearchApplications";
-import SearchJobSeeker from "./pages/recruiter/SearchJobSeeker";
-import Resources from "./pages/recruiter/Resources";
+import ApplicationScreeningPage from "./pages/employer/ApplicationScreeningPage";
+import Candidates from "./pages/employer/Candidates";
 
+import Messages from "./pages/employer/Messages";
+import CompanyProfile from "./pages/employer/CompanyProfile";
+import BillingOverview from "./pages/employer/billing/BillingOverview";
+import Plans from "./pages/employer/billing/Plans";
+import PaymentDetails from "./pages/employer/billing/PaymentDetails";
+import Invoices from "./pages/employer/billing/Invoices";
+import Settings from "./pages/employer/Settings";
 
-// Job Seeker
-import Dashboard from "./pages/seeker/Dashboard";
-import Jobs from "./pages/seeker/Jobs";
-import AppliedJobs from "./pages/seeker/AppliedJobs";
-import Resume from "./pages/seeker/Resume";
-import Profile from "./pages/seeker/Profile";
-import AIMatchDashboard from "./pages/seeker/AIMatchDashboard";
-import SavedJobs from "./pages/seeker/SavedJobs";
-import MessagesPage from "./pages/seeker/MessagePage";
+// Admin Pages
+import AdminLayout from "./components/admin/layout/AdminLayout";
 import AdminDashboard from "./pages/admin/Dashboard";
-import ManageUsers from "./pages/admin/ManageUsers";
-import ManageJobs from "./pages/admin/ManageJobs";
-import Applications from "./pages/admin/Application";
-import LoginActivity from "./pages/admin/LoginActivity";
-import Categories from "./pages/admin/Categories";
-// import AIMatch from "./pages/seeker/AIMatch";
-// import Messages from "./pages/seeker/Messages";
+import AdminUsers from "./pages/admin/Users";
+import AdminJobs from "./pages/admin/Jobs";
+import AdminCompanies from "./pages/admin/Companies";
+import AdminSettings from "./pages/admin/Settings";
+import AdminJobMeta from "./pages/admin/JobMeta";
+import AdminSubscriptions from "./pages/admin/Subscriptions";
+import { useEffect } from "react";
+import { fetchCurrentUser } from "./store/user/userThunk";
+import { useDispatch } from "react-redux";
+import AIScreening from "./pages/employer/AiScreening/AIScreening";
+import ApplicationDetail from "./pages/employer/Applications/ApplicationDetail";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    const accessToken = localStorage.getItem("accessToken");
+    if (accessToken){
+      dispatch(fetchCurrentUser());
+    }
+    
+  },[])
   return (
-        <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        {/* Auth Routes */}
+    <Router>
+      <AppBootstrap>
+        <Toaster position="top-right" richColors />
+        <Routes>
+          {/* Public Routes - Accessible to everyone */}
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/referrer-login" element={<ReferrerLogin/> } />
+          {/* Job Seeker Routes - Protected and Role-Based */}
+          <Route element={<ProtectedRoute />}>
+            <Route
+              element={<RoleBasedRoute allowedRoles={["ROLE_JOB_SEEKER"]} />}
+            >
+              {/* Full-page routes without UserLayout (own top bars) */}
+              <Route path="/resumes/:id/edit" element={<ResumeEdit />} />
+              <Route path="/resumes/:id/view" element={<ResumeView />} />
 
+              {/* Standard layout routes */}
+              <Route element={<UserLayout />}>
+                <Route path="/jobs" element={<JobsPage />} />
+                <Route path="/jobs/:id" element={<JobDetails />} />
+                <Route path="/apply/:id" element={<ApplyJob />} />
+                <Route path="/applications" element={<UserApplications />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/resumes" element={<Resumes />} />
+                <Route path="/saved-jobs" element={<SavedJobs />} />
+                <Route path="/ai-tools" element={<AITools />} />
+                <Route path="/ai-match" element={<AIMatch />} />
+                <Route path="/settings" element={<UserSettings />} />
+              </Route>
+            </Route>
+          </Route>
 
+          {/* Employer Routes - Protected and Role-Based */}
+          <Route element={<ProtectedRoute />}>
+            <Route element={<RoleBasedRoute allowedRoles={["ROLE_EMPLOYER"]} />}>
+              <Route path="/employer" element={<DashboardLayout />}>
+                <Route path="dashboard" element={<Dashboard />} />
+                <Route path="jobs" element={<EmployerJobs />} />
+                <Route path="jobs/create" element={<CreateJob />} />
+                <Route path="jobs/:id/edit" element={<EditJob />} />
+                <Route path="applications" element={<Applications />} />
+                <Route path="applications/:id" element={<ApplicationDetail />} />
+                <Route path="applications/:id/screening" element={<ApplicationScreeningPage />} />
+                <Route path="candidates" element={<Candidates />} />
+                <Route path="ai-screening" element={<AIScreening />} />
+                <Route path="messages" element={<Messages />} />
+                <Route path="company" element={<CompanyProfile />} />
+                <Route path="billing" element={<BillingOverview />} />
+                <Route path="billing/plans" element={<Plans />} />
+                <Route path="billing/payment" element={<PaymentDetails />} />
+                <Route path="billing/invoices" element={<Invoices />} />
+                <Route path="settings" element={<Settings />} />
+              </Route>
+            </Route>
+          </Route>
 
+          {/* Admin Routes - Protected and Role-Based */}
+          <Route element={<ProtectedRoute />}>
+            <Route element={<RoleBasedRoute allowedRoles={["ROLE_ADMIN"]} />}>
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route path="dashboard" element={<AdminDashboard />} />
+                <Route path="users" element={<AdminUsers />} />
+                <Route path="jobs" element={<AdminJobs />} />
+                <Route path="companies" element={<AdminCompanies />} />
+                <Route path="job-meta" element={<AdminJobMeta />} />
+                <Route path="subscriptions" element={<AdminSubscriptions />} />
+                <Route path="settings" element={<AdminSettings />} />
+              </Route>
+            </Route>
+          </Route>
 
-        {/* ================= ADMIN ================= */}
-
-        <Route path="/admin/dashboard" element={<AdminDashboard />} />
-
-        <Route path="/admin/users" element={<ManageUsers />} />
-
-        <Route path="/admin/jobs" element={<ManageJobs />} />
-
-        <Route
-          path="/admin/applications"
-          element={<Applications />}
-        />
-
-        <Route
-          path="/admin/login-activity"
-          element={<LoginActivity />}
-        />
-
-        <Route
-          path="/admin/categories"
-          element={<Categories />}
-        />
-
-          <Route
-          path="/recruiter/post-job"
-          element={<PostJob />}
-        />
-
-        {/* ================= RECRUITER ================= */}
-
-        <Route
-          path="/recruiter/dashboard"
-          element={<RecruiterDashboard />}
-        />
-
-{/* 
-        <Route
-          path="/recruiter/post-job"
-          element={<PostJob />}
-        />
-        <Route
-          path="/recruiter/applicants"
-          element={<Applicants />}
-        />
-
-        <Route
-          path="/recruiter/job-seekers"
-          element={<JobSeekers />}
-        />
-
-        <Route
-          path="/recruiter/resources"
-          element={<Resources />}
-        /> */}
-
-        <Route
-          path="/recruiter/applications"
-          element={<ViewApplications />}
-        />
-
-        <Route
-          path="/recruiter/applicants"
-          element={<ViewApplications />}
-        />
-
-        <Route
-          path="/recruiter/search-applications"
-          element={<SearchApplications />}
-        />
-
-<Route
-  path="/recruiter/search-jobseeker"
-  element={<SearchJobSeeker />}
-/>
-
-<Route
-  path="/recruiter/resources"
-  element={<Resources />}
-/>
-
-
-       <Route
-          path="/seeker/dashboard"
-          element={<Dashboard />}
-        />
-
-        <Route
-          path="/seeker/jobs"
-          element={<Jobs />}
-        />
-
-        <Route
-          path="/seeker/applied-jobs"
-          element={<AppliedJobs />}
-        />
-
-        <Route
-          path="/seeker/resume"
-          element={<Resume />}
-        />
-
-        <Route
-          path="/seeker/profile"
-          element={<Profile />}
-        />
-        <Route
-          path="/seeker/ai-match"
-          element={<AIMatchDashboard />}
-        />
-        <Route
-          path="/seeker/saved-jobs"
-          element={<SavedJobs />}
-        />
-
-        <Route
-          path="/seeker/messages"
-          element={<MessagesPage />}
-        />
-        {/* ================= JOB SEEKER ================= */}
-
-        {/*
-
-       
-
-       
-
-        
-
-         */}
-
-      </Routes>
-    </BrowserRouter>
+          {/* Catch-all Route - Redirect to login */}
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </AppBootstrap>
+    </Router>
   );
-
 }
+
 export default App;
