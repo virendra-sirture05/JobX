@@ -7,11 +7,22 @@
     <list default="true" id="4532e81b-2a9d-4b4c-ae52-626a61952bde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../job-portal-config" beforeDir="false" afterPath="$PROJECT_DIR$/../job-portal-config" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud/job-portal-api-gateway/src/main/java/com/project_referral/config/RouteConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cloud/job-portal-api-gateway/src/main/java/com/project_referral/config/RouteConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/UserResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/common-lib/src/main/java/com/project/referral/common/dto/response/UserResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/JobPortalApplicationServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/JobPortalApplicationServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/service/impl/ApplicationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-application-service/src/main/java/com/project/referral/service/impl/ApplicationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-job-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-job-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-job-service/src/main/java/com/project/referral/JobPortalJobServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-job-service/src/main/java/com/project/referral/JobPortalJobServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-job-service/src/main/java/com/project/referral/Mapper/JobMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-job-service/src/main/java/com/project/referral/Mapper/JobMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/job-portal-job-service/src/main/java/com/project/referral/service/impl/JobServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/services/job-portal-job-service/src/main/java/com/project/referral/service/impl/JobServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="277" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -29,61 +40,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000000000050744" />
-      <entry key="MS500" value="1.0062521567698801" />
-      <entry key="S2" value="1.4375480960773763" />
-      <entry key="S5" value="2.0812975634620514" />
-      <entry key="S10" value="2.573816069929326" />
-      <entry key="S30" value="8.350213949426902" />
-      <entry key="S60" value="18.397542663720415" />
-      <entry key="M2" value="29.816536139290335" />
-      <entry key="M5" value="44.165455165886605" />
-      <entry key="M10" value="54.42666060826407" />
-      <entry key="M15" value="60.87411614131183" />
-      <entry key="M30" value="76.9850398035543" />
-      <entry key="H1" value="101.06666811801358" />
-      <entry key="H2" value="125.78690806993359" />
-      <entry key="H4" value="144.2936616847251" />
-      <entry key="D1" value="164.36059480979412" />
-      <entry key="W1" value="168.32305008331565" />
+      <entry key="MS100" value="1.7219645977612479" />
+      <entry key="MS500" value="1.9369214468724254" />
+      <entry key="S2" value="1.9838429889437326" />
+      <entry key="S5" value="1.9935058100332879" />
+      <entry key="S10" value="1.9978774576183653" />
+      <entry key="S30" value="2.3427679828036343" />
+      <entry key="S60" value="3.435780365110731" />
+      <entry key="M2" value="4.936640847182423" />
+      <entry key="M5" value="6.818436065654281" />
+      <entry key="M10" value="10.152649471788731" />
+      <entry key="M15" value="14.592132395769564" />
+      <entry key="M30" value="31.526417938225446" />
+      <entry key="H1" value="68.17561860066553" />
+      <entry key="H2" value="119.46332261617493" />
+      <entry key="H4" value="167.0585717319204" />
+      <entry key="D1" value="227.65425728557963" />
+      <entry key="W1" value="240.72953872376402" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="6.93260413589979E-112" />
-      <entry key="S2" value="2.8751805164753976E-28" />
-      <entry key="S5" value="2.1146589486815408E-11" />
-      <entry key="S10" value="1.1819085600897803E-5" />
-      <entry key="S30" value="0.09965227136880694" />
-      <entry key="S60" value="1.0226515094299087" />
-      <entry key="M2" value="4.069626350377698" />
-      <entry key="M5" value="14.547451963159673" />
-      <entry key="M10" value="26.91854051600139" />
-      <entry key="M15" value="36.19781312140167" />
-      <entry key="M30" value="59.981010356611826" />
-      <entry key="H1" value="91.57684341542881" />
-      <entry key="H2" value="120.25498275742997" />
-      <entry key="H4" value="140.08765580907033" />
-      <entry key="D1" value="160.43752910151917" />
-      <entry key="W1" value="164.33731105134925" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.6836564482645063E-202" />
+      <entry key="S5" value="4.737870004153265E-81" />
+      <entry key="S10" value="1.1697549260768383E-40" />
+      <entry key="S30" value="1.0125896096535792E-13" />
+      <entry key="S60" value="5.531828958394245E-7" />
+      <entry key="M2" value="0.0014473831955668765" />
+      <entry key="M5" value="0.33064288614761783" />
+      <entry key="M10" value="3.1835315880440875" />
+      <entry key="M15" value="7.6245991577527175" />
+      <entry key="M30" value="23.44287947286698" />
+      <entry key="H1" value="56.919299974833336" />
+      <entry key="H2" value="104.90665366562808" />
+      <entry key="H4" value="149.75300501558354" />
+      <entry key="D1" value="206.6561741818061" />
+      <entry key="W1" value="218.8797188456123" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8066417592258927" />
-      <entry key="MS500" value="0.963508494888062" />
-      <entry key="S2" value="1.397624921591247" />
-      <entry key="S5" value="2.0422790707123673" />
-      <entry key="S10" value="2.5463441657077577" />
-      <entry key="S30" value="8.430535802748956" />
-      <entry key="S60" value="19.390353559573484" />
-      <entry key="M2" value="33.84357550231402" />
-      <entry key="M5" value="58.66277434077946" />
-      <entry key="M10" value="81.30134150928063" />
-      <entry key="M15" value="97.03232503747049" />
-      <entry key="M30" value="136.93050893652907" />
-      <entry key="H1" value="192.61373967751243" />
-      <entry key="H2" value="246.02109849682307" />
-      <entry key="H4" value="284.3687824530647" />
-      <entry key="D1" value="324.7956573952056" />
-      <entry key="W1" value="332.6599982699284" />
+      <entry key="MS100" value="1.3013239146315387" />
+      <entry key="MS500" value="1.8003463455650703" />
+      <entry key="S2" value="1.9462612404049082" />
+      <entry key="S5" value="1.978179057613126" />
+      <entry key="S10" value="1.9901576925972815" />
+      <entry key="S30" value="2.3394979597913657" />
+      <entry key="S60" value="3.433044199595927" />
+      <entry key="M2" value="4.935946889719258" />
+      <entry key="M5" value="7.146138071293502" />
+      <entry key="M10" value="13.32662826593868" />
+      <entry key="M15" value="22.20214216993498" />
+      <entry key="M30" value="54.948304791165626" />
+      <entry key="H1" value="125.071035867718" />
+      <entry key="H2" value="224.34853004115337" />
+      <entry key="H4" value="316.79634268491003" />
+      <entry key="D1" value="434.3069211797241" />
+      <entry key="W1" value="459.60872596093634" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -105,6 +116,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
@@ -112,6 +124,7 @@
     "Spring Boot.JobPortalApplicationServiceApplication.executor": "Run",
     "Spring Boot.JobPortalComApplication.executor": "Run",
     "Spring Boot.JobPortalConfigServerApplication.executor": "Run",
+    "Spring Boot.JobPortalJobServiceApplication.executor": "Run",
     "Spring Boot.JobPortalNotificationServiceApplication.executor": "Run",
     "Spring Boot.JobPortalResumeServiceApplication.executor": "Run",
     "Spring Boot.JobPortalServiceRegistryApplication.executor": "Run",
@@ -151,17 +164,21 @@
         <entry key="SpringBootApplicationConfigurationType">
           <value>
             <map>
+              <entry key="JobPortalApiGatewayApplication" value="STOPPED" />
               <entry key="JobPortalApplicationServiceApplication" value="STOPPED" />
+              <entry key="JobPortalComApplication" value="STOPPED" />
               <entry key="JobPortalConfigServerApplication" value="STOPPED" />
-              <entry key="JobPortalNotificationServiceApplication" value="STOPPED" />
+              <entry key="JobPortalJobServiceApplication" value="STOPPED" />
+              <entry key="JobPortalResumeServiceApplication" value="STOPPED" />
               <entry key="JobPortalServiceRegistryApplication" value="STOPPED" />
+              <entry key="JobPortalUserServiceApplication" value="STOPPED" />
             </map>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JobPortalNotificationServiceApplication">
+  <component name="RunManager" selected="Spring Boot.JobPortalApplicationServiceApplication">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="job-portal-system" />
       <method v="2">
@@ -217,29 +234,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JobPortalNotificationServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="MAIL_USERNAME" value="virendrasirture05@gmail.com" />
-        <env name="MAIL_PASSWORD" value="yzcfwcgeefltqmko" />
-      </envs>
+    <configuration name="JobPortalJobServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
-      <module name="job-portal-notification-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalNotificationServiceApplication" />
+      <module name="job-portal-job-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalJobServiceApplication" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.project.referral.*" />
           <option name="ENABLED" value="true" />
         </pattern>
-      </extension>
-      <extension name="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
       </extension>
       <method v="2">
         <option name="Make" enabled="true" />
@@ -257,6 +260,20 @@
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="job-portal-resume-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalResumeServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JobPortalServiceRegistryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UnknownPolicyInFreeMode" />
+      <module name="job-portal-service-registry" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project.referral.JobPortalServiceRegistryApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.project.referral.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -280,17 +297,19 @@
       <item itemvalue="Spring Boot.JobPortalComApplication" />
       <item itemvalue="Spring Boot.JobPortalPreferencesApplication" />
       <item itemvalue="Spring Boot.JobPortalResumeServiceApplication" />
-      <item itemvalue="Spring Boot.JobPortalNotificationServiceApplication" />
+      <item itemvalue="Spring Boot.JobPortalJobServiceApplication" />
+      <item itemvalue="Spring Boot.JobPortalServiceRegistryApplication" />
       <item itemvalue="Spring Boot.JobPortalApplicationServiceApplication" />
       <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
       <item itemvalue="Spring Boot.JobPortalUserServiceApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.JobPortalNotificationServiceApplication" />
         <item itemvalue="Spring Boot.JobPortalApplicationServiceApplication" />
-        <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
         <item itemvalue="Spring Boot.JobPortalUserServiceApplication" />
+        <item itemvalue="Spring Boot.JobPortalJobServiceApplication" />
+        <item itemvalue="Spring Boot.JobPortalApiGatewayApplication" />
+        <item itemvalue="Spring Boot.JobPortalServiceRegistryApplication" />
       </list>
     </recent_temporary>
   </component>
