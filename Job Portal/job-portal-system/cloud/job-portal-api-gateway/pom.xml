@@ -6,9 +6,9 @@
 		<groupId>com.project.referral</groupId>
 		<artifactId>job-portal-cloud</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath>../pom.xml</relativePath>
 	</parent>
-	<groupId>com.project-referral</groupId>
+	<groupId>com-project-referral</groupId>
 	<artifactId>job-portal-api-gateway</artifactId>
 	<name>job-portal-api-gateway</name>
 	<description>API Gateway with JWT validation</description>
@@ -44,7 +44,10 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<!-- JWT -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
@@ -73,6 +76,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<configuration>
+					<to>
+						<image>ritesh8554/job-portal-api-gateway:latest</image>
+					</to>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

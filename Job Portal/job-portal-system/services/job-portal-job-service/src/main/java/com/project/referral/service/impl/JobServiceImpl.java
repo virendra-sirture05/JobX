@@ -3,6 +3,7 @@ package com.project.referral.service.impl;
 import com.project.referral.Mapper.JobMapper;
 import com.project.referral.common.domain.JobStatus;
 import com.project.referral.common.dto.response.CompanyResponse;
+import com.project.referral.common.dto.response.CompanySummaryResponse;
 import com.project.referral.common.dto.response.JobResponse;
 import com.project.referral.dto.JobRequest;
 import com.project.referral.dto.JobSearchRequest;
@@ -196,11 +197,11 @@ public class JobServiceImpl implements JobService {
     //all methods
     private JobResponse convertToResponse(Job savedJob) {
         // todo : fetch company response
-        CompanyResponse companyResponse = CompanyResponse.builder()
+        CompanySummaryResponse companySummaryResponse = CompanySummaryResponse.builder()
                 .id(savedJob.getCompanyId())
                 .build();
 
-        return JobMapper.toResponse(savedJob,companyResponse);
+        return JobMapper.toResponse(savedJob,companySummaryResponse);
     }
 
     private JobLocation buildLocation(JobRequest req) {

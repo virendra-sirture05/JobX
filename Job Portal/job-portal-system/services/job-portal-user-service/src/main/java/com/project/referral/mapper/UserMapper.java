@@ -2,7 +2,6 @@ package com.project.referral.mapper;
 
 import com.project.referral.common.dto.response.UserResponse;
 import com.project.referral.entity.User;
-
 import java.util.List;
 import java.util.stream.Collectors;
 

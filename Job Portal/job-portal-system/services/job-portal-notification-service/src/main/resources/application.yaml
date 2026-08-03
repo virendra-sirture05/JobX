@@ -2,7 +2,7 @@ spring:
   application:
     name: job-portal-notification-service
   config:
-    import: configserver:http://localhost:8888
+    import: configserver:${CONFIG_SERVER_URL:http://localhost:8888}
 
   mail:
     host: ${MAIL_HOST:smtp.gmail.com}

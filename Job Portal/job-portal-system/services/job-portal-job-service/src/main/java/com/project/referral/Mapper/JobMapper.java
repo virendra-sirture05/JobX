@@ -1,9 +1,6 @@
 package com.project.referral.Mapper;
 
-import com.project.referral.common.dto.response.CompanyResponse;
-import com.project.referral.common.dto.response.JobResponse;
-import com.project.referral.common.dto.response.JobSkillResponse;
-import com.project.referral.common.dto.response.JobTagResponse;
+import com.project.referral.common.dto.response.*;
 import com.project.referral.modal.Job;
 import com.project.referral.modal.JobSkill;
 import com.project.referral.modal.JobTag;
@@ -17,7 +14,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class JobMapper {
-    public static JobResponse toResponse(Job job, CompanyResponse companyResponse){
+    public static JobResponse toResponse(Job job,  CompanySummaryResponse company){
 
         JobLocation loc = job.getLocation();
         SalaryRange sal = job.getSalaryRange();
@@ -39,8 +36,8 @@ public class JobMapper {
                 .requirements(job.getRequirements())
                 .responsibilities(job.getResponsibilities())
                 .benefits(job.getBenefits())
-                .company(companyResponse)
-                //.employerId(job.getEmployerId())
+                .company(company)
+                .employerId(job.getEmployerId())
                 .category(JobCategoryMapper.toJobCategoryResponse(job.getCategory(),false))
                 .skills(skills)
                 .tags(tags)

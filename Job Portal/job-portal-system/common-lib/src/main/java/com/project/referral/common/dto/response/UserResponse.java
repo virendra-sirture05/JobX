@@ -25,4 +25,20 @@ public class UserResponse {
     private Boolean verified;
     private LocalDateTime lastLogin;
     private LocalDateTime createdAt;
+    public UserResponse() {
+    }
+
+    public UserResponse(Long id, String fullName, String email, String phone, String profileImage, UserRole role, AuthProvider authProvider, UserStatus status, Boolean verified, LocalDateTime lastLogin, LocalDateTime createdAt) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email = email;
+        this.phone = phone;
+        this.profileImage = profileImage;
+        this.role = role;
+        this.authProvider = authProvider;
+        this.status = status;
+        this.verified = verified;
+        this.lastLogin = lastLogin;
+        this.createdAt = createdAt;
+    }
 }

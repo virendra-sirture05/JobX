@@ -21,13 +21,13 @@ public class DataInitializationComponent implements CommandLineRunner {
     }
 
     private void initializeAdminUser() {
-        String adminEmail = "codewithzosh@gmail.com";
+        String adminEmail = "admin@gmail.com";
 
         if (!userRepository.existsByEmail(adminEmail)) {
             User admin = new User();
             admin.setFullName("Admin");
             admin.setEmail(adminEmail);
-            admin.setPassword(passwordEncoder.encode("codewithzosh"));
+            admin.setPassword(passwordEncoder.encode("admin"));
             admin.setRole(UserRole.ROLE_ADMIN);
             admin.setVerified(true);
             userRepository.save(admin);

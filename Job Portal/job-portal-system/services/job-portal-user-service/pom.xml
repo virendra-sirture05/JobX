@@ -42,6 +42,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
         <!-- Spring Cloud -->
         <dependency>
@@ -121,7 +125,7 @@
                 <artifactId>jib-maven-plugin</artifactId>
                 <configuration>
                     <to>
-                        <image>zoshilo/job-portal-user-service:1.0.0</image>
+                        <image>ritesh8554/job-portal-user-service:latest</image>
                     </to>
                 </configuration>
             </plugin>
