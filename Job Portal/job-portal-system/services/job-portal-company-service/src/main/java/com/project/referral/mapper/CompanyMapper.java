@@ -40,7 +40,7 @@ public class CompanyMapper {
                 .email(company.getEmail())
                 .phone(company.getPhone())
                 .foundedYear(company.getFoundedYear())
-//                .companySize(company.getCompanySize())
+                .companySize(company.getCompanySize())
                 .companyType(company.getCompanyType())
                 .industryType(company.getIndustryType())
                 .status(company.getStatus())

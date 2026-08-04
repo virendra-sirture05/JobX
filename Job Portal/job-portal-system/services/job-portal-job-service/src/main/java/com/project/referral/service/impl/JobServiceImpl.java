@@ -1,6 +1,7 @@
 package com.project.referral.service.impl;
 
 import com.project.referral.Mapper.JobMapper;
+import com.project.referral.client.CompanyClient;
 import com.project.referral.common.domain.JobStatus;
 import com.project.referral.common.dto.response.CompanyResponse;
 import com.project.referral.common.dto.response.JobResponse;
@@ -38,12 +39,14 @@ public class JobServiceImpl implements JobService {
     private final JobCategorySevice categorySevice;
     private final JobSkillService jobSkillService;
     private final JobTagService jobTagService;
+    private final CompanyClient companyClient;
 
     @Override
     @Transactional
     public JobResponse createJob(Long employerId, JobRequest req) throws Exception {
 
         JobCategory category = categorySevice.getCategoryEntityById(req.getCategoryId());
+        System.out.println(category);
 
         Set<JobSkill> skills= req.getSkillIds()!=null?
                 jobSkillService.getSkillByIds(req.getSkillIds())
@@ -54,7 +57,9 @@ public class JobServiceImpl implements JobService {
                 :Collections.emptySet();
     // todo :fetch company by employer id
 
-        Long companyId = 1L;
+        CompanyResponse company = companyClient.getMyCompany(employerId);
+
+        Long companyId = company.getId();
         Job job = Job.builder()
                 .title(req.getTitle())
                 .description(req.getDescription())
@@ -147,6 +152,7 @@ public class JobServiceImpl implements JobService {
         return convertToResponse(jobRepositary.save(job));
     }
 
+
     @Override
     public JobResponse publishJob(Long jobId, Long employerId) throws Exception {
       Job job = jobRepositary.findById(jobId).orElseThrow(
@@ -196,9 +202,7 @@ public class JobServiceImpl implements JobService {
     //all methods
     private JobResponse convertToResponse(Job savedJob) {
         // todo : fetch company response
-        CompanyResponse companyResponse = CompanyResponse.builder()
-                .id(savedJob.getCompanyId())
-                .build();
+        CompanyResponse companyResponse = companyClient.getCompanyById(savedJob.getCompanyId());
 
         return JobMapper.toResponse(savedJob,companyResponse);
     }

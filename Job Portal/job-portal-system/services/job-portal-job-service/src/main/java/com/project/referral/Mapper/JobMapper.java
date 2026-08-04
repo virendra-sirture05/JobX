@@ -1,9 +1,6 @@
 package com.project.referral.Mapper;
 
-import com.project.referral.common.dto.response.CompanyResponse;
-import com.project.referral.common.dto.response.JobResponse;
-import com.project.referral.common.dto.response.JobSkillResponse;
-import com.project.referral.common.dto.response.JobTagResponse;
+import com.project.referral.common.dto.response.*;
 import com.project.referral.modal.Job;
 import com.project.referral.modal.JobSkill;
 import com.project.referral.modal.JobTag;
@@ -40,7 +37,7 @@ public class JobMapper {
                 .responsibilities(job.getResponsibilities())
                 .benefits(job.getBenefits())
                 .company(companyResponse)
-                //.employerId(job.getEmployerId())
+                .employerId(job.getEmployerId())
                 .category(JobCategoryMapper.toJobCategoryResponse(job.getCategory(),false))
                 .skills(skills)
                 .tags(tags)

@@ -1,5 +1,9 @@
 package com.project.referral.service.impl;
 
+import com.project.referral.client.CompanyClient;
+import com.project.referral.client.JobClient;
+import com.project.referral.client.ResumeClient;
+import com.project.referral.client.UserClient;
 import com.project.referral.common.domain.ApplicationStatus;
 import com.project.referral.common.dto.response.*;
 import com.project.referral.common.exception.ApplicationException;
@@ -38,6 +42,10 @@ public class ApplicationServiceImpl implements ApplicationService {
     private final ApplicationScreeningRepository screeningRepository;
     private final ApplicationStatusHistoryRepository historyRepository;
     private final ApplicationNoteRepository noteRepository;
+    private final JobClient jobClient;
+    private final ResumeClient resumeClient;
+    private final CompanyClient companyClient;
+    private final UserClient userClient;
 
     // ── Create ────────────────────────────────────────────────────────────────
 
@@ -49,12 +57,16 @@ public class ApplicationServiceImpl implements ApplicationService {
         if (applicationRepository.existsByCandidateIdAndJobId(candidateId, req.getJobId())) {
             throw new ApplicationException("You have already applied for this job");
         }
-        Long companyId = 1L;
-        Long employeeId = 1L;
 
-        // todo : fetch job
-        // todo : fetch company
+        JobResponse job = jobClient.getJobById(req.getJobId());
+        //  fetch job
+        // fetch company
         // Fetch job to resolve companyId and employerId
+        Long companyId = job.getCompany().getId();
+        Long employeeId = job.getEmployerId();
+
+//        todo: fetch resume
+        ResumeResponse resume = resumeClient.getResumeById(req.getResumeId(), candidateId);
 
         // Validate resume belongs to the candidate (security check only)
 
@@ -109,8 +121,8 @@ public class ApplicationServiceImpl implements ApplicationService {
             CompanyApplicationFilterRequest filter
     ) throws ResourceNotFoundException {
 
-        //todo : fetch company Id
-        Long companyId =1L;
+        // fetch company Id
+        Long companyId = companyClient.getMyCompany(userId).getId();
 
         LocalDateTime from = filter.getAppliedFrom() != null
                 ? filter.getAppliedFrom().atStartOfDay() : null;
@@ -282,10 +294,17 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     private ApplicationResponse buildFullResponse(Application application) {
+        List<ApplicationStatusHistory> history =
+                historyRepository.findByApplicationIdOrderByChangedAtAsc(application.getId());
 
-        //todo : fetch requiered data form respective service
         List<ApplicationNote> notes =
                 noteRepository.findByApplicationIdOrderByCreatedAtDesc(application.getId());
-        return ApplicationMapper.toResponse(application, JobSummaryResponse.builder().id(application.getJobId()).build(),notes, CompanySummaryResponse.builder().id(application.getCompanyId()).build(), UserResponse.builder().id(application.getCandidateId()).build() );
+//        JobSummaryResponse job = jobClient.getJobSummaryById(application.getJobId());
+        CompanySummaryResponse company = companyClient.getCompanySummaryById(application.getCompanyId());
+        UserResponse candidate = userClient.getUserById(application.getCandidateId());
+//        ApplicationScreening screening = screeningRepository.findByApplicationId(application.getId()).orElse(null);
+
+        return ApplicationMapper.toResponse(application, history, notes, company, candidate);
     }
+
 }

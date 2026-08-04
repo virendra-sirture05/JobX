@@ -1,6 +1,7 @@
 package com.project.referral.common.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.project.referral.common.domain.CompanySize;
 import com.project.referral.common.domain.CompanyStatus;
 import com.project.referral.common.domain.CompanyType;
 import com.project.referral.common.domain.IndustryType;
@@ -16,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompanyResponse {
 
     private Long id;
@@ -31,6 +32,7 @@ public class CompanyResponse {
     private String phone;
     private Integer foundedYear;
 
+    private CompanySize companySize;
     private CompanyType companyType;
     private IndustryType industryType;
     private CompanyStatus status;
