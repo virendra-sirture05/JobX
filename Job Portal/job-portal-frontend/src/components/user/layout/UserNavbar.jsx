@@ -47,7 +47,7 @@ export default function UserNavbar() {
               <Briefcase className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-bold text-slate-900">
-              ZOSHIRE</span>
+              JobX</span>
           </Link>
 
           {/* Search Bar */}

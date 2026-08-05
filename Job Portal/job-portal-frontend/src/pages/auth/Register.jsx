@@ -24,7 +24,7 @@ import {
 import { registerUser } from "../../store/user/userThunk";
 import { resetError } from "../../store/user/userAuth";
 import { getRoleBasedRedirect } from "../../utils/roleRedirect";
-
+import { toast } from "sonner";
 export default function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();

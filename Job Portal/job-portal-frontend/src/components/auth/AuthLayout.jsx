@@ -12,7 +12,7 @@ export default function AuthLayout({ title, description, children, footerText, f
       <div className="hidden lg:flex lg:w-[52%] xl:w-[55%] relative overflow-hidden shrink-0">
         <img
           src={AUTH_IMAGE}
-          alt="JobPortal.AI"
+          alt="JobX"
           className="w-full h-full object-cover object-center"
         />
         {/* Gradient overlay for readability */}
@@ -25,7 +25,7 @@ export default function AuthLayout({ title, description, children, footerText, f
               <Sparkles className="h-4 w-4 text-white" />
             </div>
             <span className="text-sm font-semibold text-white/90 tracking-wide uppercase">
-              JobPortal.AI
+              JobX
             </span>
           </div>
           <h2 className="text-3xl font-bold leading-snug">

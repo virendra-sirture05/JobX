@@ -13,7 +13,7 @@
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
           <div className="text-sm text-slate-600">
-            © 2026 <span className="font-semibold text-slate-900">JobPortal.AI</span>. All rights reserved.
+            © 2026 <span className="font-semibold text-slate-900">JobX</span>. All rights reserved.
           </div>
 
           {/* Links */}

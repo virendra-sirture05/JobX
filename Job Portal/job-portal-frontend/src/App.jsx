@@ -4,7 +4,6 @@
   Route,
   Navigate,
 } from "react-router-dom";
-import { Toaster } from "sonner";
 
 // Auth Components
 import AppBootstrap from "./components/auth/AppBootstrap";
@@ -65,6 +64,7 @@ import { fetchCurrentUser } from "./store/user/userThunk";
 import { useDispatch } from "react-redux";
 import AIScreening from "./pages/employer/AiScreening/AIScreening";
 import ApplicationDetail from "./pages/employer/Applications/ApplicationDetail";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
   const dispatch = useDispatch();

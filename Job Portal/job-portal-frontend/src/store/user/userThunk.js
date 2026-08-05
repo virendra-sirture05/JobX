@@ -1,4 +1,5 @@
 ﻿import { createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "sonner";
 import api from "../api";
 
 // Login User
@@ -34,11 +35,12 @@ export const registerUser = createAsyncThunk(
         localStorage.setItem("accessToken", response.data.jwt);
       }
 
-      console.log("Registered user:", response.data);
-
+      console.log("Registered user:", response.data); 
+    toast.success("User created successfully!");
       return response.data;
     } catch (error) {
       console.log("Registration error:", error.response?.data);
+      toast.error("Failed to create user.");
       return rejectWithValue(
         error.response?.data?.message ||
           "Registration failed. Please try again."
