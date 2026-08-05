@@ -92,7 +92,7 @@ public class RouteConfig {
         return GatewayRouterFunctions.route("application-service-routes")
                 .route(RequestPredicates.path("/api/applications/**"), HandlerFunctions.http())
                 .filter(LoadBalancerFilterFunctions.lb("job-portal-application-service"))
-//                .before(this::jwtAuthFilter)
+                .before(this::jwtAuthFilter)
                 .build();
     }
 

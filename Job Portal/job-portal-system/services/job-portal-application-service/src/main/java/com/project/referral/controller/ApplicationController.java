@@ -47,7 +47,7 @@ public class ApplicationController {
     @GetMapping("/my")
     public ResponseEntity<?> getMyApplications(
             @RequestHeader("X-User-Id") Long candidateId) {
-        List<ApplicationResponse> list = new ArrayList<>();
+
         try{
             return ResponseEntity.ok(applicationService.getMyApplications(candidateId));
         }
