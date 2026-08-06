@@ -17,6 +17,7 @@ import com.project.referral.entity.ApplicationNote;
 import com.project.referral.entity.ApplicationScreening;
 import com.project.referral.entity.ApplicationStatusHistory;
 import com.project.referral.mapper.ApplicationMapper;
+import com.project.referral.producer.ApplicationEventProducer;
 import com.project.referral.repository.ApplicationNoteRepository;
 import com.project.referral.repository.ApplicationRepository;
 import com.project.referral.repository.ApplicationScreeningRepository;
@@ -46,6 +47,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     private final ResumeClient resumeClient;
     private final CompanyClient companyClient;
     private final UserClient userClient;
+    private final ApplicationEventProducer eventProducer;
 
     // ── Create ────────────────────────────────────────────────────────────────
 
@@ -177,6 +179,7 @@ public class ApplicationServiceImpl implements ApplicationService {
                 .note(req.getNote())
                 .build());
 
+       eventProducer.publishStatusChanged(application, oldStatus, req.getNote());
 
         return buildFullResponse(application);
     }
