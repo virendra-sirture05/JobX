@@ -5,6 +5,8 @@ import com.project.referral.client.CompanyClient;
 import com.project.referral.common.domain.JobStatus;
 import com.project.referral.common.dto.response.CompanyResponse;
 import com.project.referral.common.dto.response.JobResponse;
+import com.project.referral.common.dto.response.JobSummaryResponse;
+import com.project.referral.common.exception.ResourceNotFoundException;
 import com.project.referral.dto.JobRequest;
 import com.project.referral.dto.JobSearchRequest;
 import com.project.referral.modal.Job;
@@ -198,6 +200,11 @@ public class JobServiceImpl implements JobService {
                 this::convertToResponse
         ).collect(Collectors.toList());
     }
+
+//    @Override
+//    public JobSummaryResponse getJobSummaryById(Long id) {
+//        return JobMapper.toResponse();
+//    }
 
     //all methods
     private JobResponse convertToResponse(Job savedJob) {

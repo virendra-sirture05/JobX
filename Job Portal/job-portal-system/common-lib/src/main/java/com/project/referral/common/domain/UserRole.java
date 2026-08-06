@@ -1,5 +1,5 @@
 package com.project.referral.common.domain;
 
 public enum UserRole {
-    ROLE_ADMIN, ROLE_JOB_SEEKER, ROLE_REFERRER
+    ROLE_ADMIN, ROLE_JOBSEEKER, ROLE_REFERRER
 }
