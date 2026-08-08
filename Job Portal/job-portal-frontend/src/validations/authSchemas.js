@@ -35,7 +35,7 @@ export const registerSchema = z
     confirmPassword: z
       .string()
       .min(1, "Please confirm your password"),
-    role: z.enum(["ROLE_JOB_SEEKER", "ROLE_EMPLOYER"], {
+    role: z.enum(["ROLE_JOB_SEEKER", "ROLE_REFERRER"], {
       required_error: "Please select a role",
     }),
   })

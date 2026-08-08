@@ -21,10 +21,9 @@ import com.project.referral.service.JobCategorySevice;
 import com.project.referral.service.JobService;
 import com.project.referral.service.JobSkillService;
 import com.project.referral.service.JobTagService;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -38,7 +37,7 @@ import java.util.stream.Collectors;
 public class JobServiceImpl implements JobService {
 
     private final JobRepositary jobRepositary;
-    private final JobCategorySevice categorySevice;
+    private final JobCategorySevice categoryService;
     private final JobSkillService jobSkillService;
     private final JobTagService jobTagService;
     private final CompanyClient companyClient;
@@ -47,7 +46,7 @@ public class JobServiceImpl implements JobService {
     @Transactional
     public JobResponse createJob(Long employerId, JobRequest req) throws Exception {
 
-        JobCategory category = categorySevice.getCategoryEntityById(req.getCategoryId());
+        JobCategory category = categoryService.getCategoryEntityById(req.getCategoryId());
         System.out.println(category);
 
         Set<JobSkill> skills= req.getSkillIds()!=null?
@@ -123,7 +122,7 @@ public class JobServiceImpl implements JobService {
                 ()-> new Exception("Job not found")
         );
         assertEmployer(job,employerId);
-        JobCategory category = categorySevice.getCategoryEntityById(req.getCategoryId());
+        JobCategory category = categoryService.getCategoryEntityById(req.getCategoryId());
 
         Set<JobSkill> skills= req.getSkillIds()!=null?
                 jobSkillService.getSkillByIds(req.getSkillIds())
@@ -201,10 +200,17 @@ public class JobServiceImpl implements JobService {
         ).collect(Collectors.toList());
     }
 
-//    @Override
-//    public JobSummaryResponse getJobSummaryById(Long id) {
-//        return JobMapper.toResponse();
-//    }
+    @Override
+    @Transactional(readOnly = true)
+    public JobSummaryResponse getJobSummaryById(Long id) throws ResourceNotFoundException {
+        return JobMapper.toSummaryResponse(getJobEntityById(id));
+    }
+
+    @Transactional(readOnly = true)
+    public Job getJobEntityById(Long id) throws ResourceNotFoundException {
+        return jobRepositary.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Job not found with id: " + id));
+    }
 
     //all methods
     private JobResponse convertToResponse(Job savedJob) {

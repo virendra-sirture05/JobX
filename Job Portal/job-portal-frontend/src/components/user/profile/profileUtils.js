@@ -36,7 +36,7 @@ export function completionBarColor(pct) {
 
 export const ROLE_LABELS = {
   ROLE_JOB_SEEKER: "Job Seeker",
-  ROLE_EMPLOYER:   "Employer",
+  ROLE_REFERRER:   "Employer",
   ROLE_ADMIN:      "Admin",
 }
 

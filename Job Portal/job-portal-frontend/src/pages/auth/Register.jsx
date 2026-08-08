@@ -299,10 +299,10 @@ export default function Register() {
 
             <button
               type="button"
-              onClick={() => setValue("role", "ROLE_EMPLOYER")}
+              onClick={() => setValue("role", "ROLE_REFERRER")}
               className={cn(
                 "relative flex flex-col items-center gap-3 p-4 rounded-lg border-2 transition-all duration-200",
-                selectedRole === "ROLE_EMPLOYER"
+                selectedRole === "ROLE_REFERRER"
                   ? "border-brand bg-brand/5 shadow-md"
                   : "border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm"
               )}
@@ -311,13 +311,13 @@ export default function Register() {
               <div
                 className={cn(
                   "w-12 h-12 rounded-full flex items-center justify-center transition-colors",
-                  selectedRole === "ROLE_EMPLOYER" ? "bg-brand/10" : "bg-slate-100"
+                  selectedRole === "ROLE_REFERRER" ? "bg-brand/10" : "bg-slate-100"
                 )}
               >
                 <Briefcase
                   className={cn(
                     "h-6 w-6",
-                    selectedRole === "ROLE_EMPLOYER"
+                    selectedRole === "ROLE_REFERRER"
                       ? "text-brand"
                       : "text-slate-600"
                   )}
@@ -327,7 +327,7 @@ export default function Register() {
                 <p
                   className={cn(
                     "text-sm font-semibold",
-                    selectedRole === "ROLE_EMPLOYER"
+                    selectedRole === "ROLE_REFERRER"
                       ? "text-brand"
                       : "text-slate-700"
                   )}
@@ -336,7 +336,7 @@ export default function Register() {
                 </p>
                 <p className="text-xs text-slate-500 mt-0.5">Hire top talent</p>
               </div>
-              {selectedRole === "ROLE_EMPLOYER" && (
+              {selectedRole === "ROLE_REFERRER" && (
                 <div className="absolute top-3 right-3 w-5 h-5 rounded-full bg-brand flex items-center justify-center">
                   <svg
                     className="w-3 h-3 text-white"

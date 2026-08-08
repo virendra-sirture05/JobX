@@ -44,7 +44,7 @@ function getRoleBasedRedirect(role) {
     case "ROLE_JOB_SEEKER":
     case "ROLE_USER":
       return "/jobs"
-    case "ROLE_EMPLOYER":
+    case "ROLE_REFERRER":
       return "/employer/dashboard"
     case "ROLE_ADMIN":
       return "/admin/dashboard"

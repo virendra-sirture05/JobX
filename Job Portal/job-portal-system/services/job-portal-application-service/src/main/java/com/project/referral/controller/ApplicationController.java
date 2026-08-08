@@ -49,11 +49,12 @@ public class ApplicationController {
             @RequestHeader("X-User-Id") Long candidateId) {
 
         try{
+            System.out.println("candidate id is "+candidateId);
             return ResponseEntity.ok(applicationService.getMyApplications(candidateId));
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("my exceptoin "+e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }

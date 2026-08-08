@@ -26,7 +26,7 @@ import { cn } from "@/lib/utils"
 
 const roleConfig = {
   ROLE_JOB_SEEKER: { label: "Job Seeker", className: "bg-blue-50 text-blue-700 border-blue-200" },
-  ROLE_EMPLOYER: { label: "Employer", className: "bg-purple-50 text-purple-700 border-purple-200" },
+  ROLE_REFERRER: { label: "Employer", className: "bg-purple-50 text-purple-700 border-purple-200" },
   ROLE_ADMIN: { label: "Admin", className: "bg-red-50 text-red-700 border-red-200" },
 }
 
@@ -227,7 +227,7 @@ export default function UserTable({
                           <Shield className="h-3.5 w-3.5 mr-2" /> Change Role
                         </DropdownMenuSubTrigger>
                         <DropdownMenuSubContent>
-                          {["ROLE_JOB_SEEKER", "ROLE_EMPLOYER", "ROLE_ADMIN"].map((r) => (
+                          {["ROLE_JOB_SEEKER", "ROLE_REFERRER", "ROLE_ADMIN"].map((r) => (
                             <DropdownMenuItem
                               key={r}
                               disabled={user.role === r}

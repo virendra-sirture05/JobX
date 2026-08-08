@@ -114,7 +114,7 @@ function App() {
 
           {/* Employer Routes - Protected and Role-Based */}
           <Route element={<ProtectedRoute />}>
-            <Route element={<RoleBasedRoute allowedRoles={["ROLE_EMPLOYER"]} />}>
+            <Route element={<RoleBasedRoute allowedRoles={["ROLE_REFERRER"]} />}>
               <Route path="/employer" element={<DashboardLayout />}>
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="jobs" element={<EmployerJobs />} />

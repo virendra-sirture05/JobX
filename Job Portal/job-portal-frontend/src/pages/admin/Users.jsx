@@ -78,7 +78,7 @@ export default function AdminUsers() {
   const stats = useMemo(() => {
     const total = users.length
     const seekers = users.filter((u) => u.role === "ROLE_JOB_SEEKER").length
-    const employers = users.filter((u) => u.role === "ROLE_EMPLOYER").length
+    const employers = users.filter((u) => u.role === "ROLE_REFERRER").length
     const suspended = users.filter((u) => u.status === "SUSPENDED").length
     return { total, seekers, employers, suspended }
   }, [users])

@@ -30,7 +30,7 @@ export default function UserFilters({ onSearch, onRoleFilter, onStatusFilter }) 
         <SelectContent>
           <SelectItem value="all">All Roles</SelectItem>
           <SelectItem value="ROLE_JOB_SEEKER">Job Seekers</SelectItem>
-          <SelectItem value="ROLE_EMPLOYER">Employers</SelectItem>
+          <SelectItem value="ROLE_REFERRER">Employers</SelectItem>
           <SelectItem value="ROLE_ADMIN">Admins</SelectItem>
         </SelectContent>
       </Select>

@@ -96,10 +96,9 @@ public class JobController {
 
 
     @GetMapping("/{id}/summary")
-    public ResponseEntity<String> getJobSummaryById(
+    public ResponseEntity<JobSummaryResponse> getJobSummaryById(
             @PathVariable Long id) throws ResourceNotFoundException {
-//        return ResponseEntity.ok(jobService.getJobSummaryById(id));
-         return ResponseEntity.ok("doneeeee");
+        return ResponseEntity.ok(jobService.getJobSummaryById(id));
 
     }
 

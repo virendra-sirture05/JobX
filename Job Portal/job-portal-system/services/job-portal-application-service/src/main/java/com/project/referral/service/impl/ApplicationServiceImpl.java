@@ -69,10 +69,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
 //        todo: fetch resume
         ResumeResponse resume = resumeClient.getResumeById(req.getResumeId(), candidateId);
-
         // Validate resume belongs to the candidate (security check only)
-
-
         Application application = ApplicationMapper.toEntity(req, candidateId,
                companyId, employeeId);
 
@@ -297,15 +294,16 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     private ApplicationResponse buildFullResponse(Application application) {
+        System.out.println(application);
         List<ApplicationStatusHistory> history =
                 historyRepository.findByApplicationIdOrderByChangedAtAsc(application.getId());
 
         List<ApplicationNote> notes =
                 noteRepository.findByApplicationIdOrderByCreatedAtDesc(application.getId());
-//        JobSummaryResponse job = jobClient.getJobSummaryById(application.getJobId());
+        JobSummaryResponse job = jobClient.getJobSummaryById(application.getJobId());
         CompanySummaryResponse company = companyClient.getCompanySummaryById(application.getCompanyId());
         UserResponse candidate = userClient.getUserById(application.getCandidateId());
-//        ApplicationScreening screening = screeningRepository.findByApplicationId(application.getId()).orElse(null);
+        ApplicationScreening screening = screeningRepository.findByApplicationId(application.getId()).orElse(null);
 
         return ApplicationMapper.toResponse(application, history, notes, company, candidate);
     }

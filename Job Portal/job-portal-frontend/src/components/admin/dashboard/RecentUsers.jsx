@@ -17,7 +17,7 @@ const recentUsers = [
     id: 2,
     name: "TechCorp HR",
     email: "hr@techcorp.com",
-    role: "ROLE_EMPLOYER",
+    role: "ROLE_REFERRER",
     joined: "5 min ago",
     avatarColor: "from-purple-400 to-purple-600",
   },
@@ -33,7 +33,7 @@ const recentUsers = [
     id: 4,
     name: "InnovateTech",
     email: "info@innovate.com",
-    role: "ROLE_EMPLOYER",
+    role: "ROLE_REFERRER",
     joined: "25 min ago",
     avatarColor: "from-orange-400 to-orange-600",
   },
@@ -49,7 +49,7 @@ const recentUsers = [
 
 const roleConfig = {
   ROLE_JOB_SEEKER: { label: "Seeker", className: "bg-blue-50 text-blue-700 border-blue-200" },
-  ROLE_EMPLOYER: { label: "Employer", className: "bg-purple-50 text-purple-700 border-purple-200" },
+  ROLE_REFERRER: { label: "Employer", className: "bg-purple-50 text-purple-700 border-purple-200" },
   ROLE_ADMIN: { label: "Admin", className: "bg-red-50 text-red-700 border-red-200" },
 }
 
