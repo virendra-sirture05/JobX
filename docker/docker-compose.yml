@@ -112,54 +112,6 @@ services:
     networks:
       - job-portal-net
 
-  paymentdb:
-    image: mysql:8.4
-    container_name: job-portal-paymentdb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3311:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job_portal_payment
-      MYSQL_USER: jobportal
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - paymentdb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
-
-  subscriptiondb:
-    image: mysql:8.4
-    container_name: job-portal-subscriptiondb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3312:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job_portal_subscription
-      MYSQL_USER: jobportal
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - subscriptiondb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
-
   preferencedb:
     image: mysql:8.4
     container_name: job-portal-preferencedb
@@ -226,6 +178,7 @@ services:
       interval: 15s
       timeout: 10s
       retries: 8
+      start_period: 30s
     networks:
       - job-portal-net
 
@@ -247,6 +200,7 @@ services:
       interval: 15s
       timeout: 10s
       retries: 8
+      start_period: 30s
     networks:
       - job-portal-net
 
@@ -264,6 +218,12 @@ services:
     environment:
       SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:5000/actuator/health || exit 1" ]
+      interval: 15s
+      timeout: 10s
+      retries: 8
+      start_period: 30s
     networks:
       - job-portal-net
 
@@ -282,9 +242,198 @@ services:
         condition: service_healthy
     environment:
       SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-      DB_URL: jdbc:mysql://userdb:3306/job-portal-user?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_URL: jdbc:mysql://userdb:3306/job-portal-user-service?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USERNAME: root
+      DB_PASSWORD: ${DB_PASSWORD}
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:8083/actuator/health || exit 1" ]
+      start_period: 30s
+    networks:
+      - job-portal-net
+
+  company-service:
+      image: ritesh8554/job-portal-company-service:latest
+      container_name: job-portal-company-service
+      mem_limit: 512m
+      mem_reservation: 256m
+      cpus: 0.5
+      ports:
+        - "8086:8086"
+      depends_on:
+        companydb:
+          condition: service_healthy
+        config-server:
+          condition: service_healthy
+      environment:
+        SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+        DB_URL: jdbc:mysql://companydb:3306/job-portal-company?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+        DB_USERNAME: jobportal
+        DB_PASSWORD: ${DB_PASSWORD}
+        EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+        EUREKA_URL: http://discovery:8761/eureka
+        SERVER_PORT: 8086
+      healthcheck:
+        test: [ "CMD-SHELL", "wget -qO- http://localhost:8086/actuator/health || exit 1" ]
+        start_period: 30s
+      networks:
+        - job-portal-net
+
+
+  job-service:
+    image: ritesh8554/job-portal-job-service:latest
+    container_name: job-portal-job-service
+    mem_limit: 512m
+    mem_reservation: 256m
+    cpus: 0.5
+    ports:
+      - "8085:8085"
+    depends_on:
+      jobdb:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+    environment:
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      DB_URL: jdbc:mysql://jobdb:3306/job-portal-job?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
       DB_USERNAME: jobportal
       DB_PASSWORD: ${DB_PASSWORD}
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+      EUREKA_URL: http://discovery:8761/eureka
+      SERVER_PORT: 8085
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:8085/actuator/health || exit 1" ]
+      start_period: 30s
     networks:
       - job-portal-net
+
+  application-service:
+    image: ritesh8554/job-portal-application-service:latest
+    container_name: job-portal-application-service
+    mem_limit: 512m
+    mem_reservation: 256m
+    cpus: 0.5
+    ports:
+      - "8084:8084"
+    depends_on:
+      applicationdb:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+    environment:
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      DB_URL: jdbc:mysql://applicationdb:3306/job-portal-application?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USERNAME: jobportal
+      DB_PASSWORD: ${DB_PASSWORD}
+      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+      EUREKA_URL: http://discovery:8761/eureka
+      SERVER_PORT: 8084
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:8084/actuator/health || exit 1" ]
+      start_period: 30s
+    networks:
+      - job-portal-net
+
+#  notification-service:
+#    image: ritesh8554/job-portal-notification-service:latest
+#    container_name: job-portal-notification-service
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "8090:8090"
+#    depends_on:
+#      kafka:
+#        condition: service_healthy
+#      config-server:
+#        condition: service_healthy
+#    environment:
+#      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+#      KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+#      DB_URL: jdbc:mysql://notificationdb:3306/job-portal-notification?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+#      DB_USERNAME: jobportal
+#      DB_PASSWORD: ${DB_PASSWORD}
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+#      EUREKA_URL: http://discovery:8761/eureka
+#      SERVER_PORT: 8090
+#      MAIL_HOST: smtp.gmail.com
+#      MAIL_PORT: 587
+#      MAIL_USERNAME: ${MAIL_USERNAME}
+#      MAIL_PASSWORD: ${MAIL_PASSWORD}
+#    networks:
+#      - job-portal-net
+  preference-service:
+    image: ritesh8554/job-portal-preference-service:latest
+    container_name: job-portal-preference-service
+    mem_limit: 512m
+    mem_reservation: 256m
+    cpus: 0.5
+    ports:
+      - "8087:8087"
+    depends_on:
+      preferencedb:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+    environment:
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      DB_URL: jdbc:mysql://preferencedb:3306/job-portal-preference?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USERNAME: jobportal
+      DB_PASSWORD: ${DB_PASSWORD}
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+      EUREKA_URL: http://discovery:8761/eureka
+      SERVER_PORT: 8087
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:8087/actuator/health || exit 1" ]
+      start_period: 30s
+    networks:
+      - job-portal-net
+
+  resume-service:
+    image: ritesh8554/job-portal-resume-service:latest
+    container_name: job-portal-resume-service
+    mem_limit: 512m
+    mem_reservation: 256m
+    cpus: 0.5
+    ports:
+      - "8088:8088"
+    depends_on:
+      resumedb:
+        condition: service_healthy
+      config-server:
+        condition: service_healthy
+    environment:
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      DB_URL: jdbc:mysql://resumedb:3306/job-portal-resume?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      DB_USERNAME: jobportal
+      DB_PASSWORD: ${DB_PASSWORD}
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+      EUREKA_URL: http://discovery:8761/eureka
+      SERVER_PORT: 8088
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:8088/actuator/health || exit 1" ]
+      start_period: 30s
+    networks:
+      - job-portal-net
+
+#  ai-service:
+#    image: ritesh8554/job-portal-ai-service:latest
+#    container_name: job-portal-ai-service
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "8089:8089"
+#    depends_on:
+#      config-server:
+#        condition: service_healthy
+#    environment:
+#      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+#      EUREKA_URL: http://discovery:8761/eureka
+#      SERVER_PORT: 8089
+#    networks:
+#      - job-portal-net
+
+
