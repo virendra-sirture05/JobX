@@ -11,7 +11,7 @@ public class HomeController {
     @GetMapping("/")
     public ApiResponse home() {
         return new ApiResponse(
-                "Service for managing job posting, search and filtering---"+ UserRole.ROLE_JOBSEEKER,
+                "Service for managing job posting, search and filtering---"+ UserRole.ROLE_JOB_SEEKER,
                 true
         );
     }

@@ -2,6 +2,8 @@ package com.project.referral.service;
 
 
 import com.project.referral.common.dto.response.JobResponse;
+import com.project.referral.common.dto.response.JobSummaryResponse;
+import com.project.referral.common.exception.ResourceNotFoundException;
 import com.project.referral.dto.JobRequest;
 import com.project.referral.dto.JobSearchRequest;
 
@@ -28,5 +30,6 @@ public interface JobService {
     List<JobResponse> getAllJobsAdmin();
 
 
+    JobSummaryResponse getJobSummaryById(Long id) throws ResourceNotFoundException;
 }
 

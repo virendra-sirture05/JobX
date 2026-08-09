@@ -1,10 +1,13 @@
 package com.project.referral.service.impl;
 
 import com.project.referral.Mapper.JobMapper;
+import com.project.referral.client.CompanyClient;
 import com.project.referral.common.domain.JobStatus;
 import com.project.referral.common.dto.response.CompanyResponse;
 import com.project.referral.common.dto.response.CompanySummaryResponse;
 import com.project.referral.common.dto.response.JobResponse;
+import com.project.referral.common.dto.response.JobSummaryResponse;
+import com.project.referral.common.exception.ResourceNotFoundException;
 import com.project.referral.dto.JobRequest;
 import com.project.referral.dto.JobSearchRequest;
 import com.project.referral.modal.Job;
@@ -19,10 +22,9 @@ import com.project.referral.service.JobCategorySevice;
 import com.project.referral.service.JobService;
 import com.project.referral.service.JobSkillService;
 import com.project.referral.service.JobTagService;
-import jakarta.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -36,15 +38,17 @@ import java.util.stream.Collectors;
 public class JobServiceImpl implements JobService {
 
     private final JobRepositary jobRepositary;
-    private final JobCategorySevice categorySevice;
+    private final JobCategorySevice categoryService;
     private final JobSkillService jobSkillService;
     private final JobTagService jobTagService;
+    private final CompanyClient companyClient;
 
     @Override
     @Transactional
     public JobResponse createJob(Long employerId, JobRequest req) throws Exception {
 
-        JobCategory category = categorySevice.getCategoryEntityById(req.getCategoryId());
+        JobCategory category = categoryService.getCategoryEntityById(req.getCategoryId());
+        System.out.println(category);
 
         Set<JobSkill> skills= req.getSkillIds()!=null?
                 jobSkillService.getSkillByIds(req.getSkillIds())
@@ -55,7 +59,9 @@ public class JobServiceImpl implements JobService {
                 :Collections.emptySet();
     // todo :fetch company by employer id
 
-        Long companyId = 1L;
+        CompanyResponse company = companyClient.getMyCompany(employerId);
+
+        Long companyId = company.getId();
         Job job = Job.builder()
                 .title(req.getTitle())
                 .description(req.getDescription())
@@ -117,7 +123,7 @@ public class JobServiceImpl implements JobService {
                 ()-> new Exception("Job not found")
         );
         assertEmployer(job,employerId);
-        JobCategory category = categorySevice.getCategoryEntityById(req.getCategoryId());
+        JobCategory category = categoryService.getCategoryEntityById(req.getCategoryId());
 
         Set<JobSkill> skills= req.getSkillIds()!=null?
                 jobSkillService.getSkillByIds(req.getSkillIds())
@@ -147,6 +153,7 @@ public class JobServiceImpl implements JobService {
         job.setExpiresAt(req.getExpiresAt());
         return convertToResponse(jobRepositary.save(job));
     }
+
 
     @Override
     public JobResponse publishJob(Long jobId, Long employerId) throws Exception {
@@ -194,14 +201,23 @@ public class JobServiceImpl implements JobService {
         ).collect(Collectors.toList());
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public JobSummaryResponse getJobSummaryById(Long id) throws ResourceNotFoundException {
+        return JobMapper.toSummaryResponse(getJobEntityById(id));
+    }
+
+    @Transactional(readOnly = true)
+    public Job getJobEntityById(Long id) throws ResourceNotFoundException {
+        return jobRepositary.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Job not found with id: " + id));
+    }
+
     //all methods
     private JobResponse convertToResponse(Job savedJob) {
         // todo : fetch company response
-        CompanySummaryResponse companySummaryResponse = CompanySummaryResponse.builder()
-                .id(savedJob.getCompanyId())
-                .build();
-
-        return JobMapper.toResponse(savedJob,companySummaryResponse);
+        CompanyResponse companyResponse = companyClient.getCompanyById(savedJob.getCompanyId());
+        return JobMapper.toResponse(savedJob,companyResponse);
     }
 
     private JobLocation buildLocation(JobRequest req) {

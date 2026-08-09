@@ -3,6 +3,8 @@ package com.project.referral.controller;
 
 import com.project.referral.common.dto.response.ApiResponse;
 import com.project.referral.common.dto.response.JobResponse;
+import com.project.referral.common.dto.response.JobSummaryResponse;
+import com.project.referral.common.exception.ResourceNotFoundException;
 import com.project.referral.dto.JobRequest;
 import com.project.referral.dto.JobSearchRequest;
 import com.project.referral.service.JobService;
@@ -90,6 +92,14 @@ public class JobController {
             throws Exception {
         jobService.deleteJob(id, employerId);
         return ResponseEntity.ok(new ApiResponse("Job deleted successfully", true));
+    }
+
+
+    @GetMapping("/{id}/summary")
+    public ResponseEntity<JobSummaryResponse> getJobSummaryById(
+            @PathVariable Long id) throws ResourceNotFoundException {
+        return ResponseEntity.ok(jobService.getJobSummaryById(id));
+
     }
 
 

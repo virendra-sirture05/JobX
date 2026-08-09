@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -44,9 +45,18 @@ public class ApplicationController {
     }
 
     @GetMapping("/my")
-    public ResponseEntity<List<ApplicationResponse>> getMyApplications(
+    public ResponseEntity<?> getMyApplications(
             @RequestHeader("X-User-Id") Long candidateId) {
-        return ResponseEntity.ok(applicationService.getMyApplications(candidateId));
+
+        try{
+            System.out.println("candidate id is "+candidateId);
+            return ResponseEntity.ok(applicationService.getMyApplications(candidateId));
+        }
+        catch (Exception e)
+        {
+            System.out.println("my exceptoin "+e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
+        }
     }
 
     @GetMapping("/job/{jobId}")

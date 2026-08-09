@@ -9,7 +9,5 @@ public class JobPortalApiGatewayApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(JobPortalApiGatewayApplication.class, args);
 	}
-
+	
 }
-
-

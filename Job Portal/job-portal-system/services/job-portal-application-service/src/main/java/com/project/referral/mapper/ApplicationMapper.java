@@ -122,16 +122,18 @@ public class ApplicationMapper {
     // ── Application ───────────────────────────────────────────────────────────
 
     public static ApplicationResponse toResponse(Application application,
-                                                   JobSummaryResponse job,
+                                                 List<ApplicationStatusHistory> history,
+
                                                  List<ApplicationNote> notes,
-                                                   CompanySummaryResponse company,
-                                                   UserResponse candidate) {
+//                                                 JobSummaryResponse job,
+                                                 CompanySummaryResponse company,
+                                                 UserResponse candidate) {
 
         return ApplicationResponse.builder()
                 .id(application.getId())
                 .candidate(candidate)
                 .employerId(application.getEmployerId())
-                .job(job)
+//                .job(job)
                 .company(company)
                 .status(application.getStatus())
 
@@ -143,14 +145,16 @@ public class ApplicationMapper {
                 .availableFrom(application.getAvailableFrom())
                 .isRead(application.getIsRead())
                 .isStarred(application.getIsStarred())
+                .statusHistory(toHistoryResponseList(history))
+
                 .notes(toNoteResponseList(notes))
                 .withdrawnAt(application.getWithdrawnAt())
                 .withdrawnReason(application.getWithdrawnReason())
                 .appliedAt(application.getAppliedAt())
                 .updatedAt(application.getUpdatedAt())
+//                .screening(toScreeningResponse(screening))
                 .build();
     }
-
     public static ApplicationSummaryResponse toSummaryResponse(Application application) {
         return ApplicationSummaryResponse.builder()
                 .id(application.getId())
