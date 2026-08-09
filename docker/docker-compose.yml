@@ -416,16 +416,16 @@ services:
       start_period: 30s
     networks:
       - job-portal-net
-  ai-service:
-    image: ritesh8554/job-portal-ai-service:latest
-    container_name: job-portal-ai-service
-    mem_limit: 1g
-    mem_reservation: 512m
-    cpus: 1.0
-    ports:
-      - "8089:8089"
-    networks:
-      - job-portal-net
+#  ai-service:
+#    image: ritesh8554/job-portal-ai-service:latest
+#    container_name: job-portal-ai-service
+#    mem_limit: 1g
+#    mem_reservation: 512m
+#    cpus: 1.0
+#    ports:
+#      - "8089:8089"
+#    networks:
+#      - job-portal-net
 #  ai-service:
 #    image: ritesh8554/job-portal-ai-service:latest
 #    container_name: job-portal-ai-service

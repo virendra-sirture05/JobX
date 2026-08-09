@@ -10,7 +10,6 @@ spring:
         git:
           uri: "https://github.com/virendra-sirture05/job-portal-config"
           clone-on-start: true
-   #       default-label : master
           default-label : docker-config
 
 
