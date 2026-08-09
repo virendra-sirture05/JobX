@@ -25,6 +25,7 @@ import com.project.referral.service.JobTagService;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import feign.FeignException;
 
 import java.time.LocalDateTime;
 import java.util.Collections;
@@ -215,8 +216,13 @@ public class JobServiceImpl implements JobService {
 
     //all methods
     private JobResponse convertToResponse(Job savedJob) {
-        // todo : fetch company response
-        CompanyResponse companyResponse = companyClient.getCompanyById(savedJob.getCompanyId());
+
+        CompanyResponse companyResponse = null;
+        try {
+            companyResponse = companyClient.getCompanyById(savedJob.getCompanyId());
+        } catch (FeignException.NotFound ignored) {
+            // Keep legacy jobs visible when their company was removed.
+        }
         return JobMapper.toResponse(savedJob,companyResponse);
     }
 

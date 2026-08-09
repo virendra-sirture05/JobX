@@ -21,6 +21,10 @@ import java.util.List;
 public class ResumeServiceImpl implements ResumeService {
 
     private final ResumeRepository resumeRepository;
+    private final WorkExperienceRepository workExperienceRepository;
+    private final EducationRepository educationRepository;
+    private final ResumeSkillRepository resumeSkillRepository;
+    private final ProjectRepository projectRepository;
 
     @Override
     @Transactional
@@ -163,6 +167,21 @@ public class ResumeServiceImpl implements ResumeService {
     private ResumeResponse buildFullResponse(Resume resume) {
 
 
-        return ResumeMapper.toResponse(resume);
+        ResumeResponse response = ResumeMapper.toResponse(resume);
+        response.setWorkExperiences(workExperienceRepository
+                .findByResume_IdOrderByDisplayOrderAsc(resume.getId())
+                .stream()
+                .map(ResumeMapper::toWorkExperienceResponse)
+                .toList());
+        response.setEducations(educationRepository
+                .findByResume_IdOrderByDisplayOrderAsc(resume.getId())
+                .stream()
+                .map(ResumeMapper::toEducationResponse)
+                .toList());
+        response.setSkills(resumeSkillRepository.findByResume_IdOrderByDisplayOrderAsc(resume.getId())
+                .stream().map(ResumeMapper::toSkillResponse).toList());
+        response.setProjects(projectRepository.findByResume_IdOrderByDisplayOrderAsc(resume.getId())
+                .stream().map(ResumeMapper::toProjectResponse).toList());
+        return response;
     }
 }

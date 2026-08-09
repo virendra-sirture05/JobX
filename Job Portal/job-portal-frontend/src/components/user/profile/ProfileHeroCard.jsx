@@ -109,7 +109,7 @@ export default function ProfileHeroCard({
           {pct === 100 && (
             <p className="flex items-center gap-1.5 text-xs text-green-700 mt-2">
               <CheckCircle2 className="h-3.5 w-3.5" />
-              Your profile is complete — great visibility to employers!
+              Your profile is complete — great visibility to job referrers!
             </p>
           )}
         </div>

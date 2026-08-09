@@ -1,10 +1,14 @@
 ﻿import { Button } from "../ui/button"
 
+import { toast } from "sonner"
+
 export default function GoogleButton({ children = "Continue with Google", onClick }) {
   const handleClick = () => {
-    // Placeholder for OAuth logic
-    console.log("Google OAuth clicked")
-    if (onClick) onClick()
+    if (onClick) {
+      onClick()
+      return
+    }
+    toast.info("Google sign-in is not configured yet.")
   }
 
   return (

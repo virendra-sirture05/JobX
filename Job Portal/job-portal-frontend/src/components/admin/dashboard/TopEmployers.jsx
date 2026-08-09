@@ -55,7 +55,7 @@ export default function TopEmployers() {
     <Card className="border-0 shadow-sm h-full">
       <CardHeader className="pb-3 border-b border-slate-100">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-base font-semibold text-slate-900">Top Employers</CardTitle>
+          <CardTitle className="text-base font-semibold text-slate-900">Top Job Referrers</CardTitle>
           <button className="text-xs font-medium text-red-600 hover:text-red-700 transition-colors">
             View all
           </button>

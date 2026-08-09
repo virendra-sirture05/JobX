@@ -176,9 +176,9 @@ export default function Navbar({ onMenuClick }) {
               </Avatar>
               <div className="hidden md:block text-left">
                 <p className="text-sm font-semibold text-slate-900 leading-tight">
-                  {user?.fullName || "Employer"}
+                  {user?.fullName || "Job Referrer"}
                 </p>
-                <p className="text-[11px] text-slate-500">Employer</p>
+                <p className="text-[11px] text-slate-500">Job Referrer</p>
               </div>
               <ChevronDown className="h-4 w-4 text-slate-400 hidden md:block" />
             </Button>
@@ -186,7 +186,7 @@ export default function Navbar({ onMenuClick }) {
           <DropdownMenuContent align="end" className="w-56">
             <DropdownMenuLabel>
               <div>
-                <p className="font-semibold text-slate-900">{user?.fullName || "Employer"}</p>
+                <p className="font-semibold text-slate-900">{user?.fullName || "Job Referrer"}</p>
                 <p className="text-xs text-slate-500 font-normal mt-0.5">{user?.email}</p>
               </div>
             </DropdownMenuLabel>

@@ -120,7 +120,7 @@ export default function AdminUsers() {
   const summaryCards = [
     { label: "Total Users", value: stats.total, icon: UsersIcon, color: "text-brand bg-blue-50" },
     { label: "Job Seekers", value: stats.seekers, icon: UserCheck, color: "text-emerald-600 bg-emerald-50" },
-    { label: "Employers", value: stats.employers, icon: Briefcase, color: "text-purple-600 bg-purple-50" },
+    { label: "Job Referrers", value: stats.employers, icon: Briefcase, color: "text-purple-600 bg-purple-50" },
     { label: "Suspended", value: stats.suspended, icon: UserX, color: "text-red-600 bg-red-50" },
   ]
 

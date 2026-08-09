@@ -399,6 +399,14 @@ function WorkExperienceSection({ resumeId, data=[], isLoading, dispatch, otherRe
     if (n > 0) toast.success(`Added ${n} experience${n !== 1 ? "s" : ""} from "${src.title}"`)
   }
   const save = () => {
+    if (!form.companyName.trim() || !form.jobTitle.trim()) {
+      toast.error("Company and job title are required")
+      return
+    }
+    if (!form.startDate) {
+      toast.error("Start date is required")
+      return
+    }
     const payload = { ...form, endDate: form.isCurrentJob ? null : form.endDate || null }
     const thunk = editing ? updateWorkExperience({ resumeId, experienceId: editing.id, data: payload }) : addWorkExperience({ resumeId, data: payload })
     dispatch(thunk).then((a) => { if (a.meta.requestStatus === "fulfilled") { toast.success(editing ? "Updated!" : "Added!"); setOpen(false) } })
@@ -407,6 +415,14 @@ function WorkExperienceSection({ resumeId, data=[], isLoading, dispatch, otherRe
     dispatch(deleteWorkExperience({ resumeId, experienceId: delItem.id })).then((a) => { if (a.meta.requestStatus === "fulfilled") { toast.success("Deleted"); setDel(null) } })
   }
   const handleGenerateBullets = async () => {
+    if (!form.jobTitle.trim()) {
+      toast.error("Enter a job title first")
+      return
+    }
+    if (!form.description.trim()) {
+      toast.error("Enter a description first so AI can create bullet points")
+      return
+    }
     try {
       const result = await dispatch(generateExperienceBullets({
         jobTitle: form.jobTitle,
@@ -459,7 +475,7 @@ function WorkExperienceSection({ resumeId, data=[], isLoading, dispatch, otherRe
             <Button
               type="button" variant="ghost" size="sm"
               onClick={handleGenerateBullets}
-              disabled={isGeneratingBullets || !form.jobTitle}
+              disabled={isGeneratingBullets || !form.jobTitle.trim() || !form.description.trim()}
               className="h-7 gap-1.5 text-xs text-brand hover:bg-blue-50 px-2"
             >
               {isGeneratingBullets
@@ -548,6 +564,7 @@ function SkillsSection({ resumeId, data=[], isLoading, dispatch, otherResumes=[]
     if(n>0)toast.success(`Added ${n} skill${n!==1?"s":""} from "${src.title}"`)
   }
   const save=()=>{
+    if (!form.skillName.trim()) { toast.error("Skill name is required"); return }
     const payload={...form,yearsOfExperience:form.yearsOfExperience?Number(form.yearsOfExperience):null}
     const thunk=editing?updateSkill({resumeId,skillId:editing.id,data:payload}):addSkill({resumeId,data:payload})
     dispatch(thunk).then(a=>{if(a.meta.requestStatus==="fulfilled"){toast.success(editing?"Updated!":"Added!");setOpen(false)}})
@@ -609,6 +626,7 @@ function ProjectsSection({ resumeId, data=[], isLoading, dispatch, otherResumes=
     if(n>0)toast.success(`Added ${n} project${n!==1?"s":""} from "${src.title}"`)
   }
   const save=()=>{
+    if (!form.title.trim()) { toast.error("Project title is required"); return }
     const payload={...form,endDate:form.isOngoing?null:form.endDate||null,projectUrl:form.projectUrl||null,sourceCodeUrl:form.sourceCodeUrl||null}
     const thunk=editing?updateProject({resumeId,projectId:editing.id,data:payload}):addProject({resumeId,data:payload})
     dispatch(thunk).then(a=>{if(a.meta.requestStatus==="fulfilled"){toast.success(editing?"Updated!":"Added!");setOpen(false)}})
@@ -805,7 +823,7 @@ function LanguagesSection({ resumeId, data=[], isLoading, dispatch, otherResumes
 
 const VISIBILITY_OPTIONS = [
   { value: "PRIVATE",   label: "Private",   desc: "Only visible when you apply" },
-  { value: "PUBLIC",    label: "Public",    desc: "Discoverable by employers" },
+  { value: "PUBLIC",    label: "Public",    desc: "Discoverable by job referrers" },
   { value: "LINK_ONLY", label: "Link Only", desc: "Share via direct link" },
 ]
 

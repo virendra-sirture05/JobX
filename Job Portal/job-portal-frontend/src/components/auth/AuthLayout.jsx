@@ -32,7 +32,7 @@ export default function AuthLayout({ title, description, children, footerText, f
             Your next career move <br /> starts here.
           </h2>
           <p className="text-white/70 mt-3 text-sm leading-relaxed max-w-sm">
-            AI-powered job matching, smart resume builder, and real-time insights — all in one place.
+            Discover jobs, build stronger applications, and connect with the right people — all in one place.
           </p>
 
           {/* Trust indicators */}
@@ -72,10 +72,10 @@ export default function AuthLayout({ title, description, children, footerText, f
                   </div>
                 </div>
                 <h1 className="text-3xl font-bold text-slate-900">
-                  JobPortal<span className="text-brand">.AI</span>
+              Job Referrer<span className="text-brand"> System</span>
                 </h1>
               </Link>
-              <p className="text-sm text-slate-600 mt-2">AI-Powered Career Platform</p>
+              <p className="text-sm text-slate-600 mt-2">Connect, refer, and grow your career</p>
             </div>
 
             {/* Auth Card */}

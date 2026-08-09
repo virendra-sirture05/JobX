@@ -12,7 +12,7 @@ import { TEMPLATES } from "./ResumeTemplates"
 
 const VISIBILITY_OPTIONS = [
   { value: "PRIVATE",   label: "Private",   desc: "Only visible when you apply" },
-  { value: "PUBLIC",    label: "Public",    desc: "Discoverable by employers" },
+  { value: "PUBLIC",    label: "Public",    desc: "Discoverable by job referrers" },
   { value: "LINK_ONLY", label: "Link Only", desc: "Share via direct link" },
 ]
 

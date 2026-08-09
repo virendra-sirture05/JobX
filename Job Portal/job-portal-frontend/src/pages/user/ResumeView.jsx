@@ -137,7 +137,7 @@ function ProfessionalTemplate({ resume }) {
             <div key={p.id}>
               <div className="flex justify-between items-baseline">
                 <span className="font-semibold text-slate-900">
-                  {p.projectName}
+                  {p.title}
                   {p.projectUrl && <a href={p.projectUrl} target="_blank" rel="noreferrer" className="ml-1 text-brand"><Globe className="inline h-3 w-3" /></a>}
                 </span>
                 <span className="text-[11px] text-slate-500">{fmtRange(p.startDate, p.endDate, p.isOngoing)}</span>
@@ -291,7 +291,7 @@ function ClassicTemplate({ resume }) {
             {resume.projects.map((p) => (
               <div key={p.id}>
                 <div className="flex justify-between items-baseline">
-                  <span className="font-bold">{p.projectName}</span>
+                  <span className="font-bold">{p.title}</span>
                   <span className="text-slate-500 text-xs italic">{fmtRange(p.startDate, p.endDate, p.isOngoing)}</span>
                 </div>
                 {p.description && <p className="text-slate-700 mt-0.5 leading-relaxed">{p.description}</p>}
@@ -506,7 +506,7 @@ function ModernTemplate({ resume }) {
               <div key={p.id}>
                 <div className="flex justify-between items-baseline">
                   <span className="font-bold text-slate-900">
-                    {p.projectName}
+                    {p.title}
                     {p.projectUrl && <a href={p.projectUrl} target="_blank" rel="noreferrer" className="ml-1 text-[#1e40af]"><Globe className="inline h-3 w-3" /></a>}
                   </span>
                   <span className="text-[11px] text-slate-500">{fmtRange(p.startDate, p.endDate, p.isOngoing)}</span>
@@ -616,7 +616,7 @@ function MinimalTemplate({ resume }) {
             <div key={p.id}>
               <div className="flex justify-between items-baseline">
                 <span className="font-semibold text-slate-900">
-                  {p.projectName}
+                  {p.title}
                   {p.projectUrl && <a href={p.projectUrl} target="_blank" rel="noreferrer" className="ml-1 text-slate-400 hover:text-slate-700"><Globe className="inline h-3 w-3" /></a>}
                 </span>
                 <span className="text-[11px] text-slate-400">{fmtRange(p.startDate, p.endDate, p.isOngoing)}</span>
@@ -774,7 +774,7 @@ function CreativeTemplate({ resume }) {
               <div key={p.id} className="bg-white rounded-xl border border-purple-100 p-4">
                 <div className="flex justify-between items-baseline mb-1">
                   <span className="font-bold text-slate-900">
-                    {p.projectName}
+                    {p.title}
                     {p.projectUrl && <a href={p.projectUrl} target="_blank" rel="noreferrer" className="ml-1 text-[#7c3aed]"><Globe className="inline h-3 w-3" /></a>}
                   </span>
                   <span className="text-[10px] text-purple-500">{fmtRange(p.startDate, p.endDate, p.isOngoing)}</span>

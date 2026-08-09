@@ -52,6 +52,31 @@ public class ResumeMapper {
                 .build();
     }
 
+    public static EducationResponse toEducationResponse(Education education) {
+        if (education == null) return null;
+        return EducationResponse.builder()
+                .id(education.getId())
+                .institutionName(education.getInstitutionName())
+                .degree(education.getDegree())
+                .fieldOfStudy(education.getFieldOfStudy())
+                .grade(education.getGrade())
+                .startDate(education.getStartDate())
+                .endDate(education.getEndDate())
+                .isCurrentlyStudying(education.getIsCurrentlyStudying())
+                .description(education.getDescription())
+                .displayOrder(education.getDisplayOrder())
+                .build();
+    }
+
+    public static ProjectResponse toProjectResponse(Project project) {
+        if (project == null) return null;
+        return ProjectResponse.builder().id(project.getId()).title(project.getTitle())
+                .description(project.getDescription()).technologies(project.getTechnologies())
+                .projectUrl(project.getProjectUrl()).sourceCodeUrl(project.getSourceCodeUrl())
+                .startDate(project.getStartDate()).endDate(project.getEndDate())
+                .isOngoing(project.getIsOngoing()).displayOrder(project.getDisplayOrder()).build();
+    }
+
     public static ResumeSkillResponse toSkillResponse(ResumeSkill skill) {
         if (skill == null) return null;
         return ResumeSkillResponse.builder()

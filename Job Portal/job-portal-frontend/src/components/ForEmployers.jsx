@@ -4,9 +4,9 @@ import { CheckCircle2, Briefcase } from "lucide-react"
 
 export default function ForEmployers() {
   const benefits = [
-    "Better candidate matching with AI-powered screening",
-    "Reduced hiring noise and irrelevant applications",
-    "Faster hiring process with qualified candidates"
+    "Reach candidates through trusted professional referrals",
+    "Reduce hiring noise and irrelevant applications",
+    "Build stronger teams with qualified talent"
   ]
 
   return (
@@ -21,7 +21,7 @@ export default function ForEmployers() {
                 <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center">
                   <Briefcase className="w-10 h-10 text-purple-600" />
                 </div>
-                <p className="text-slate-500 font-medium">Employer Dashboard</p>
+                <p className="text-slate-500 font-medium">Hiring Dashboard</p>
               </div>
             </div>
           </div>
@@ -29,15 +29,15 @@ export default function ForEmployers() {
           {/* Right: Content */}
           <div className="flex flex-col gap-6 order-1 md:order-2">
             <div className="inline-flex items-center gap-2 w-fit rounded-full border border-purple-200 bg-purple-50 px-3 py-1 text-sm text-purple-700">
-              For Employers
+              For Job Referrers
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Find the Right Talent, Faster
+              Hire with Confidence Through Referrals
             </h2>
 
             <p className="text-lg text-slate-600">
-              Connect with pre-qualified candidates who match your requirements through our intelligent matching system.
+              Job Referrer System helps employers connect with qualified candidates through relevant roles, professional networks, and meaningful recommendations.
             </p>
 
             {/* Benefits list */}
@@ -54,7 +54,7 @@ export default function ForEmployers() {
             <div className="pt-2">
               <Link to="/register">
                 <Button size="lg" variant="default">
-                  Post a Job
+                  Find Talent
                 </Button>
               </Link>
             </div>

@@ -25,6 +25,12 @@ public class CompanyController {
 
     private final CompanyService companyService;
 
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ApiResponse> handleNotFound(ResourceNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(new ApiResponse(e.getMessage(), false));
+    }
+
     @PostMapping
     public ResponseEntity<CompanyResponse> createCompany(
             @RequestHeader("X-User-Id") Long ownerId,

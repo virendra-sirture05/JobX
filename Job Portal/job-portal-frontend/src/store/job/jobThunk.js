@@ -13,7 +13,6 @@ export const fetchJobs = createAsyncThunk(
         Object.entries(params).filter(([, v]) => v !== null && v !== undefined && v !== "")
       )
       const { data } = await api.get("/api/jobs", { params: clean })
-      console.log("fetch jobs ",data)
       return data
     } catch (err) {
       console.log("fetch job error ", err)
@@ -116,7 +115,6 @@ export const fetchAllJobsAdmin = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await api.get("/api/jobs/admin")
-      console.log("jobs",job)
       return data
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || "Failed to fetch jobs")

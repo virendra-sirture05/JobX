@@ -115,6 +115,26 @@ export const parseResumeText = createAsyncThunk(
   }
 )
 
+// POST /api/ai/resume/analyze-upload
+// Multipart resume upload → ApiResponse<CareerFeedbackResponse>
+export const analyzeResumeUpload = createAsyncThunk(
+  "ai/analyzeResumeUpload",
+  async (file, { rejectWithValue }) => {
+    try {
+      const formData = new FormData()
+      formData.append("file", file)
+      const { data } = await api.post("/api/ai/resume/analyze-upload", formData)
+      return data.data
+    } catch (err) {
+      return rejectWithValue(
+        err.response?.data?.data?.file ||
+        err.response?.data?.message ||
+        "Failed to analyze resume"
+      )
+    }
+  }
+)
+
 // POST /api/ai/resume/improvements
 // ResumeImprovementRequest → ApiResponse<ResumeImprovementResponse>
 export const getResumeImprovements = createAsyncThunk(
@@ -259,6 +279,20 @@ export const enhanceSearch = createAsyncThunk(
       return data.data
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || "Failed to enhance search")
+    }
+  }
+)
+
+// POST /api/ai/search/job-match
+// JobMatchRequest → ApiResponse<JobMatchResponse>
+export const calculateJobMatch = createAsyncThunk(
+  "ai/calculateJobMatch",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const { data } = await api.post("/api/ai/search/job-match", payload)
+      return data.data
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || "Failed to calculate job match")
     }
   }
 )

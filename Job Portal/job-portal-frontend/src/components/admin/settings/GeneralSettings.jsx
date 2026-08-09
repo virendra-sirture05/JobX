@@ -18,7 +18,7 @@ export default function GeneralSettings() {
             Platform Information
           </CardTitle>
           <CardDescription className="text-sm">
-            Basic details about your job portal platform
+            Basic details about the Job Referrer System platform
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-5">
@@ -33,7 +33,7 @@ export default function GeneralSettings() {
             <div className="space-y-1.5">
               <Label className="text-sm font-medium text-slate-700">Support Email</Label>
               <Input
-                defaultValue="support@jobportal.com"
+              defaultValue="support@jobreferrersystem.com"
                 className="h-9 border-slate-200 focus-visible:ring-slate-300"
               />
             </div>
@@ -47,7 +47,7 @@ export default function GeneralSettings() {
             <div className="space-y-1.5">
               <Label className="text-sm font-medium text-slate-700">Website URL</Label>
               <Input
-                defaultValue="https://jobportal.com"
+              defaultValue="https://jobreferrersystem.com"
                 className="h-9 border-slate-200 focus-visible:ring-slate-300"
               />
             </div>
@@ -55,7 +55,7 @@ export default function GeneralSettings() {
           <div className="space-y-1.5">
             <Label className="text-sm font-medium text-slate-700">Platform Description</Label>
             <Textarea
-              defaultValue="An AI-powered job portal connecting top employers with qualified job seekers worldwide."
+              defaultValue="Job Referrer System connects job seekers, employers, and professional referrers to create better career opportunities."
               className="resize-none h-20 text-sm border-slate-200 focus-visible:ring-slate-300"
             />
           </div>

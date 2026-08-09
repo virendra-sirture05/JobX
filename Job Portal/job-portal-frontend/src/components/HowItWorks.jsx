@@ -5,18 +5,18 @@ export default function HowItWorks() {
   const steps = [
     {
       icon: UserCircle,
-      title: "Create your profile",
-      description: "Build an AI-optimized resume in minutes with our smart builder."
+      title: "Build your profile",
+      description: "Showcase your skills, experience, and goals so the right people can discover you."
     },
     {
       icon: Search,
-      title: "Discover relevant jobs",
-      description: "Get matched with opportunities that fit your skills and experience."
+      title: "Connect through referrals",
+      description: "Find relevant roles or introduce qualified talent to opportunities that fit."
     },
     {
       icon: Send,
-      title: "Apply & track applications",
-      description: "Apply with one click and track all your applications in one place."
+      title: "Grow your career network",
+      description: "Manage applications, referrals, and conversations from one organized platform."
     }
   ]
 
@@ -30,7 +30,7 @@ export default function HowItWorks() {
             How It Works
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Get started in three simple steps
+            Create connections that lead to opportunity
           </p>
         </div>
 
