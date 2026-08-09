@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
 const NEXT_STEPS = [
-  "Your application is being reviewed by the employer",
+  "Your application is being reviewed by the job referrer",
   "You'll receive an email confirmation shortly",
   "Track your application status in your dashboard",
 ]

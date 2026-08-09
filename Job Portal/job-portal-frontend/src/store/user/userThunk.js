@@ -39,11 +39,11 @@ export const registerUser = createAsyncThunk(
     toast.success("User created successfully!");
       return response.data;
     } catch (error) {
-      console.log("Registration error:", error.response?.data);
-      toast.error("Failed to create user.");
+      const message = error.response?.data?.message || "Registration failed. Please try again.";
+      console.log("Registration error:", message);
+      toast.error(message);
       return rejectWithValue(
-        error.response?.data?.message ||
-          "Registration failed. Please try again."
+        message
       );
     }
   }

@@ -67,14 +67,14 @@ export default function Register() {
   }, [dispatch]);
 
   const onSubmit = async (data) => {
-    console.log(data);
-    dispatch(registerUser(data));
+    const { confirmPassword, ...payload } = data;
+    dispatch(registerUser(payload));
   };
 
   return (
     <AuthLayout
       title="Create your account"
-      description="Start your AI-powered job search journey"
+      description="Build your profile, discover opportunities, and grow through referrals"
       footerText="Already have an account?"
       footerLink="/login"
       footerLinkText="Sign in"
@@ -332,9 +332,9 @@ export default function Register() {
                       : "text-slate-700"
                   )}
                 >
-                  Employer
+                  Job Referrer
                 </p>
-                <p className="text-xs text-slate-500 mt-0.5">Hire top talent</p>
+                <p className="text-xs text-slate-500 mt-0.5">Refer and hire top talent</p>
               </div>
               {selectedRole === "ROLE_REFERRER" && (
                 <div className="absolute top-3 right-3 w-5 h-5 rounded-full bg-brand flex items-center justify-center">

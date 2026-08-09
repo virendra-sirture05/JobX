@@ -26,7 +26,7 @@ import { cn } from "@/lib/utils"
 
 const roleConfig = {
   ROLE_JOB_SEEKER: { label: "Job Seeker", className: "bg-blue-50 text-blue-700 border-blue-200" },
-  ROLE_REFERRER: { label: "Employer", className: "bg-purple-50 text-purple-700 border-purple-200" },
+  ROLE_REFERRER: { label: "Job Referrer", className: "bg-purple-50 text-purple-700 border-purple-200" },
   ROLE_ADMIN: { label: "Admin", className: "bg-red-50 text-red-700 border-red-200" },
 }
 

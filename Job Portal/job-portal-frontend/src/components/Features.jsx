@@ -5,28 +5,28 @@ export default function Features() {
   const features = [
     {
       icon: FileText,
-      title: "AI Resume Builder",
-      description: "Create ATS-friendly resumes optimized for applicant tracking systems with AI assistance."
+      title: "Professional Profiles",
+      description: "Present your experience, skills, and achievements in a profile built to earn trust."
     },
     {
       icon: Target,
-      title: "Smart Job Matching",
-      description: "Get personalized job recommendations based on your skills, experience, and preferences."
+      title: "Relevant Opportunities",
+      description: "Discover roles aligned with your strengths, interests, and professional goals."
     },
     {
       icon: Zap,
-      title: "One-Click Apply",
-      description: "Apply to multiple jobs instantly with pre-filled information and saved preferences."
+      title: "Easy Referrals",
+      description: "Recommend qualified candidates and help strong talent reach the right employers."
     },
     {
       icon: BarChart3,
       title: "Application Tracking",
-      description: "Monitor all your applications in one dashboard with real-time status updates."
+      description: "Keep applications, referrals, and progress organized in one clear dashboard."
     },
     {
       icon: Users,
-      title: "Recruiter Insights",
-      description: "Understand what recruiters are looking for with AI-powered industry insights."
+      title: "Trusted Hiring Connections",
+      description: "Help employers reduce hiring noise and connect with candidates through credible referrals."
     }
   ]
 
@@ -37,10 +37,10 @@ export default function Features() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
-            Key Features
+            Why Job Referrer System
           </h2>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Everything you need to streamline your job search
+            Everything you need to make hiring and referrals more effective
           </p>
         </div>
 

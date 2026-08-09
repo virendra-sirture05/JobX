@@ -68,8 +68,8 @@ const notifications = [
   {
     id: 5,
     icon: Building2,
-    title: "New employer registered",
-    desc: "GlobalCorp verified as premium employer",
+    title: "New job referrer registered",
+    desc: "GlobalCorp verified as a premium job referrer",
     time: "3 hr ago",
     iconColor: "text-purple-600",
     iconBg: "bg-purple-50",

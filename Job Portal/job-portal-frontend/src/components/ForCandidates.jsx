@@ -4,9 +4,9 @@ import { CheckCircle2 } from "lucide-react"
 
 export default function ForCandidates() {
   const benefits = [
-    "ATS-friendly resumes that pass automated screening",
-    "Faster shortlisting with AI-optimized applications",
-    "Career insights and personalized recommendations"
+    "A profile that clearly showcases your strengths",
+    "Referrals that help your application stand out",
+    "Relevant opportunities and organized application tracking"
   ]
 
   return (
@@ -21,11 +21,11 @@ export default function ForCandidates() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Land Your Dream Job Faster
+              Get Referred to the Right Opportunities
             </h2>
 
             <p className="text-lg text-slate-600">
-              Our AI-powered platform helps you create standout applications and discover opportunities that match your skills.
+              Job Referrer System helps you present your strengths, build professional connections, and reach employers who value trusted recommendations.
             </p>
 
             {/* Benefits list */}
@@ -42,7 +42,7 @@ export default function ForCandidates() {
             <div className="pt-2">
               <Link to="/register">
                 <Button size="lg">
-                  Start Building Resume
+                  Build Your Profile
                 </Button>
               </Link>
             </div>
@@ -55,7 +55,7 @@ export default function ForCandidates() {
                 <div className="w-20 h-20 mx-auto mb-3 rounded-full bg-white border-2 border-slate-200 flex items-center justify-center">
                   <CheckCircle2 className="w-10 h-10 text-green-600" />
                 </div>
-                <p className="text-slate-500 font-medium">Resume Preview</p>
+                <p className="text-slate-500 font-medium">Candidate Profile</p>
               </div>
             </div>
           </div>

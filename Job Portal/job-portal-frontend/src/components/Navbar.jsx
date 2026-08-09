@@ -9,7 +9,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center">
           <Link to="/" className="text-xl font-bold text-slate-900">
-            JobPortal<span className="text-brand">.AI</span>
+            Job Referrer<span className="text-brand"> System</span>
           </Link>
         </div>
 
@@ -25,7 +25,7 @@ export default function Navbar() {
             href="#employers"
             className="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors"
           >
-            For Employers
+            For Job Referrers
           </a>
           <a
             href="#features"

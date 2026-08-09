@@ -243,7 +243,7 @@ export default function Plans() {
 
   const handleSelect = (plan, cycle) => {
     if (plan.plan === "ENTERPRISE") {
-      window.location.href = "mailto:sales@aijobportal.com"
+      window.location.href = "mailto:sales@jobreferrersystem.com"
     } else {
       setSelected({ plan, cycle })
     }

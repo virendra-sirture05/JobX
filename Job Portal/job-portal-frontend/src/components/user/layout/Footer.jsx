@@ -13,10 +13,10 @@ export default function Footer() {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand">
                 <Briefcase className="h-5 w-5 text-white" />
               </div>
-              <span className="text-xl font-bold text-slate-900">JobPortal</span>
+              <span className="text-xl font-bold text-slate-900">Job Referrer System</span>
             </Link>
             <p className="text-sm text-slate-600">
-              Find your dream job with AI-powered recommendations and smart matching.
+              Find opportunities faster through trusted referrals, smart tools, and meaningful connections.
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-slate-400 hover:text-slate-600 transition-colors">
@@ -58,9 +58,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* For Employers */}
+          {/* For Job Referrers */}
           <div>
-            <h3 className="font-semibold text-slate-900 mb-4">For Employers</h3>
+            <h3 className="font-semibold text-slate-900 mb-4">For Job Referrers</h3>
             <ul className="space-y-3">
               <li>
                 <Link to="/employer/dashboard" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
@@ -69,7 +69,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/employer/dashboard" className="text-sm text-slate-600 hover:text-slate-900 transition-colors">
-                  Employer Dashboard
+                  Job Referrer Dashboard
                 </Link>
               </li>
               <li>
@@ -115,7 +115,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-slate-200">
           <p className="text-center text-sm text-slate-600">
-            © {new Date().getFullYear()} JobPortal. All rights reserved.
+            © {new Date().getFullYear()} Job Referrer System. All rights reserved.
           </p>
         </div>
       </div>

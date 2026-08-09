@@ -66,7 +66,7 @@ export default function Settings() {
             <div className="flex items-center justify-between">
               <div>
                 <Label htmlFor="profile-visible">Profile Visibility</Label>
-                <p className="text-sm text-slate-600">Make your profile visible to employers</p>
+                <p className="text-sm text-slate-600">Make your profile visible to job referrers</p>
               </div>
               <Switch id="profile-visible" defaultChecked />
             </div>
@@ -74,7 +74,7 @@ export default function Settings() {
             <div className="flex items-center justify-between">
               <div>
                 <Label htmlFor="show-activity">Show Activity Status</Label>
-                <p className="text-sm text-slate-600">Let employers see when you're active</p>
+                <p className="text-sm text-slate-600">Let job referrers see when you're active</p>
               </div>
               <Switch id="show-activity" />
             </div>

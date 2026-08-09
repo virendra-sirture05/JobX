@@ -19,7 +19,7 @@ export default function AdminSettings() {
       <div>
         <h1 className="text-2xl font-bold text-slate-900 tracking-tight">Platform Settings</h1>
         <p className="text-sm text-slate-400 mt-0.5">
-          Configure and manage your job portal platform
+          Configure and manage the Job Referrer System platform
         </p>
       </div>
 

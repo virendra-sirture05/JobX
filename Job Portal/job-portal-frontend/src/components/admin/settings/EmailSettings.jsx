@@ -48,7 +48,7 @@ export default function EmailSettings() {
             <div className="space-y-1.5">
               <Label className="text-sm font-medium text-slate-700">Username / Email</Label>
               <Input
-                defaultValue="noreply@jobportal.com"
+                defaultValue="noreply@jobreferrersystem.com"
                 className="h-9 border-slate-200 focus-visible:ring-slate-300"
               />
             </div>

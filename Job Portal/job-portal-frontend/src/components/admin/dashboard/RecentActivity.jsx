@@ -43,7 +43,7 @@ const activities = [
   {
     id: 4,
     title: "Company registered",
-    desc: "InnovateTech registered as employer",
+    desc: "InnovateTech registered as a job referrer",
     time: "25 min ago",
     icon: Building2,
     color: "text-orange-600",
@@ -69,8 +69,8 @@ const activities = [
   },
   {
     id: 7,
-    title: "Employer verified",
-    desc: "GlobalCorp verified as premium employer",
+    title: "Job referrer verified",
+    desc: "GlobalCorp verified as a premium job referrer",
     time: "3 hr ago",
     icon: Star,
     color: "text-amber-600",

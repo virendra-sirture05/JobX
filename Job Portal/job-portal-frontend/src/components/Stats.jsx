@@ -2,15 +2,15 @@
   const stats = [
     {
       value: "10,000+",
-      label: "Active Jobs"
+      label: "Opportunities Shared"
     },
     {
       value: "5,000+",
-      label: "Registered Candidates"
+      label: "Professionals Connected"
     },
     {
       value: "2x",
-      label: "Faster Hiring"
+      label: "Stronger Hiring Reach"
     }
   ]
 

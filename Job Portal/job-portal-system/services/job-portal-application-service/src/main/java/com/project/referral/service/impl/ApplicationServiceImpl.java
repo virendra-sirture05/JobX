@@ -27,6 +27,7 @@ import com.project.referral.service.ApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import feign.FeignException;
 
 import org.springframework.data.domain.Sort;
 
@@ -300,9 +301,18 @@ public class ApplicationServiceImpl implements ApplicationService {
 
         List<ApplicationNote> notes =
                 noteRepository.findByApplicationIdOrderByCreatedAtDesc(application.getId());
-        JobSummaryResponse job = jobClient.getJobSummaryById(application.getJobId());
-        CompanySummaryResponse company = companyClient.getCompanySummaryById(application.getCompanyId());
-        UserResponse candidate = userClient.getUserById(application.getCandidateId());
+        CompanySummaryResponse company = null;
+        try {
+            company = companyClient.getCompanySummaryById(application.getCompanyId());
+        } catch (FeignException.NotFound ignored) {
+            // Keep historical applications visible when their company was removed.
+        }
+        UserResponse candidate = null;
+        try {
+            candidate = userClient.getUserById(application.getCandidateId());
+        } catch (FeignException.NotFound ignored) {
+            // Keep historical applications visible when the candidate account was removed.
+        }
         ApplicationScreening screening = screeningRepository.findByApplicationId(application.getId()).orElse(null);
 
         return ApplicationMapper.toResponse(application, history, notes, company, candidate);

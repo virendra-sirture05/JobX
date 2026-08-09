@@ -81,8 +81,8 @@ export default function Sidebar({ collapsed, setCollapsed, mobileMenuOpen, setMo
               <Sparkles className="h-4 w-4 text-white" />
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-bold text-white truncate">JobX.AI</p>
-              <p className="text-[10px] text-slate-500 leading-tight">Employer Dashboard</p>
+      <p className="text-sm font-bold text-white truncate">Job Referrer System</p>
+              <p className="text-[10px] text-slate-500 leading-tight">Job Referrer Dashboard</p>
             </div>
           </Link>
         ) : (
