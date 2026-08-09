@@ -2,7 +2,7 @@ spring:
   application:
     name: job-portal-ai-service
   config:
-    import: configserver:http://localhost:8888
+    import: configserver:http://config-server:8888
 
 gemini:
   api:
