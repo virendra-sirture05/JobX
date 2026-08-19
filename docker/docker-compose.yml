@@ -1,164 +1,164 @@
 networks:
   job-portal-net:
     driver: bridge
-volumes:
-  userdb_data:
-  companydb_data:
-  jobdb_data:
-  applicationdb_data:
-  paymentdb_data:
-  subscriptiondb_data:
-  preferencedb_data:
-  resumedb_data:
+#volumes:
+#  userdb_data:
+#  companydb_data:
+#  jobdb_data:
+#  applicationdb_data:
+#  paymentdb_data:
+#  subscriptiondb_data:
+#  preferencedb_data:
+#  resumedb_data:
 services:
 #
 #  # ============================================================
 #  # DATABASES (One MySQL container per microservice)
 #  # ============================================================
 #
-  userdb:
-    image: mysql:8.4
-    container_name: job-portal-userdb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3307:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job-portal-user-service
-      MYSQL_USER: root
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - userdb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
-
-  companydb:
-    image: mysql:8.4
-    container_name: job-portal-companydb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3308:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job_portal_company
-      MYSQL_USER: jobportal
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - companydb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
-
-  jobdb:
-    image: mysql:8.4
-    container_name: job-portal-jobdb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3309:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job_portal_job
-      MYSQL_USER: jobportal
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - jobdb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
-
-  applicationdb:
-    image: mysql:8.4
-    container_name: job-portal-applicationdb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3310:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job_portal_application
-      MYSQL_USER: jobportal
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - applicationdb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
-
-  preferencedb:
-    image: mysql:8.4
-    container_name: job-portal-preferencedb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3313:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job_portal_preference
-      MYSQL_USER: jobportal
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - preferencedb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
-
-  resumedb:
-    image: mysql:8.4
-    container_name: job-portal-resumedb
-    mem_limit: 512m
-    mem_reservation: 256m
-    cpus: 0.5
-    ports:
-      - "3314:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_DATABASE: job_portal_resume
-      MYSQL_USER: jobportal
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-    volumes:
-      - resumedb_data:/var/lib/mysql
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-      start_period: 30s
-    networks:
-      - job-portal-net
+#  userdb:
+#    image: mysql:8.4
+#    container_name: job-portal-userdb
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "3307:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_DATABASE: job-portal-user-service
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - userdb_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 30s
+#    networks:
+#      - job-portal-net
+#
+#  companydb:
+#    image: mysql:8.4
+#    container_name: job-portal-companydb
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "3308:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_DATABASE: job_portal_company
+#      MYSQL_USER: jobportal
+#      MYSQL_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - companydb_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 30s
+#    networks:
+#      - job-portal-net
+#
+#  jobdb:
+#    image: mysql:8.4
+#    container_name: job-portal-jobdb
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "3309:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_DATABASE: job_portal_job
+#      MYSQL_USER: jobportal
+#      MYSQL_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - jobdb_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 30s
+#    networks:
+#      - job-portal-net
+#
+#  applicationdb:
+#    image: mysql:8.4
+#    container_name: job-portal-applicationdb
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "3310:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_DATABASE: job_portal_application
+#      MYSQL_USER: jobportal
+#      MYSQL_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - applicationdb_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 30s
+#    networks:
+#      - job-portal-net
+#
+#  preferencedb:
+#    image: mysql:8.4
+#    container_name: job-portal-preferencedb
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "3313:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_DATABASE: job_portal_preference
+#      MYSQL_USER: jobportal
+#      MYSQL_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - preferencedb_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 30s
+#    networks:
+#      - job-portal-net
+#
+#  resumedb:
+#    image: mysql:8.4
+#    container_name: job-portal-resumedb
+#    mem_limit: 512m
+#    mem_reservation: 256m
+#    cpus: 0.5
+#    ports:
+#      - "3314:3306"
+#    environment:
+#      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+#      MYSQL_DATABASE: job_portal_resume
+#      MYSQL_USER: jobportal
+#      MYSQL_PASSWORD: ${DB_PASSWORD}
+#    volumes:
+#      - resumedb_data:/var/lib/mysql
+#    healthcheck:
+#      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p${DB_PASSWORD}"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+#      start_period: 30s
+#    networks:
+#      - job-portal-net
 
 
 #  # ============================================================
@@ -236,14 +236,12 @@ services:
     ports:
       - "8083:8083"
     depends_on:
-      userdb:
-        condition: service_healthy
       config-server:
         condition: service_healthy
     environment:
       SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-      DB_URL: jdbc:mysql://userdb:3306/job-portal-user-service?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      DB_USERNAME: root
+      DB_URL: jdbc:mysql://db-context-contextai.e.aivencloud.com:17475/jobx?sslMode=REQUIRED
+      DB_USERNAME: avnadmin
       DB_PASSWORD: ${DB_PASSWORD}
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
     healthcheck:
@@ -261,14 +259,12 @@ services:
       ports:
         - "8086:8086"
       depends_on:
-        companydb:
-          condition: service_healthy
         config-server:
           condition: service_healthy
       environment:
         SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-        DB_URL: jdbc:mysql://companydb:3306/job-portal-company?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-        DB_USERNAME: jobportal
+        DB_URL: jdbc:mysql://db-context-contextai.e.aivencloud.com:17475/jobx?sslMode=REQUIRED
+        DB_USERNAME: avnadmin
         DB_PASSWORD: ${DB_PASSWORD}
         EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
         EUREKA_URL: http://discovery:8761/eureka
@@ -289,14 +285,12 @@ services:
     ports:
       - "8085:8085"
     depends_on:
-      jobdb:
-        condition: service_healthy
       config-server:
         condition: service_healthy
     environment:
       SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-      DB_URL: jdbc:mysql://jobdb:3306/job-portal-job?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      DB_USERNAME: jobportal
+      DB_URL: jdbc:mysql://db-context-contextai.e.aivencloud.com:17475/jobx?sslMode=REQUIRED
+      DB_USERNAME: avnadmin
       DB_PASSWORD: ${DB_PASSWORD}
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
       EUREKA_URL: http://discovery:8761/eureka
@@ -316,14 +310,12 @@ services:
     ports:
       - "8084:8084"
     depends_on:
-      applicationdb:
-        condition: service_healthy
       config-server:
         condition: service_healthy
     environment:
       SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-      DB_URL: jdbc:mysql://applicationdb:3306/job-portal-application?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      DB_USERNAME: jobportal
+      DB_URL: jdbc:mysql://db-context-contextai.e.aivencloud.com:17475/jobx?sslMode=REQUIRED
+      DB_USERNAME: avnadmin
       DB_PASSWORD: ${DB_PASSWORD}
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
@@ -372,14 +364,12 @@ services:
     ports:
       - "8087:8087"
     depends_on:
-      preferencedb:
-        condition: service_healthy
       config-server:
         condition: service_healthy
     environment:
       SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-      DB_URL: jdbc:mysql://preferencedb:3306/job-portal-preference?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      DB_USERNAME: jobportal
+      DB_URL: jdbc:mysql://db-context-contextai.e.aivencloud.com:17475/jobx?sslMode=REQUIRED
+      DB_USERNAME: avnadmin
       DB_PASSWORD: ${DB_PASSWORD}
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
       EUREKA_URL: http://discovery:8761/eureka
@@ -399,14 +389,12 @@ services:
     ports:
       - "8088:8088"
     depends_on:
-      resumedb:
-        condition: service_healthy
       config-server:
         condition: service_healthy
     environment:
       SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-      DB_URL: jdbc:mysql://resumedb:3306/job-portal-resume?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-      DB_USERNAME: jobportal
+      DB_URL: jdbc:mysql://db-context-contextai.e.aivencloud.com:17475/jobx?sslMode=REQUIRED
+      DB_USERNAME: avnadmin
       DB_PASSWORD: ${DB_PASSWORD}
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
       EUREKA_URL: http://discovery:8761/eureka
@@ -416,33 +404,23 @@ services:
       start_period: 30s
     networks:
       - job-portal-net
-#  ai-service:
-#    image: ritesh8554/job-portal-ai-service:latest
-#    container_name: job-portal-ai-service
-#    mem_limit: 1g
-#    mem_reservation: 512m
-#    cpus: 1.0
-#    ports:
-#      - "8089:8089"
-#    networks:
-#      - job-portal-net
-#  ai-service:
-#    image: ritesh8554/job-portal-ai-service:latest
-#    container_name: job-portal-ai-service
-#    mem_limit: 512m
-#    mem_reservation: 256m
-#    cpus: 0.5
-#    ports:
-#      - "8089:8089"
-#    depends_on:
-#      config-server:
-#        condition: service_healthy
-#    environment:
-#      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
-#      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
-#      EUREKA_URL: http://discovery:8761/eureka
-#      SERVER_PORT: 8089
-#    networks:
-#      - job-portal-net
+  ai-service:
+    image: ritesh8554/job-portal-ai-service:latest
+    container_name: job-portal-ai-service
+    mem_limit: 512m
+    mem_reservation: 256m
+    cpus: 0.5
+    ports:
+      - "8089:8089"
+    depends_on:
+      config-server:
+        condition: service_healthy
+    environment:
+      SPRING_CONFIG_IMPORT: configserver:http://config-server:8888
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://discovery:8761/eureka/
+      EUREKA_URL: http://discovery:8761/eureka
+      SERVER_PORT: 8089
+    networks:
+      - job-portal-net
 
 
