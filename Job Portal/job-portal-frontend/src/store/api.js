@@ -1,7 +1,7 @@
 ﻿import axios from "axios"
 
 // Base URL - Update this with your actual backend URL
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://13.205.248.245:5000"
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://jobx-api.duckdns.org"
 
 
 // Create axios instance
