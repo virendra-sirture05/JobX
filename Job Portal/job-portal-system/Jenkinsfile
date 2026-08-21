@@ -1,0 +1,85 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven-3.9.16'
+    }
+
+    environment {
+        DOCKERHUB_CREDS = credentials('jobx-dockerhub')
+        IMAGE_TAG = "${env.GIT_COMMIT?.take(7) ?: env.BUILD_NUMBER}"
+    }
+
+    stages {
+
+        stage('Environment') {
+            steps {
+                sh '''
+                    set -eux
+
+                    echo "=== Jenkins Environment ==="
+                    whoami
+                    pwd
+                    java -version
+                    mvn -version
+                    docker --version
+                    git --version
+                '''
+            }
+        }
+
+        stage('Checkout Verification') {
+            steps {
+                sh '''
+                    set -eux
+
+                    echo "=== Git Branch ==="
+                    git branch --show-current || true
+
+                    echo "=== Latest Commit ==="
+                    git log -1 --oneline
+
+                    echo "=== Backend Structure ==="
+                    ls -la
+                    ls -la "Job Portal/job-portal-system"
+                '''
+            }
+        }
+
+        stage('Verify Maven Project') {
+            steps {
+                dir('Job Portal/job-portal-system') {
+                    sh '''
+                        set -eux
+                        mvn -B -ntp validate
+                    '''
+                }
+            }
+        }
+
+        stage('Summary') {
+            steps {
+                script {
+                    echo "Build Number: ${env.BUILD_NUMBER}"
+                    echo "Commit: ${env.GIT_COMMIT}"
+                    echo "Branch: ${env.BRANCH_NAME ?: 'docker'}"
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline completed.'
+            deleteDir()
+        }
+
+        success {
+            echo 'JobX backend CI validation succeeded.'
+        }
+
+        failure {
+            echo 'JobX backend CI validation failed. Check the stage logs.'
+        }
+    }
+}
