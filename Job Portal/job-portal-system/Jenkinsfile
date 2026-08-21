@@ -7,7 +7,8 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDS = credentials('jobx-dockerhub')
-        IMAGE_TAG = "${env.GIT_COMMIT?.take(7) ?: env.BUILD_NUMBER}"
+        DOCKERHUB_USERNAME = 'ritesh8554'
+        IMAGE_TAG = "${BUILD_NUMBER}"
     }
 
     stages {
@@ -56,7 +57,35 @@ pipeline {
                 }
             }
         }
+        stage('Build Config Server Image') {
+            steps {
+                dir('Job Portal/job-portal-system') {
+                    withCredentials([
+                        usernamePassword(
+                            credentialsId: 'jobx-dockerhub',
+                            usernameVariable: 'DOCKERHUB_USERNAME',
+                            passwordVariable: 'DOCKERHUB_PASSWORD'
+                        )
+                    ]) {
+                        sh '''
+                            set -eux
 
+                            echo "Building Config Server image"
+                            echo "Image tag: ${IMAGE_TAG}"
+
+                            mvn -B -ntp \
+                              -pl cloud/job-portal-config-server \
+                              -am \
+                              jib:build \
+                              -Djib.to.image=ritesh8554/job-portal-config-server \
+                              -Djib.to.tags=${IMAGE_TAG} \
+                              -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                              -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                        '''
+                    }
+                }
+            }
+        }
         stage('Summary') {
             steps {
                 script {
