@@ -210,6 +210,146 @@ pipeline {
                         }
                     }
                 }
+                stage('Build Notification Service Image') {
+                    steps {
+                        dir('Job Portal/job-portal-system') {
+                            withCredentials([
+                                usernamePassword(
+                                    credentialsId: 'jobx-dockerhub',
+                                    usernameVariable: 'DOCKERHUB_USERNAME',
+                                    passwordVariable: 'DOCKERHUB_PASSWORD'
+                                )
+                            ]) {
+                                sh '''
+                                    set -eux
+
+                                    echo "=== Building Notification Service ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-notification-service \
+                                      -am \
+                                      clean install \
+                                      -DskipTests
+
+                                    echo "=== Building Notification Service Image ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-notification-service \
+                                      jib:build \
+                                      -Djib.to.image=ritesh8554/job-portal-notification-service \
+                                      -Djib.to.tags=${IMAGE_TAG} \
+                                      -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                                      -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                                '''
+                            }
+                        }
+                    }
+                }
+                stage('Build Preferences Service Image') {
+                    steps {
+                        dir('Job Portal/job-portal-system') {
+                            withCredentials([
+                                usernamePassword(
+                                    credentialsId: 'jobx-dockerhub',
+                                    usernameVariable: 'DOCKERHUB_USERNAME',
+                                    passwordVariable: 'DOCKERHUB_PASSWORD'
+                                )
+                            ]) {
+                                sh '''
+                                    set -eux
+
+                                    echo "=== Building Preferences Service ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-preferences \
+                                      -am \
+                                      clean install \
+                                      -DskipTests
+
+                                    echo "=== Building Preferences Service Image ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-preferences \
+                                      jib:build \
+                                      -Djib.to.image=ritesh8554/job-portal-preferences \
+                                      -Djib.to.tags=${IMAGE_TAG} \
+                                      -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                                      -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                                '''
+                            }
+                        }
+                    }
+                }
+                stage('Build Resume Service Image') {
+                    steps {
+                        dir('Job Portal/job-portal-system') {
+                            withCredentials([
+                                usernamePassword(
+                                    credentialsId: 'jobx-dockerhub',
+                                    usernameVariable: 'DOCKERHUB_USERNAME',
+                                    passwordVariable: 'DOCKERHUB_PASSWORD'
+                                )
+                            ]) {
+                                sh '''
+                                    set -eux
+
+                                    echo "=== Building Resume Service ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-resume-service \
+                                      -am \
+                                      clean install \
+                                      -DskipTests
+
+                                    echo "=== Building Resume Service Image ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-resume-service \
+                                      jib:build \
+                                      -Djib.to.image=ritesh8554/job-portal-resume-service \
+                                      -Djib.to.tags=${IMAGE_TAG} \
+                                      -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                                      -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                                '''
+                            }
+                        }
+                    }
+                }
+                stage('Build User Service Image') {
+                    steps {
+                        dir('Job Portal/job-portal-system') {
+                            withCredentials([
+                                usernamePassword(
+                                    credentialsId: 'jobx-dockerhub',
+                                    usernameVariable: 'DOCKERHUB_USERNAME',
+                                    passwordVariable: 'DOCKERHUB_PASSWORD'
+                                )
+                            ]) {
+                                sh '''
+                                    set -eux
+
+                                    echo "=== Building User Service ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-user-service \
+                                      -am \
+                                      clean install \
+                                      -DskipTests
+
+                                    echo "=== Building User Service Image ==="
+
+                                    mvn -B -ntp \
+                                      -pl services/job-portal-user-service \
+                                      jib:build \
+                                      -Djib.to.image=ritesh8554/job-portal-user-service \
+                                      -Djib.to.tags=${IMAGE_TAG} \
+                                      -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                                      -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                                '''
+                            }
+                        }
+                    }
+                }
         stage('Summary') {
             steps {
                 script {
