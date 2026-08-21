@@ -350,6 +350,43 @@ pipeline {
                         }
                     }
                 }
+                stage('Build AI Service Image') {
+                    steps {
+                        dir('Job Portal/job-portal-system/services/job-portal-ai-service') {
+                            withCredentials([
+                                usernamePassword(
+                                    credentialsId: 'jobx-dockerhub',
+                                    usernameVariable: 'DOCKERHUB_USERNAME',
+                                    passwordVariable: 'DOCKERHUB_PASSWORD'
+                                )
+                            ]) {
+                                sh '''
+                                    set -eux
+
+                                    IMAGE_NAME=ritesh8554/job-portal-ai-service:${IMAGE_TAG}
+
+                                    echo "=== Building AI Service Docker Image ==="
+                                    echo "Image: ${IMAGE_NAME}"
+
+                                    echo "${DOCKERHUB_PASSWORD}" | docker login \
+                                      -u "${DOCKERHUB_USERNAME}" \
+                                      --password-stdin
+
+                                    docker build \
+                                      --pull \
+                                      -t "${IMAGE_NAME}" \
+                                      .
+
+                                    echo "=== Pushing AI Service Image ==="
+
+                                    docker push "${IMAGE_NAME}"
+
+                                    docker logout
+                                '''
+                            }
+                        }
+                    }
+                }
         stage('Summary') {
             steps {
                 script {
