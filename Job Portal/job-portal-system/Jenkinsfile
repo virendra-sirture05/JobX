@@ -67,21 +67,22 @@ pipeline {
                             passwordVariable: 'DOCKERHUB_PASSWORD'
                         )
                     ]) {
-                        sh '''
-                            set -eux
+                                       sh '''
+                                           set -eux
 
-                            echo "Building Config Server image"
-                            echo "Image tag: ${IMAGE_TAG}"
+                                           echo "=== Building Config Server ==="
+                                           echo "Image: ritesh8554/job-portal-config-server:${IMAGE_TAG}"
 
-                            mvn -B -ntp \
-                              -pl cloud/job-portal-config-server \
-                              -am \
-                              jib:build \
-                              -Djib.to.image=ritesh8554/job-portal-config-server \
-                              -Djib.to.tags=${IMAGE_TAG} \
-                              -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
-                              -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
-                        '''
+                                           mvn -B -ntp \
+                                             -pl cloud/job-portal-config-server \
+                                             -am \
+                                             clean package \
+                                             jib:build \
+                                             -Djib.to.image=ritesh8554/job-portal-config-server \
+                                             -Djib.to.tags=${IMAGE_TAG} \
+                                             -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                                             -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                                       '''
                     }
                 }
             }
