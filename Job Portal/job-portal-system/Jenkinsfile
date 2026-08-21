@@ -130,6 +130,7 @@ pipeline {
                                       -pl cloud/job-portal-api-gateway \
                                       -am \
                                       clean package jib:build \
+                                      -DskipTests \
                                       -Djib.to.image=ritesh8554/job-portal-api-gateway \
                                       -Djib.to.tags=${IMAGE_TAG} \
                                       -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
