@@ -57,6 +57,32 @@ pipeline {
                 }
             }
         }
+        stage('Build Service Registry Image') {
+            steps {
+                dir('Job Portal/job-portal-system') {
+                    withCredentials([
+                        usernamePassword(
+                            credentialsId: 'jobx-dockerhub',
+                            usernameVariable: 'DOCKERHUB_USERNAME',
+                            passwordVariable: 'DOCKERHUB_PASSWORD'
+                        )
+                    ]) {
+                        sh '''
+                            set -eux
+
+                            mvn -B -ntp \
+                              -pl cloud/job-portal-service-registry \
+                              -am \
+                              clean package jib:build \
+                              -Djib.to.image=ritesh8554/job-portal-service-registry \
+                              -Djib.to.tags=${IMAGE_TAG} \
+                              -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                              -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                        '''
+                    }
+                }
+            }
+        }
         stage('Build Config Server Image') {
             steps {
                 dir('Job Portal/job-portal-system') {
@@ -87,6 +113,32 @@ pipeline {
                 }
             }
         }
+         stage('Build API Gateway Image') {
+                    steps {
+                        dir('Job Portal/job-portal-system') {
+                            withCredentials([
+                                usernamePassword(
+                                    credentialsId: 'jobx-dockerhub',
+                                    usernameVariable: 'DOCKERHUB_USERNAME',
+                                    passwordVariable: 'DOCKERHUB_PASSWORD'
+                                )
+                            ]) {
+                                sh '''
+                                    set -eux
+
+                                    mvn -B -ntp \
+                                      -pl cloud/job-portal-api-gateway \
+                                      -am \
+                                      clean package jib:build \
+                                      -Djib.to.image=ritesh8554/job-portal-api-gateway \
+                                      -Djib.to.tags=${IMAGE_TAG} \
+                                      -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
+                                      -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
+                                '''
+                            }
+                        }
+                    }
+                }
         stage('Summary') {
             steps {
                 script {
