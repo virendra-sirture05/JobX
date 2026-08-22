@@ -6,7 +6,6 @@ pipeline {
     }
 
     environment {
-        DOCKERHUB_CREDS = credentials('jobx-dockerhub')
         DOCKERHUB_USERNAME = 'ritesh8554'
         IMAGE_TAG = "${BUILD_NUMBER}"
     }
@@ -271,7 +270,7 @@ pipeline {
                                     mvn -B -ntp \
                                       -pl services/job-portal-preferences \
                                       jib:build \
-                                      -Djib.to.image=ritesh8554/job-portal-preferences \
+                                      -Djib.to.image=ritesh8554/job-portal-preferences-service \
                                       -Djib.to.tags=${IMAGE_TAG} \
                                       -Djib.to.auth.username="${DOCKERHUB_USERNAME}" \
                                       -Djib.to.auth.password="${DOCKERHUB_PASSWORD}"
@@ -387,6 +386,36 @@ pipeline {
                         }
                     }
                 }
+        stage('Deploy to EC2') {
+            steps {
+                sshagent(credentials: ['jobx-ec2-ssh']) {
+                    sh '''
+                set -eux
+
+                echo "========================================="
+                echo "Deploying JobX release: ${IMAGE_TAG}"
+                echo "========================================="
+
+                ssh -o StrictHostKeyChecking=no \
+                    ec2-user@13.205.248.245 \
+                    "
+                    set -e
+
+                    cd /home/ec2-user/jobx
+
+                    echo 'Deploying IMAGE_TAG=${IMAGE_TAG}'
+
+                    IMAGE_TAG=${IMAGE_TAG} docker compose pull
+
+                    IMAGE_TAG=${IMAGE_TAG} docker compose up -d --remove-orphans
+
+                    echo '=== Running Containers ==='
+                    docker compose ps
+                    "
+            '''
+                }
+            }
+        }
         stage('Summary') {
             steps {
                 script {
