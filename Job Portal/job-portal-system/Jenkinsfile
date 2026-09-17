@@ -386,6 +386,26 @@ pipeline {
                         }
                     }
                 }
+        stage('Test Backend SSH') {
+            steps {
+                sshagent(credentials: ['jobx-ec2-ssh']) {
+                    sh '''
+                set -eux
+
+                echo "=== SSH Agent ==="
+                ssh-add -l
+
+                echo "=== Testing Backend ==="
+
+                ssh \
+                    -o StrictHostKeyChecking=no \
+                    -o ConnectTimeout=10 \
+                    ec2-user@172.31.22.164 \
+                    "echo 'SSH connection successful'; hostname; whoami"
+            '''
+                }
+            }
+        }
         stage('Deploy to EC2') {
             steps {
                 sshagent(credentials: ['jobx-ec2-ssh']) {
