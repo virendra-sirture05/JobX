@@ -417,20 +417,14 @@ pipeline {
                 echo "========================================="
 
                 ssh -o StrictHostKeyChecking=no \
-                    ec2-user@13.205.248.245 \
+                    ec2-user@172.31.22.164 \
                     "
-                    set -e
-
-                    cd /home/ec2-user/jobx
-
-                    echo 'Deploying IMAGE_TAG=${IMAGE_TAG}'
-
-                    IMAGE_TAG=${IMAGE_TAG} docker compose pull
-
-                    IMAGE_TAG=${IMAGE_TAG} docker compose up -d --remove-orphans
-
-                    echo '=== Running Containers ==='
-                    docker compose ps
+                   cd /home/ec2-user/jobx && \\
+                   echo 'Deploying IMAGE_TAG=${IMAGE_TAG}' && \\
+                   IMAGE_TAG=${IMAGE_TAG} docker compose pull && \\
+                   IMAGE_TAG=${IMAGE_TAG} docker compose up -d --remove-orphans && \\
+                   echo '=== Running Containers ===' && \\
+                   IMAGE_TAG=${IMAGE_TAG} docker compose ps
                     "
             '''
                 }
