@@ -400,7 +400,6 @@ pipeline {
                 ssh \
                     -o StrictHostKeyChecking=no \
                     -o ConnectTimeout=10 \
-                     -o IdentitiesOnly=yes \
                     ec2-user@172.31.22.164 \
                     "echo 'SSH connection successful'; hostname; whoami"
             '''
